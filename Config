@@ -1,0 +1,11 @@
+HelloWorld_NAME=HelloWorld
+HelloWorld_URL=/helloworld
+
+Main_NAME=Main_f
+Main_URL=/main
+
+SimpleHello_NAME=SimpleHello
+SimpleHello_URL=/hello
+
+Test_NAME=Only_A_Test
+Test_URL=/999*
