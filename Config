@@ -7,5 +7,5 @@ Main_URL=/main
 SimpleHello_NAME=SimpleHello
 SimpleHello_URL=/hello
 
-Test_NAME=Only_A_Test
-Test_URL=/999*
+WelcomeYou_NAME=welcomeYou
+WelcomeYou_URL=/welcome

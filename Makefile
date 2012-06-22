@@ -29,6 +29,7 @@ install:
 	mkdir $(WEB_PATH)/WEB-INF/classes
 	cp web.xml $(WEB_PATH)/WEB-INF/
 	cp -t $(WEB_PATH)/WEB-INF/classes $(JAVA_CLASS)
+	cp ./html/* $(WEB_PATH) -rf
 
 server:
 	$(CATALINA_HOME)/bin/shutdown.sh
@@ -36,7 +37,7 @@ server:
 
 
 %.class:%.java
-	javac $<
+	javac $< -classpath "$(CLASSPATH):$(CLASS_PATH)"
 
 
 info:web.start  $(WEN_INFO_CONTENT)  web.end
@@ -52,7 +53,7 @@ info:web.start  $(WEN_INFO_CONTENT)  web.end
 	@echo '    </servlet-mapping>' >>  web.xml
 
 clean:
-	rm $(CONTENT)
+	-rm $(CONTENT)
 	-rm web.xml -rf
 
 t:
