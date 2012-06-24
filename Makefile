@@ -1,8 +1,10 @@
 include Config
+empty=
+space=$(empty) $(empty)
 
 SRC_DIR = ./src \
-          ./src2
-
+          ./src2 \
+          $(shell find ./third-party -type d)
 DISPLAY_NAME = miao
 DESCRPTION = My_Project
 
@@ -37,7 +39,8 @@ server:
 
 
 %.class:%.java
-	javac $< -classpath "$(CLASSPATH):$(CLASS_PATH)"
+	@echo ---compile $<
+	javac $< -classpath third-party/taobao/taobao-sdk-java-auto_1338966442474-20120622-source.jar:$(CLASSPATH)
 
 
 info:web.start  $(WEN_INFO_CONTENT)  web.end
