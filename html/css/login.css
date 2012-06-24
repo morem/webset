@@ -1,0 +1,11 @@
+.login
+{
+	border:thin solid;
+	background:#FF66FF;
+	width:300px;
+	height:150px;
+	position:absolute;
+	left:100px;
+	top: 150px;
+	text-align:center;
+}
