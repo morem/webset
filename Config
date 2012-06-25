@@ -9,3 +9,6 @@ SimpleHello_URL=/hello
 
 WelcomeYou_NAME=welcomeYou
 WelcomeYou_URL=/welcome
+
+DisplayAFile_NAME=DisplayFile
+DisplayAFile_URL=/file
