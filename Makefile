@@ -4,6 +4,7 @@ space=$(empty) $(empty)
 
 SRC_DIR = ./src \
           ./src2 \
+          ./src/layout\
           $(shell find ./third-party -type d)
 DISPLAY_NAME = miao
 DESCRPTION = My_Project
@@ -12,12 +13,14 @@ JAVA_SRC = $(foreach var, $(SRC_DIR),$(wildcard $(var)/*.java))
 JAVA_CLASS = $(patsubst %.java,%.class,$(JAVA_SRC))
 WEN_INFO_CONTENT=$(notdir $(patsubst %.java,%.info,$(JAVA_SRC)))
 CONTENT = $(JAVA_CLASS)
+JAVA_CLASS_INSTALL = $(foreach var, $(SRC_DIR),$(wildcard $(var)/*.class))
 
 WEB_ROOT=/opt/apache-tomcat-7.0.27/webapps
 WEB_NAME=a
 WEB_PATH=$(WEB_ROOT)/$(WEB_NAME)
 
 all:start $(CONTENT) info end
+
 
 start:
 	@echo start at $(shell date)
@@ -30,7 +33,7 @@ install:
 	mkdir $(WEB_PATH)/WEB-INF
 	mkdir $(WEB_PATH)/WEB-INF/classes
 	cp web.xml $(WEB_PATH)/WEB-INF/
-	cp -t $(WEB_PATH)/WEB-INF/classes $(JAVA_CLASS)
+	cp -t $(WEB_PATH)/WEB-INF/classes $(JAVA_CLASS_INSTALL)
 	cp ./html/* $(WEB_PATH) -rf
 
 server:
@@ -40,20 +43,22 @@ server:
 
 %.class:%.java
 	@echo ---compile $<
-	javac $< -classpath third-party/taobao/taobao-sdk-java-auto_1338966442474-20120622-source.jar:$(CLASSPATH)
+	javac $< -classpath third-party/taobao/taobao-sdk-java-auto_1338966442474-20120622-source.jar:$(CLASSPATH):./src
 
 
 info:web.start  $(WEN_INFO_CONTENT)  web.end
 
 %.info:
-	@echo '    <servlet>' >>  web.xml
-	@echo '        <servlet-name>$($*_NAME)</servlet-name>' >>  web.xml
-	@echo '        <servlet-class>$*</servlet-class>' >>  web.xml
-	@echo '    </servlet>' >>  web.xml
-	@echo '    <servlet-mapping>' >>  web.xml
-	@echo '        <servlet-name>$($*_NAME)</servlet-name>' >>  web.xml
-	@echo '        <url-pattern>$($*_URL)</url-pattern>' >>  web.xml
-	@echo '    </servlet-mapping>' >>  web.xml
+	@if [ $($*_NAME)x != x ]; then \
+	echo '    <servlet>' >>  web.xml;\
+	echo '        <servlet-name>$($*_NAME)</servlet-name>' >>  web.xml;\
+	echo '        <servlet-class>$*</servlet-class>' >>  web.xml;\
+	echo '    </servlet>' >>  web.xml;\
+	echo '    <servlet-mapping>' >>  web.xml;\
+	echo '        <servlet-name>$($*_NAME)</servlet-name>' >>  web.xml;\
+	echo '        <url-pattern>$($*_URL)</url-pattern>' >>  web.xml;\
+	echo '    </servlet-mapping>' >>  web.xml;\
+	fi
 
 clean:
 	-rm $(CONTENT)
