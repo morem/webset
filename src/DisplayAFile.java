@@ -31,9 +31,12 @@ public class DisplayAFile extends HttpServlet
         FileReader fs1 = new FileReader("/home/miao/work/webset/src/README");
         BufferedReader br = new BufferedReader(fs1);
         MLayout layout = new MLayout();
-        layout.PrintOut (out,"-------------------------------------");
+        layout.PrintOut (out,"-------------------------------------\n");
         MLayout2 layout2 = new MLayout2();
-        layout2.PrintOut (out,"-------------------------------------");
+        layout2.PrintOut (out,"-------------------------------------\n");
+        out.println (br.readLine());
+        MLayout3 layout3 = new MLayout3();
+        layout3.PrintOut (out,"-------------------------------------\n");
         out.println (br.readLine());
         out.println ("</body></html>");
         out.close();

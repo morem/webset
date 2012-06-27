@@ -2,9 +2,7 @@ include Config
 empty=
 space=$(empty) $(empty)
 
-SRC_DIR = ./src \
-          ./src2 \
-          ./src/layout\
+SRC_DIR = $(shell find ./src -type d) \
           $(shell find ./third-party -type d)
 DISPLAY_NAME = miao
 DESCRPTION = My_Project
@@ -13,11 +11,13 @@ JAVA_SRC = $(foreach var, $(SRC_DIR),$(wildcard $(var)/*.java))
 JAVA_CLASS = $(patsubst %.java,%.class,$(JAVA_SRC))
 WEN_INFO_CONTENT=$(notdir $(patsubst %.java,%.info,$(JAVA_SRC)))
 CONTENT = $(JAVA_CLASS)
-JAVA_CLASS_INSTALL = $(foreach var, $(SRC_DIR),$(wildcard $(var)/*.class))
+JAVA_CLASS_SEARCH = $(foreach var, $(SRC_DIR),$(wildcard $(var)/*.class))
 
 WEB_ROOT=/opt/apache-tomcat-7.0.27/webapps
 WEB_NAME=a
 WEB_PATH=$(WEB_ROOT)/$(WEB_NAME)
+
+CP = .:$(CLASSPATH):third-party/taobao/taobao-sdk-java-auto_1338966442474-20120622-source.jar:$(subst $(space),:,$(SRC_DIR))
 
 all:start $(CONTENT) info end
 
@@ -33,7 +33,7 @@ install:
 	mkdir $(WEB_PATH)/WEB-INF
 	mkdir $(WEB_PATH)/WEB-INF/classes
 	cp web.xml $(WEB_PATH)/WEB-INF/
-	cp -t $(WEB_PATH)/WEB-INF/classes $(JAVA_CLASS_INSTALL)
+	cp -t $(WEB_PATH)/WEB-INF/classes $(JAVA_CLASS_SEARCH)
 	cp ./html/* $(WEB_PATH) -rf
 
 server:
@@ -42,8 +42,8 @@ server:
 
 
 %.class:%.java
-	@echo ---compile $<
-	javac $< -classpath third-party/taobao/taobao-sdk-java-auto_1338966442474-20120622-source.jar:$(CLASSPATH):./src
+	@echo compile $<
+	@javac $< -classpath $(CP) -encoding UTF8
 
 
 info:web.start  $(WEN_INFO_CONTENT)  web.end
@@ -61,7 +61,7 @@ info:web.start  $(WEN_INFO_CONTENT)  web.end
 	fi
 
 clean:
-	-rm $(CONTENT)
+	-rm $(JAVA_CLASS_SEARCH)
 	-rm web.xml -rf
 
 t:
