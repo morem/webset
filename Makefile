@@ -32,6 +32,8 @@ install:
 	mkdir $(WEB_PATH)
 	mkdir $(WEB_PATH)/WEB-INF
 	mkdir $(WEB_PATH)/WEB-INF/classes
+	mkdir $(WEB_PATH)/WEB-INF/lib
+	cp ./third-party/* $(WEB_PATH)/WEB-INF/lib
 	cp web.xml $(WEB_PATH)/WEB-INF/
 	cp -t $(WEB_PATH)/WEB-INF/classes $(JAVA_CLASS_SEARCH)
 	cp ./html/* $(WEB_PATH) -rf
