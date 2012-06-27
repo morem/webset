@@ -1,7 +1,12 @@
+import freemarker.template.*;
 import javax.servlet.ServletException;
-import java.io.*;
 import javax.servlet.http.*;
+import javax.xml.transform.*;;
 import java.lang.*;
+import java.io.*;
+import java.util.*;
+
+
 
 public class SimpleHello extends HttpServlet
 {
@@ -9,6 +14,7 @@ public class SimpleHello extends HttpServlet
             throws ServletException, IOException
     {
         PrintWriter out = resp.getWriter();
+ /*
         MFile file = new MFile();
         String content = null;
         
@@ -16,6 +22,23 @@ public class SimpleHello extends HttpServlet
         content += file.GetContent ("/opt/apache-tomcat-7.0.27/webapps/a/template/menu.jsp");
         content += file.GetContent ("/opt/apache-tomcat-7.0.27/webapps/a/template/footer.jsp"); 
         out.println(content);
-        out.close();
+        out.close();*/
+        Configuration cfg = new Configuration();
+        cfg.setDirectoryForTemplateLoading (
+        		new File("/opt/apache-tomcat-7.0.27/webapps/a/template/"));
+        cfg.setObjectWrapper (new DefaultObjectWrapper());
+        
+        Template temp = cfg.getTemplate("header.jsp");
+        
+        Map root = new HashMap();
+        root.put("title","aaaaaaaaaaaaaaaaaaaaaaaaaa");
+        try {
+            temp.process(root, out);		
+            out.flush();
+        } catch (Exception e) {
+			// TODO: handle exception
+		}
+
+
     }
 }

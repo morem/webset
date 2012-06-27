@@ -17,7 +17,7 @@ WEB_ROOT=/opt/apache-tomcat-7.0.27/webapps
 WEB_NAME=a
 WEB_PATH=$(WEB_ROOT)/$(WEB_NAME)
 
-CP = .:$(CLASSPATH):third-party/taobao/taobao-sdk-java-auto_1338966442474-20120622-source.jar:$(subst $(space),:,$(SRC_DIR))
+CP = .:$(CLASSPATH):third-party/taobao/taobao-sdk-java-auto_1338966442474-20120622-source.jar:./third-party/freemarker.jar:$(subst $(space),:,$(SRC_DIR))
 
 all:start $(CONTENT) info end
 
@@ -45,7 +45,7 @@ server:
 
 %.class:%.java
 	@echo compile $<
-	@javac $< -classpath $(CP) -encoding UTF8
+	javac $< -classpath $(CP) -encoding UTF8
 
 
 info:web.start  $(WEN_INFO_CONTENT)  web.end

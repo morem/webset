@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-type" content="text/html; charset=GBK" />
-<title>Your Page Title</title>
+<title>${title}</title>
 <!-- add your meta tags here -->
 <link href="css/login.css" rel="stylesheet" type="text/css" />
 <link href="css/my_layout.css" rel="stylesheet" type="text/css" />
@@ -11,3 +11,5 @@
 <![endif]-->
 </head>
 <body>
+</body>
+</html>
