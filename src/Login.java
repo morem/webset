@@ -1,7 +1,12 @@
+import freemarker.template.*;
 import javax.servlet.ServletException;
-import java.io.*;
 import javax.servlet.http.*;
+import javax.xml.transform.*;;
 import java.lang.*;
+import java.io.*;
+import java.util.*;
+
+
 
 public class Login extends HttpServlet
 {
@@ -9,13 +14,18 @@ public class Login extends HttpServlet
             throws ServletException, IOException
     {
         PrintWriter out = resp.getWriter();
-        MFile file = new MFile();
-        String content = null;
+        Configuration cfg = new Configuration();
+        cfg.setDirectoryForTemplateLoading (
+        		new File("/opt/apache-tomcat-7.0.27/webapps/a/template/"));
+        cfg.setObjectWrapper (new DefaultObjectWrapper());
         
-        content = file.GetContent ("/opt/apache-tomcat-7.0.27/webapps/a/template/header.jsp");
-        content += file.GetContent ("/opt/apache-tomcat-7.0.27/webapps/a/template/menu.jsp");
-        content += file.GetContent ("/opt/apache-tomcat-7.0.27/webapps/a/template/footer.jsp"); 
-        out.println(content);
-        out.close();
+        Template temp = cfg.getTemplate("login.html");
+        Map root = new HashMap();
+        try {
+            temp.process(root, out);		
+            out.flush();
+        } catch (Exception e) {
+			// TODO: handle exception
+		}
     }
 }

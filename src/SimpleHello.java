@@ -28,7 +28,7 @@ public class SimpleHello extends HttpServlet
         		new File("/opt/apache-tomcat-7.0.27/webapps/a/template/"));
         cfg.setObjectWrapper (new DefaultObjectWrapper());
         
-        Template temp = cfg.getTemplate("header.jsp");
+        Template temp = cfg.getTemplate("header.html");
         
         Map root = new HashMap();
         root.put("title","aaaaaaaaaaaaaaaaaaaaaaaaaa");

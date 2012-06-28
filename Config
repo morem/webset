@@ -12,3 +12,6 @@ WelcomeYou_URL=/welcome
 
 DisplayAFile_NAME=DisplayFile
 DisplayAFile_URL=/file
+
+Login_NAME=Login
+Login_URL=/login
