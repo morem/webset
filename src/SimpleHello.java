@@ -14,27 +14,29 @@ public class SimpleHello extends HttpServlet
             throws ServletException, IOException
     {
         PrintWriter out = resp.getWriter();
- /*
+
         MFile file = new MFile();
         String content = null;
-        
-        content = file.GetContent ("/opt/apache-tomcat-7.0.27/webapps/a/template/header.jsp");
-        content += file.GetContent ("/opt/apache-tomcat-7.0.27/webapps/a/template/menu.jsp");
-        content += file.GetContent ("/opt/apache-tomcat-7.0.27/webapps/a/template/footer.jsp"); 
+        /*
+        content = file.GetContent ("/opt/apache-tomcat-7.0.27/webapps/a/template/header.html");
         out.println(content);
         out.close();*/
-        Configuration cfg = new Configuration();
+         Configuration cfg = new Configuration();
+
         cfg.setDirectoryForTemplateLoading (
         		new File("/opt/apache-tomcat-7.0.27/webapps/a/template/"));
         cfg.setObjectWrapper (new DefaultObjectWrapper());
-        
+        cfg.setDefaultEncoding("ISO-8859-1");
+
         Template temp = cfg.getTemplate("header.html");
-        
+        //temp.setEncoding("UTF-8");
+        //out.println (temp.toString());
+
         Map root = new HashMap();
         root.put("title","aaaaaaaaaaaaaaaaaaaaaaaaaa");
         try {
             temp.process(root, out);		
-            out.flush();
+            //out.flush();
         } catch (Exception e) {
 			// TODO: handle exception
 		}

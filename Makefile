@@ -45,7 +45,7 @@ server:
 
 %.class:%.java
 	@echo compile $<
-	javac $< -classpath $(CP) -encoding UTF8
+	javac $< -classpath $(CP)
 
 
 info:web.start  $(WEN_INFO_CONTENT)  web.end
