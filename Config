@@ -5,13 +5,13 @@ Main_NAME=Main_f
 Main_URL=/main
 
 SimpleHello_NAME=SimpleHello
-SimpleHello_URL=/hello
-
-WelcomeYou_NAME=welcomeYou
-WelcomeYou_URL=/welcome
+SimpleHello_URL=/index.html
 
 DisplayAFile_NAME=DisplayFile
 DisplayAFile_URL=/file
 
 Login_NAME=Login
 Login_URL=/login
+
+Regist_NAME=Regist
+Regist_URL=/regist
