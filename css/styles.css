@@ -1,0 +1,15 @@
+body > header { min-width: 760px; }
+
+body
+{
+	 background: #eee;	
+}
+
+.debug1
+{
+	border:#FF0000 thin solid;
+}
+.debug2
+{
+	border:#00FF00 thin solid;
+}

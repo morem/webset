@@ -1,0 +1,30 @@
+body > header { min-width: 760px; }
+
+.ym-wbox { padding: 10px; }
+
+header, footer
+{
+	background: #eee;
+	padding:0px;	
+}
+
+.nav-style
+{
+	background: #ffcffd;
+}
+
+.remove_frame
+{
+	padding: 0 0 0 0;
+	margin:0 0 0 0;	
+}
+
+ol, ul {
+	list-style:none;	
+}
+
+
+a {
+	text-decoration: none;
+	outline: none;
+}

@@ -4,8 +4,8 @@ HelloWorld_URL=/helloworld
 Main_NAME=Main_f
 Main_URL=/main
 
-SimpleHello_NAME=SimpleHello
-SimpleHello_URL=/index.html
+Index_NAME=Index
+Index_URL=/index.html
 
 DisplayAFile_NAME=DisplayFile
 DisplayAFile_URL=/file

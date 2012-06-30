@@ -2,8 +2,7 @@ include Config
 empty=
 space=$(empty) $(empty)
 
-SRC_DIR = $(shell find ./src -type d) \
-          $(shell find ./third-party -type d)
+SRC_DIR = $(shell find ./WEB_INF -type d)
 DISPLAY_NAME = miao
 DESCRPTION = My_Project
 
@@ -45,7 +44,7 @@ server:
 
 %.class:%.java
 	@echo compile $<
-	javac $< -classpath $(CP)
+	javac $< -classpath $(CP) -encoding GBK
 
 
 info:web.start  $(WEN_INFO_CONTENT)  web.end

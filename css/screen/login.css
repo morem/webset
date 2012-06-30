@@ -1,0 +1,49 @@
+body > header { min-width: 760px; }
+
+.ym-wrapper {
+  max-width: 80em;
+}
+
+.ym-wbox { padding: 0px; }
+
+.ym-gbox {
+	height: 400px;
+}
+
+.ym-gbox-login{
+
+}
+
+body
+{
+	 background: #eee;	
+}
+.ym-wrapper
+{
+	 background: #eee
+}
+
+header, footer, main
+{
+	background: #eee;
+	padding:0px;	
+}
+.ym-grid
+{
+	background: #fff;
+	padding:0px;
+
+}
+.box
+{
+	padding:0px;
+}
+
+.remove_margin 
+{
+	margin:0 0 0 0;
+}
+.remove_padding
+{
+ 	padding:0 0 0 0 ;
+}
