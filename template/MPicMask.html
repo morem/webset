@@ -1,0 +1,58 @@
+﻿<style type="text/css">
+q{}
+
+.${model}PicMask
+{
+	width:${width}px;
+	height:${height}px;
+	overflow:hidden;
+	position:absolute;
+	margin:0 0 0 0;
+	padding: 0 0 0 0;
+	top:0px;
+}
+
+.${model}PicMask img
+{
+
+}
+
+.${model}PicMask span{
+	position:absolute;
+	display: block;
+	height: ${mask_height}px;
+	width: ${width}px;
+	bottom:0;
+	left:0;
+	background: white;
+	opacity: .6;
+	filter: alpha(opacity=60);
+	font-weight: bold;
+	text-align:center;
+	margin-left:0;
+}
+
+.${model}PicMask .n {
+	position: relative;
+	display: inline-block;
+	line-height: ${mask_height}px;
+	color: #FF70A7;
+	font: ${font};
+}
+
+.${model}PicMask_C
+{
+	overflow: hidden;
+}
+
+.${model}PicMask_F{
+float: left;
+display: inline;
+}
+</style>
+
+<div class="${model}PicMask ">
+	<img src="${img}" />
+	<span><a class="n">${comment}</a></span>
+	
+</div>

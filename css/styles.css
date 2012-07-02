@@ -11,5 +11,13 @@ body
 }
 .debug2
 {
-	border:#00FF00 thin solid;
+	border:#0000FF thin solid;
+}
+.mybox
+{
+	padding:0 0 0 0 ;
+	overflow:hidden;
+	z-index:10;
+	background:#FFFFFF;
+	width: 950px;	
 }

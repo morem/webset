@@ -2,7 +2,7 @@ include Config
 empty=
 space=$(empty) $(empty)
 
-SRC_DIR = $(shell find ./WEB_INF -type d)
+SRC_DIR = $(shell find ./WEB-INF -type d)
 DISPLAY_NAME = miao
 DESCRPTION = My_Project
 
@@ -12,30 +12,21 @@ WEN_INFO_CONTENT=$(notdir $(patsubst %.java,%.info,$(JAVA_SRC)))
 CONTENT = $(JAVA_CLASS)
 JAVA_CLASS_SEARCH = $(foreach var, $(SRC_DIR),$(wildcard $(var)/*.class))
 
-WEB_ROOT=/opt/apache-tomcat-7.0.27/webapps
-WEB_NAME=a
-WEB_PATH=$(WEB_ROOT)/$(WEB_NAME)
+WEB-ROOT=/opt/apache-tomcat-7.0.27/webapps
+WEB-NAME=a
+WEB-PATH=$(WEB-ROOT)/$(WEB-NAME)
+WEB-INF=./WEB-INF
 
-CP = .:$(CLASSPATH):third-party/taobao/taobao-sdk-java-auto_1338966442474-20120622-source.jar:./third-party/freemarker.jar:$(subst $(space),:,$(SRC_DIR))
+CP = .:$(CLASSPATH):WEB-INF/lib/*:$(subst $(space),:,$(SRC_DIR))
 
 all:start $(CONTENT) info end
+	@mv web.xml ./WEB-INF/web.xml
 
 
 start:
 	@echo start at $(shell date)
 end:
 	@echo end at $(shell date)
-
-install:
-	-rm -rf $(WEB_PATH)
-	mkdir $(WEB_PATH)
-	mkdir $(WEB_PATH)/WEB-INF
-	mkdir $(WEB_PATH)/WEB-INF/classes
-	mkdir $(WEB_PATH)/WEB-INF/lib
-	cp ./third-party/* $(WEB_PATH)/WEB-INF/lib
-	cp web.xml $(WEB_PATH)/WEB-INF/
-	cp -t $(WEB_PATH)/WEB-INF/classes $(JAVA_CLASS_SEARCH)
-	cp ./html/* $(WEB_PATH) -rf
 
 server:
 	$(CATALINA_HOME)/bin/shutdown.sh
@@ -44,7 +35,7 @@ server:
 
 %.class:%.java
 	@echo compile $<
-	javac $< -classpath $(CP) -encoding GBK
+	javac $< -classpath $(CP) -encoding UTF-8 
 
 
 info:web.start  $(WEN_INFO_CONTENT)  web.end
@@ -63,7 +54,7 @@ info:web.start  $(WEN_INFO_CONTENT)  web.end
 
 clean:
 	-rm $(JAVA_CLASS_SEARCH)
-	-rm web.xml -rf
+	-rm WEB-INF/web.xml -rf
 
 t:
 	sudo /etc/init.d/tomcat6 restart
