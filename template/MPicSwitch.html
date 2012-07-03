@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+<title></title>
+<!-- add your meta tags here -->
+<link rel="stylesheet" href="css/central.css" type="text/css"/>
+<link rel="stylesheet" href="css/screen/custom.css" type="text/css"/>
+<link rel="stylesheet" href="yaml/screen/grid-960-12.css" type="text/css"/>
+<link rel="stylesheet" href="yaml/screen/grid-960-16.css" type="text/css"/>
+<link rel="stylesheet" href="css/g960_411.css" type="text/css"/>
+<script language="javascript" type="text/javascript" src="lib/jquery-1.7.1.min.js"></script>
+<!--[if lte IE 7]>
+<link rel="stylesheet" href="yaml/core/iehacks.min.css" type="text/css"/>
+<![endif]-->
+</head>
+<style type="text/css">
+q{}
+
+.MPicSwitch
+{
+	width:618px;
+	height:auto;
+	overflow:hidden;
+	position:absolute;
+	margin:0 0 0 0;
+	padding: 2px 2px 2px 2px;
+	border:#FFCCCC 1px solid;
+}
+
+.MPicSwitch_Nav
+{
+		width:180px;
+		margin:0 0 0 0;
+		padding:0 0 0 0;
+		float:left;
+}
+
+.MPicSwitch_Nav li
+{
+	list-style:none;
+	height:68px;
+	width:178px;
+	background-color:#EEEEEE;
+	border:#FFFFFF 1px solid;
+	padding:0 0 0 0;
+	margin:0 0 0 0 ;
+}
+
+.MPicSwitch_Nav img
+{
+	float:none;
+	margin-top:6px;
+	margin-left:6px;
+}
+
+.MPicSwitch_Nav_Select
+{
+	border-right:medium solid #FF66CC;
+}
+.MPicSwitch_Detial
+{
+	float:left;
+	height:280px;
+	width:435px;
+	overflow:hidden;
+	margin-top:0;
+	margin-left:0;
+}
+
+.MPicSwitch_Detial img
+{
+	height:285px;
+}
+.MPicSwitch_Detial_Cur
+{
+	display:block;
+}
+.MPicSwitch_Detial_no
+{
+	display:none;
+}
+</style>
+
+<script language="javascript" type="text/javascript">
+$(document).ready(function() {	
+
+	$(".MPicSwitch_Detial img:first").removeClass("MPicSwitch_Detial_no");
+	$(".MPicSwitch_Detial img:first").addClass("MPicSwitch_Detial_Cur");
+	
+	var $title = $(".MPicSwitch_Nav li");
+	var $content = $(".MPicSwitch_Detial img");
+	var index = $title.index($(this));
+	$title.mousemove (function(){
+		$content.hide();
+		$($content.get(index)).show();	
+	});	
+	/*
+		//Show Banner
+	$(".main_image .desc").show(); //Show Banner
+	$(".main_image .block").animate({ opacity: 0.85 }, 1 ); //Set Opacity
+
+	//Click and Hover events for thumbnail list
+	$(".image_thumb ul li:first").addClass('active'); 
+	$(".image_thumb ul li").click(function(){ 
+		//Set Variables
+		var imgAlt = $(this).find('img').attr("alt"); //Get Alt Tag of Image
+		var imgTitle = $(this).find('a').attr("href"); //Get Main Image URL
+		var imgDesc = $(this).find('.block').html(); 	//Get HTML of block
+		var imgDescHeight = $(".main_image").find('.block').height();	//Calculate height of block	
+		
+		if ($(this).is(".active")) {  //If it's already active, then...
+			return false; // Don't click through
+		} else {
+			//Animate the Teaser				
+			$(".main_image .block").animate({ opacity: 0, marginBottom: -imgDescHeight }, 250 , function() {
+				$(".main_image .block").html(imgDesc).animate({ opacity: 0.85,	marginBottom: "0" }, 250 );
+				$(".main_image img").attr({ src: imgTitle , alt: imgAlt});
+			});
+		}
+		
+		$(".image_thumb ul li").removeClass('active'); //Remove class of 'active' on all lists
+		$(this).addClass('active');  //add class of 'active' on this list only
+		return false;
+		
+	}) .hover(function(){
+		$(this).addClass('hover');
+		}, function() {
+		$(this).removeClass('hover');
+	});
+			
+	//Toggle Teaser
+	$("a.collapse").click(function(){
+		$(".main_image .block").slideToggle();
+		$("a.collapse").toggleClass("show");
+	});*/
+	
+});//Close Function
+</script>
+
+<div class="MPicSwitch">
+	<div class="MPicSwitch_Nav">
+	<li class="MPicSwitch_Nav_Select"><img  src="res/picswitch/2h15i_kqytsrkkl5bfqysugfjeg5sckzsew_48x48.jpg" /></li>
+	<li><img class="" src="res/picswitch/2h15i_kqyu253eozbdktdwgfjeg5sckzsew_48x48.jpg" /></li>
+	<li><img class="" src="res/picswitch/2h15i_kqyvk4dcl5bfqtdwgfjeg5sckzsew_48x48.jpg" /></li>
+	<li><img class="" src="res/picswitch/2h15i_kqywsrkfl5begzcugfjeg5sckzsew_48x48.jpg" /></li>
+	</div>
+	<div class="MPicSwitch_Detial">
+	<img class="MPicSwitch_Detial_no" src="res/picswitch/2h15i_kqyu4scbl5bfcs2ugfjeg5sckzsew_439x283.jpg" />
+	<img class="MPicSwitch_Detial_no" src="res/picswitch/62bf1edb36141f114521ec4bb4175579.jpg" />
+	<img class="MPicSwitch_Detial_no" src="res/picswitch/2h15i_kqyuq4c7l5bditdwgfjeg5sckzsew_439x289.jpg" />
+	<img class="MPicSwitch_Detial_no" src="res/picswitch/2h15i_kqyussc7l5bdiytwgfjeg5sckzsew_439x283.jpg" />
+	</div>
+</div>
