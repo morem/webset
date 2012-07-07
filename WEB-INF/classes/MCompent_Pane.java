@@ -10,6 +10,8 @@ import org.dom4j.Node;
 import org.dom4j.Visitor;
 import org.dom4j.VisitorSupport;
 
+import freemarker.log.Logger;
+
 class XmlFileLoader{
 	  public Document doc = null;
 	  
@@ -38,12 +40,12 @@ class XmlFileLoader{
 class MDivProperty extends Object
 {
 	int index;
-	int width = -1;
-	int heigh = -1;
-	int top = -1;
-	int left = -1;
-	int bottom = -1;
-	int right = -1;
+	String width = "";
+	String height = "";
+	String top = "";
+	String left = "";
+	String bottom = "";
+	String right = "";
 	String fontString = "";
 	String bordString = "";
 	String backgroundString = "";
@@ -52,7 +54,7 @@ class MDivProperty extends Object
 public class MCompent_Pane extends MCompent
 {
   static int n = 0;
-   
+  static Logger logger = Logger.getLogger(MCompent_Pane.class.getName());
   public String GetCodeByIndex (int index, Document doc)
   {
 	  String string ="";
@@ -60,6 +62,7 @@ public class MCompent_Pane extends MCompent
 	  List list = root.selectNodes("unit");
 	  Element elementIndex = (Element)list.get(index);
 	  list = elementIndex.selectNodes("model");
+	  if (list.size() == 0)return "";
 	  elementIndex = (Element)list.get(0);
 	  list = elementIndex.elements();
 	  Map map = new HashMap();
@@ -80,19 +83,19 @@ public class MCompent_Pane extends MCompent
 	  String name = element.getName();
 	  String value = element.getText();
 	  if (name == "width")
-		  property.width = Integer.valueOf(value).intValue();
+		  property.width = value;
 	  else if (name == "height")
-		  property.heigh = Integer.valueOf(value).intValue();
+		  property.height = value;
 	  else if (name == "bord")
 		  property.bordString = value;
 	  else if (name == "left")
-		  property.left = Integer.valueOf(value).intValue();
+		  property.left = value;
 	  else if (name == "right")
-		  property.right = Integer.valueOf(value).intValue();
+		  property.right = value;
 	  else if (name == "top")
-		  property.top = Integer.valueOf(value).intValue();
+		  property.top = value;
 	  else if (name == "bottom")
-		  property.bottom = Integer.valueOf(value).intValue();
+		  property.bottom = value;
 	  else if (name == "font")
 		  property.fontString = value;
 	  else if (name == "background")
@@ -176,12 +179,12 @@ public class MCompent_Pane extends MCompent
 		MDivProperty property = (MDivProperty)list.get(i);
         cssString += (".Pane"+ this.n + i+
                 "{" +
-                "width:" + property.width  + "px;" + 
-                "height:" + property.heigh + "px;" +
+                "width:" + property.width  + ";" + 
+                "height:" + property.height + ";" +
                 "position:" + "absolute" + ";" +
                 "display:" + "block" + ";" +
-                "left:" + property.left + "px;" +
-                "top:" + property.top + "px;" +
+                "left:" + property.left + ";" +
+                "top:" + property.top + ";" +
                 "overflow:" + "hidden;" +
                 "margin:" + "0 0 0 0;" +
                 "padding:" + "10 10 0 0;" +
@@ -200,16 +203,17 @@ public class MCompent_Pane extends MCompent
 	cssHeadString = "<style type=\"text/css\">" + 
             ".Pane" + n +
             "{" +
-            "width:" + property.width + "px;" +
-            "height:" + property.heigh + "px;" +
-            "position:" + "relative" + ";" +
+            "width:" + property.width + ";";
+	cssHeadString += ("height:" + property.height + ";");
+    cssHeadString += 
+           ("position:" + "relative" + ";" +
             "overflow:" + "hidden;" +
             "margin:" + "0px 0px 0px 0px;" +
-            "padding:" + "0px 0px 0px 0px;";
+            "padding:" + "0px 0px 0px 0px;");
 	if (property.backgroundString != "")
 		cssHeadString += "background:"+property.backgroundString+";";
-	if (property.left != -1 )cssHeadString += "left:"+property.left+"px;";
-	if (property.top != -1 )cssHeadString += "top:"+property.top+"px;";
+	if (!property.left.isEmpty() )cssHeadString += "left:"+property.left+"px;";
+	if (!property.top.isEmpty() )cssHeadString += "top:"+property.top+"px;";
 	cssHeadString += "}";
           cssString = cssHeadString +cssString + "</style>";
     htmlString = "<div class=\"Pane" + n + "\"\\>" + htmlString + "</div>";

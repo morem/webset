@@ -10,7 +10,6 @@ header, footer
 
 .nav-style
 {
-	background: #ffcffd;
 }
 
 .remove_frame
@@ -28,3 +27,7 @@ a {
 	text-decoration: none;
 	outline: none;
 }
+
+.workspace{
+	overflow:hide;
+	}

@@ -5,13 +5,13 @@ Main_NAME=Main_f
 Main_URL=/main
 
 Index_NAME=Index
-Index_URL=/index.html
+Index_URL=/index.html/*
 
 DisplayAFile_NAME=DisplayFile
 DisplayAFile_URL=/file
 
 Login_NAME=Login
-Login_URL=/login
+Login_URL=/login.html
 
 Regist_NAME=Regist
 Regist_URL=/regist

@@ -14,18 +14,8 @@ public class Regist extends HttpServlet
             throws ServletException, IOException
     {
         PrintWriter out = resp.getWriter();
-        Configuration cfg = new Configuration();
-        cfg.setDirectoryForTemplateLoading (
-        		new File("/opt/apache-tomcat-7.0.27/webapps/a/template/"));
-        cfg.setObjectWrapper (new DefaultObjectWrapper());
-        
-        Template temp = cfg.getTemplate("regist.html");
-        Map root = new HashMap();
-        try {
-            temp.process(root, out);		
-            out.flush();
-        } catch (Exception e) {
-			// TODO: handle exception
-		}
+        HttpSession httpSession = req.getSession();
+        out.println (httpSession.getAttribute("visitor_id"));
+        httpSession.invalidate();
     }
 }

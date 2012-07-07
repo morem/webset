@@ -8,16 +8,16 @@ DESCRPTION = My_Project
 
 JAVA_SRC = $(foreach var, $(SRC_DIR),$(wildcard $(var)/*.java))
 JAVA_CLASS = $(patsubst %.java,%.class,$(JAVA_SRC))
-WEN_INFO_CONTENT=$(notdir $(patsubst %.java,%.info,$(JAVA_SRC)))
+WEB_INFO_CONTENT=$(notdir $(patsubst %.java,%.info,$(JAVA_SRC)))
 CONTENT = $(JAVA_CLASS)
 JAVA_CLASS_SEARCH = $(foreach var, $(SRC_DIR),$(wildcard $(var)/*.class))
 
-WEB-ROOT=/opt/apache-tomcat-7.0.27/webapps
+WEB-ROOT=/opt/tomcat/webapps
 WEB-NAME=a
 WEB-PATH=$(WEB-ROOT)/$(WEB-NAME)
 WEB-INF=./WEB-INF
 
-CP = .:$(CLASSPATH):WEB-INF/lib/*:$(subst $(space),:,$(SRC_DIR))
+CP = $(CLASSPATH):${PWD}/WEB-INF/lib/:${PWD}/WEB-INF/lib/*:${PWD}/WEB-INF/classes/:${PWD}/WEB-INF/lib/*:$(subst $(space),:,$(SRC_DIR))
 
 all:start $(CONTENT) info end
 	@mv web.xml ./WEB-INF/web.xml
@@ -38,8 +38,22 @@ server:
 	javac $< -classpath $(CP) -encoding UTF-8 
 
 
-info:web.start  $(WEN_INFO_CONTENT)  web.end
+info:web.start  $(WEB_INFO_CONTENT) LOG4J SESSION web.end
 
+LOG4J:
+	@echo '    <servlet>' >>  web.xml;
+	@echo '    	<servlet-name>log4j-init</servlet-name>' >>  web.xml;
+	@echo '    	<servlet-class>Log4jInit</servlet-class>' >>  web.xml;
+	@echo '    	<init-param>' >>  web.xml;
+	@echo '    		<param-name>log4j</param-name>' >>  web.xml;
+	@echo '    		<param-value>WEB-INF/log4j.properties</param-value>' >>  web.xml;
+	@echo '    	</init-param>' >>  web.xml;
+	@echo '    	<load-on-startup>1</load-on-startup>' >>  web.xml;
+	@echo '    </servlet>' >>  web.xml;
+SESSION:
+	@echo '    <session-config>' >>  web.xml;
+	@echo '    <session-timeout>5</session-timeout>' >>  web.xml;
+	@echo '    </session-config>' >> web.xml
 %.info:
 	@if [ $($*_NAME)x != x ]; then \
 	echo '    <servlet>' >>  web.xml;\
