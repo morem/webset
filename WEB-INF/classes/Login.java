@@ -1,4 +1,3 @@
-import freemarker.log.Logger;
 import freemarker.template.*;
 
 import javax.servlet.ServletException;
@@ -7,7 +6,7 @@ import javax.xml.transform.*;
 import java.lang.*;
 import java.io.*;
 import java.util.*;
-
+import org.apache.log4j.*;
 
 
 public class Login extends HttpServlet

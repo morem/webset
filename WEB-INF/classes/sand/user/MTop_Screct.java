@@ -7,8 +7,6 @@ import org.apache.commons.codec.binary.StringUtils;
 import org.apache.commons.codec.digest.DigestUtils;
 import com.taobao.api.*;
 
-import freemarker.log.Logger;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 

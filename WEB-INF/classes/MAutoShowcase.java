@@ -3,7 +3,7 @@ import com.taobao.api.request.*;
 import com.taobao.api.response.*;
 import com.taobao.api.response.*;
 
-import freemarker.log.Logger;
+import org.apache.log4j.*;
 
 public class MAutoShowcase extends Object
 {

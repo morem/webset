@@ -1,4 +1,4 @@
-import freemarker.log.Logger;
+
 import freemarker.template.*;
 import java.io.*;
 import java.util.*;
@@ -10,7 +10,7 @@ import org.dom4j.Element;
 import org.dom4j.Node;
 import org.dom4j.Visitor;
 import org.dom4j.VisitorSupport;
-
+import org.apache.log4j.*;
 class DeployFileLoaderSample {
 
 	  /** dom4j object model representation of a xml document. Note: We use the interface(!) not its implementation */

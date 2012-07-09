@@ -19,8 +19,7 @@ WEB-INF=./WEB-INF
 
 CP = $(CLASSPATH):${PWD}/WEB-INF/lib/:${PWD}/WEB-INF/lib/*:${PWD}/WEB-INF/classes/:${PWD}/WEB-INF/lib/*:$(subst $(space),:,$(SRC_DIR))
 
-all:start $(CONTENT) info end
-	@mv web.xml ./WEB-INF/web.xml
+all:$(CONTENT)
 
 
 start:
@@ -35,7 +34,7 @@ server:
 
 %.class:%.java
 	@echo compile $<
-	javac $< -classpath $(CP) -encoding UTF-8 
+	javac $< -g -classpath $(CP) -encoding UTF-8 
 
 
 info:web.start  $(WEB_INFO_CONTENT) LOG4J SESSION web.end
@@ -68,7 +67,6 @@ SESSION:
 
 clean:
 	-rm $(JAVA_CLASS_SEARCH)
-	-rm WEB-INF/web.xml -rf
 
 t:
 	sudo /etc/init.d/tomcat6 restart

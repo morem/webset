@@ -1,4 +1,4 @@
-import freemarker.log.Logger;
+import org.apache.log4j.*;
 import freemarker.template.*;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
@@ -13,8 +13,6 @@ import com.taobao.api.*;
 import com.taobao.api.request.*;
 import com.taobao.api.response.*;
 import com.taobao.api.response.*;
-
-import freemarker.log.Logger;
 
 public class Index extends HttpServlet
 {
@@ -32,10 +30,14 @@ public class Index extends HttpServlet
             httpSession.invalidate();
         }
         
-        String control = req.getParameter("c");
-        if (null == control)control="introduction";
+       // String control = req.getParameter("c");
+       // if (null == control)control="introduction";
         
-        logger.debug("Control=" + control);
+        String control = req.getPathInfo();
+        if (control == null)control = "#";
+  
+        
+        //logger.debug("Control=" + control);
         
 	    Configuration cfg = new Configuration();
         cfg.setDirectoryForTemplateLoading (
@@ -50,20 +52,16 @@ public class Index extends HttpServlet
         str = new String(str.getBytes("UTF-8"),"ISO-8859-1");
         root.put("title",str); 
         MCompent_Pane c = new MCompent_Pane();
-        root.put("compent1", c.BuildAPane("index.xml"));
         
         logger.debug("getRequestURL():" + req.getRequestURL());
         
+        MDispatch patch= new MDispatch();
+        String string = patch.Dispatch(control, visitor_id);
+        root.put("compent1", string);
+        
         MUserManager m = new MUserManager();
         MUser user = m.GetUserByID(visitor_id);
-        if (user == null)
-        {
-            logger.error("Can't find id:"+visitor_id);
-            root.put("head_img", " ");
-        }
-        else
-            root.put("head_img", user.avatar);
-       
+
         try {
             temp.process(root, out);		
             out.flush();

@@ -6,7 +6,7 @@ import java.lang.*;
 import java.io.*;
 import java.util.*;
 
-
+import org.apache.log4j.*;
 
 public class Regist extends HttpServlet
 {

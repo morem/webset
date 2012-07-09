@@ -1,0 +1,1298 @@
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["index.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "index.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/index.html"
+DEBUG Index doGet 56  - getRequestURL():http://192.168.0.88:8080/index.html/showstatus
+DEBUG MDispatch Dispatch 74  - Found a element:showstatus
+DEBUG MDispatch Dispatch 90  - Dispatch showstatus MShowStatus@189280b
+DEBUG MShowStatus load 23  - MShowStatus load:36950449
+DEBUG MShowStatus Displatch 61  - Enter
+DEBUG MShowStatus load 36  - Start get shop Info
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='36950449'
+DEBUG MUserManager GetUserByID 166  - Get User ID:36950449
+DEBUG MUserManager GetUserByID 178  - Get User nick:morem
+DEBUG MTop_API getUserShowNum 48  - Enter
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='36950449'
+DEBUG MUserManager GetUserByID 166  - Get User ID:36950449
+DEBUG MUserManager GetUserByID 178  - Get User nick:morem
+DEBUG MTop_API getUserShowNum 67  - ShowCase NUM:40
+DEBUG MTop_API getUserShowNum 68  - ShowCase Used:40
+DEBUG MTop_API getUserShowNum 69  - ShowCase NUM:0
+DEBUG MShowStatus load 40  - Get Shop Info success
+DEBUG MCompent GetModel 103  - template Dir:./template/sand/show
+DEBUG MCompent GetModel 104  - FileName:status.html
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["status.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "status.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/show/status.html"
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='36950449'
+DEBUG MUserManager GetUserByID 166  - Get User ID:36950449
+DEBUG MUserManager GetUserByID 178  - Get User nick:morem
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["menu.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "menu.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/menu.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["ivnav.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "ivnav.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/ivnav.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["footer.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "footer.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/footer.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["index.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "index.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/index.html"
+DEBUG Index doGet 56  - getRequestURL():http://192.168.0.88:8080/index.html/showstatus
+DEBUG MDispatch Dispatch 74  - Found a element:showstatus
+DEBUG MDispatch Dispatch 90  - Dispatch showstatus MShowStatus@189280b
+DEBUG MShowStatus load 23  - MShowStatus load:36950449
+DEBUG MShowStatus Displatch 61  - Enter
+DEBUG MShowStatus load 36  - Start get shop Info
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='36950449'
+DEBUG MUserManager GetUserByID 166  - Get User ID:36950449
+DEBUG MUserManager GetUserByID 178  - Get User nick:morem
+DEBUG MTop_API getUserShowNum 48  - Enter
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='36950449'
+DEBUG MUserManager GetUserByID 166  - Get User ID:36950449
+DEBUG MUserManager GetUserByID 178  - Get User nick:morem
+DEBUG MTop_API getUserShowNum 67  - ShowCase NUM:40
+DEBUG MTop_API getUserShowNum 68  - ShowCase Used:40
+DEBUG MTop_API getUserShowNum 69  - ShowCase NUM:0
+DEBUG MShowStatus load 40  - Get Shop Info success
+DEBUG MCompent GetModel 103  - template Dir:./template/sand/show
+DEBUG MCompent GetModel 104  - FileName:status.html
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["status.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "status.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/show/status.html"
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='36950449'
+DEBUG MUserManager GetUserByID 166  - Get User ID:36950449
+DEBUG MUserManager GetUserByID 178  - Get User nick:morem
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["menu.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "menu.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/menu.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["ivnav.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "ivnav.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/ivnav.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["footer.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "footer.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/footer.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["index.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "index.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/index.html"
+DEBUG Index doGet 56  - getRequestURL():http://192.168.0.88:8080/index.html/showstatus/fsfsd
+DEBUG MDispatch Dispatch 81  - Found a element:showstatus
+DEBUG MDispatch Dispatch 74  - Found a element:fsfsd
+DEBUG MDispatch Dispatch 90  - Dispatch showstatus MShowStatus@189280b
+DEBUG MShowStatus load 23  - MShowStatus load:Guest
+DEBUG MShowStatus Displatch 61  - Enter
+DEBUG MShowStatus load 36  - Start get shop Info
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='Guest'
+ERROR MUserManager GetShopInfo 199  - Get the User info error:Guest
+DEBUG MShowStatus load 47  - Get Shop Info error
+DEBUG MCompent GetModel 103  - template Dir:./template/sand/show
+DEBUG MCompent GetModel 104  - FileName:status.html
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["status.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "status.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/show/status.html"
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='Guest'
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["menu.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "menu.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/menu.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["ivnav.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "ivnav.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/ivnav.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["footer.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "footer.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/footer.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["index.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "index.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/index.html"
+DEBUG Index doGet 56  - getRequestURL():http://192.168.0.88:8080/index.html/showstatus/fsfsd
+DEBUG MDispatch Dispatch 81  - Found a element:showstatus
+DEBUG MDispatch Dispatch 74  - Found a element:fsfsd
+DEBUG MDispatch Dispatch 90  - Dispatch showstatus MShowStatus@189280b
+DEBUG MShowStatus load 23  - MShowStatus load:Guest
+DEBUG MShowStatus Displatch 61  - Enter
+DEBUG MShowStatus load 36  - Start get shop Info
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='Guest'
+ERROR MUserManager GetShopInfo 199  - Get the User info error:Guest
+DEBUG MShowStatus load 47  - Get Shop Info error
+DEBUG MCompent GetModel 103  - template Dir:./template/sand/show
+DEBUG MCompent GetModel 104  - FileName:status.html
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["status.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "status.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/show/status.html"
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='Guest'
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["menu.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "menu.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/menu.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["ivnav.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "ivnav.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/ivnav.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["footer.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "footer.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/footer.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["index.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "index.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/index.html"
+DEBUG Index doGet 56  - getRequestURL():http://192.168.0.88:8080/index.html/showstatus/fsfsd
+DEBUG MDispatch Dispatch 81  - Found a element:showstatus
+DEBUG MDispatch Dispatch 74  - Found a element:fsfsd
+DEBUG MDispatch Dispatch 90  - Dispatch showstatus MShowStatus@189280b
+DEBUG MShowStatus load 23  - MShowStatus load:Guest
+DEBUG MShowStatus Displatch 61  - Enter
+DEBUG MShowStatus load 36  - Start get shop Info
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='Guest'
+ERROR MUserManager GetShopInfo 199  - Get the User info error:Guest
+DEBUG MShowStatus load 47  - Get Shop Info error
+DEBUG MCompent GetModel 103  - template Dir:./template/sand/show
+DEBUG MCompent GetModel 104  - FileName:status.html
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["status.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "status.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/show/status.html"
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='Guest'
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["menu.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "menu.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/menu.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["ivnav.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "ivnav.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/ivnav.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["footer.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "footer.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/footer.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["index.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "index.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/index.html"
+DEBUG Index doGet 56  - getRequestURL():http://192.168.0.88:8080/index.html/showstatus/fsfsd
+DEBUG MDispatch Dispatch 81  - Found a element:showstatus
+DEBUG MDispatch Dispatch 74  - Found a element:fsfsd
+DEBUG MDispatch Dispatch 90  - Dispatch showstatus MShowStatus@189280b
+DEBUG MShowStatus load 23  - MShowStatus load:Guest
+DEBUG MShowStatus Displatch 61  - Enter
+DEBUG MShowStatus load 36  - Start get shop Info
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='Guest'
+ERROR MUserManager GetShopInfo 199  - Get the User info error:Guest
+DEBUG MShowStatus load 47  - Get Shop Info error
+DEBUG MCompent GetModel 103  - template Dir:./template/sand/show
+DEBUG MCompent GetModel 104  - FileName:status.html
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["status.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "status.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/show/status.html"
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='Guest'
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["menu.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "menu.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/menu.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["ivnav.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "ivnav.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/ivnav.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["footer.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "footer.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/footer.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["index.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "index.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/index.html"
+DEBUG Index doGet 56  - getRequestURL():http://192.168.0.88:8080/index.html/showstatus/fsfsd
+DEBUG MDispatch Dispatch 81  - Found a element:showstatus
+DEBUG MDispatch Dispatch 74  - Found a element:fsfsd
+DEBUG MDispatch Dispatch 90  - Dispatch showstatus MShowStatus@189280b
+DEBUG MShowStatus load 23  - MShowStatus load:Guest
+DEBUG MShowStatus Displatch 61  - Enter
+DEBUG MShowStatus load 36  - Start get shop Info
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='Guest'
+ERROR MUserManager GetShopInfo 199  - Get the User info error:Guest
+DEBUG MShowStatus load 47  - Get Shop Info error
+DEBUG MCompent GetModel 103  - template Dir:./template/sand/show
+DEBUG MCompent GetModel 104  - FileName:status.html
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["status.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "status.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/show/status.html"
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='Guest'
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["menu.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "menu.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/menu.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["ivnav.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "ivnav.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/ivnav.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["footer.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "footer.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/footer.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["index.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "index.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/index.html"
+DEBUG Index doGet 56  - getRequestURL():http://192.168.0.88:8080/index.html/showstatus/fsfsd
+DEBUG MDispatch Dispatch 81  - Found a element:showstatus
+DEBUG MDispatch Dispatch 74  - Found a element:fsfsd
+DEBUG MDispatch Dispatch 90  - Dispatch showstatus MShowStatus@189280b
+DEBUG MShowStatus load 23  - MShowStatus load:Guest
+DEBUG MShowStatus Displatch 61  - Enter
+DEBUG MShowStatus load 36  - Start get shop Info
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='Guest'
+ERROR MUserManager GetShopInfo 199  - Get the User info error:Guest
+DEBUG MShowStatus load 47  - Get Shop Info error
+DEBUG MCompent GetModel 103  - template Dir:./template/sand/show
+DEBUG MCompent GetModel 104  - FileName:status.html
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["status.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "status.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/show/status.html"
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='Guest'
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["menu.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "menu.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/menu.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["ivnav.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "ivnav.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/ivnav.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["footer.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "footer.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/footer.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["index.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "index.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/index.html"
+DEBUG Index doGet 56  - getRequestURL():http://192.168.0.88:8080/index.html/showstatus/fsfsd
+DEBUG MDispatch Dispatch 81  - Found a element:showstatus
+DEBUG MDispatch Dispatch 74  - Found a element:fsfsd
+DEBUG MDispatch Dispatch 90  - Dispatch showstatus MShowStatus@189280b
+DEBUG MShowStatus load 23  - MShowStatus load:Guest
+DEBUG MShowStatus Displatch 61  - Enter
+DEBUG MShowStatus load 36  - Start get shop Info
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='Guest'
+ERROR MUserManager GetShopInfo 199  - Get the User info error:Guest
+DEBUG MShowStatus load 47  - Get Shop Info error
+DEBUG MCompent GetModel 103  - template Dir:./template/sand/show
+DEBUG MCompent GetModel 104  - FileName:status.html
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["status.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "status.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/show/status.html"
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='Guest'
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["menu.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "menu.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/menu.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["ivnav.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "ivnav.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/ivnav.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["footer.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "footer.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/footer.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["index.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "index.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/index.html"
+DEBUG Index doGet 56  - getRequestURL():http://192.168.0.88:8080/index.html/showstatus/fsfsd
+DEBUG MDispatch Dispatch 81  - Found a element:showstatus
+DEBUG MDispatch Dispatch 74  - Found a element:fsfsd
+DEBUG MDispatch Dispatch 90  - Dispatch showstatus MShowStatus@189280b
+DEBUG MShowStatus load 23  - MShowStatus load:Guest
+DEBUG MShowStatus Displatch 61  - Enter
+DEBUG MShowStatus load 36  - Start get shop Info
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='Guest'
+ERROR MUserManager GetShopInfo 199  - Get the User info error:Guest
+DEBUG MShowStatus load 47  - Get Shop Info error
+DEBUG MCompent GetModel 103  - template Dir:./template/sand/show
+DEBUG MCompent GetModel 104  - FileName:status.html
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["status.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "status.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/show/status.html"
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='Guest'
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["menu.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "menu.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/menu.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["ivnav.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "ivnav.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/ivnav.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["footer.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "footer.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/footer.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["index.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "index.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/index.html"
+DEBUG Index doGet 56  - getRequestURL():http://192.168.0.88:8080/index.html/showstatus/fsfsd
+DEBUG MDispatch Dispatch 81  - Found a element:showstatus
+DEBUG MDispatch Dispatch 74  - Found a element:fsfsd
+DEBUG MDispatch Dispatch 90  - Dispatch showstatus MShowStatus@189280b
+DEBUG MShowStatus load 23  - MShowStatus load:Guest
+DEBUG MShowStatus Displatch 61  - Enter
+DEBUG MShowStatus load 36  - Start get shop Info
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='Guest'
+ERROR MUserManager GetShopInfo 199  - Get the User info error:Guest
+DEBUG MShowStatus load 47  - Get Shop Info error
+DEBUG MCompent GetModel 103  - template Dir:./template/sand/show
+DEBUG MCompent GetModel 104  - FileName:status.html
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["status.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "status.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/show/status.html"
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='Guest'
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["menu.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "menu.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/menu.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["ivnav.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "ivnav.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/ivnav.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["footer.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "footer.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/footer.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["index.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "index.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/index.html"
+DEBUG Index doGet 56  - getRequestURL():http://192.168.0.88:8080/index.html/showindex
+DEBUG MDispatch Dispatch 74  - Found a element:showindex
+ERROR MDispatch Dispatch 96  - Go to the introdection Page:showindex
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='Guest'
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["menu.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "menu.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/menu.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["ivnav.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "ivnav.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/ivnav.html"
+ERROR freemarker.log.Log4JLoggerFactory$Log4JLogger error 96  - Template processing error: "Expression compent1 is undefined on line 30, column 19 in index.html."
+
+Expression compent1 is undefined on line 30, column 19 in index.html.
+The problematic instruction:
+----------
+==> ${compent1} [on line 30, column 17 in index.html]
+----------
+
+Java backtrace for programmers:
+----------
+freemarker.core.InvalidReferenceException: Expression compent1 is undefined on line 30, column 19 in index.html.
+	at freemarker.core.TemplateObject.assertNonNull(TemplateObject.java:125)
+	at freemarker.core.Expression.getStringValue(Expression.java:118)
+	at freemarker.core.Expression.getStringValue(Expression.java:93)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:76)
+	at freemarker.core.Environment.visit(Environment.java:221)
+	at freemarker.core.MixedContent.accept(MixedContent.java:92)
+	at freemarker.core.Environment.visit(Environment.java:221)
+	at freemarker.core.Environment.process(Environment.java:199)
+	at freemarker.template.Template.process(Template.java:259)
+	at Index.doGet(Index.java:66)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:225)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:999)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:565)
+	at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.run(AprEndpoint.java:1812)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["index.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "index.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/index.html"
+DEBUG Index doGet 56  - getRequestURL():http://192.168.0.88:8080/index.html/showstatus
+DEBUG MDispatch Dispatch 74  - Found a element:showstatus
+DEBUG MDispatch Dispatch 90  - Dispatch showstatus MShowStatus@189280b
+DEBUG MShowStatus load 23  - MShowStatus load:Guest
+DEBUG MShowStatus Displatch 61  - Enter
+DEBUG MShowStatus load 36  - Start get shop Info
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='Guest'
+ERROR MUserManager GetShopInfo 199  - Get the User info error:Guest
+DEBUG MShowStatus load 47  - Get Shop Info error
+DEBUG MCompent GetModel 103  - template Dir:./template/sand/show
+DEBUG MCompent GetModel 104  - FileName:status.html
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["status.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "status.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/show/status.html"
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='Guest'
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["menu.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "menu.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/menu.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["ivnav.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "ivnav.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/ivnav.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["footer.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "footer.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/footer.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["index.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "index.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/index.html"
+DEBUG Index doGet 56  - getRequestURL():http://192.168.0.88:8080/index.html/showconfig/temp/a/b/cdsdfafdsa/122/vfsd
+DEBUG MDispatch Dispatch 81  - Found a element:showconfig
+DEBUG MDispatch Dispatch 81  - Found a element:temp
+DEBUG MDispatch Dispatch 81  - Found a element:a
+DEBUG MDispatch Dispatch 81  - Found a element:b
+DEBUG MDispatch Dispatch 81  - Found a element:cdsdfafdsa
+DEBUG MDispatch Dispatch 81  - Found a element:122
+DEBUG MDispatch Dispatch 74  - Found a element:vfsd
+ERROR MDispatch Dispatch 96  - Go to the introdection Page:showconfig
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='Guest'
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["menu.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "menu.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/menu.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["ivnav.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "ivnav.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/ivnav.html"
+ERROR freemarker.log.Log4JLoggerFactory$Log4JLogger error 96  - Template processing error: "Expression compent1 is undefined on line 30, column 19 in index.html."
+
+Expression compent1 is undefined on line 30, column 19 in index.html.
+The problematic instruction:
+----------
+==> ${compent1} [on line 30, column 17 in index.html]
+----------
+
+Java backtrace for programmers:
+----------
+freemarker.core.InvalidReferenceException: Expression compent1 is undefined on line 30, column 19 in index.html.
+	at freemarker.core.TemplateObject.assertNonNull(TemplateObject.java:125)
+	at freemarker.core.Expression.getStringValue(Expression.java:118)
+	at freemarker.core.Expression.getStringValue(Expression.java:93)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:76)
+	at freemarker.core.Environment.visit(Environment.java:221)
+	at freemarker.core.MixedContent.accept(MixedContent.java:92)
+	at freemarker.core.Environment.visit(Environment.java:221)
+	at freemarker.core.Environment.process(Environment.java:199)
+	at freemarker.template.Template.process(Template.java:259)
+	at Index.doGet(Index.java:66)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:225)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:999)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:565)
+	at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.run(AprEndpoint.java:1812)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["index.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "index.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/index.html"
+DEBUG Index doGet 56  - getRequestURL():http://192.168.0.88:8080/index.html/showplan
+DEBUG MDispatch Dispatch 74  - Found a element:showplan
+ERROR MDispatch Dispatch 96  - Go to the introdection Page:showplan
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='Guest'
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["menu.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "menu.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/menu.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["ivnav.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "ivnav.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/ivnav.html"
+ERROR freemarker.log.Log4JLoggerFactory$Log4JLogger error 96  - Template processing error: "Expression compent1 is undefined on line 30, column 19 in index.html."
+
+Expression compent1 is undefined on line 30, column 19 in index.html.
+The problematic instruction:
+----------
+==> ${compent1} [on line 30, column 17 in index.html]
+----------
+
+Java backtrace for programmers:
+----------
+freemarker.core.InvalidReferenceException: Expression compent1 is undefined on line 30, column 19 in index.html.
+	at freemarker.core.TemplateObject.assertNonNull(TemplateObject.java:125)
+	at freemarker.core.Expression.getStringValue(Expression.java:118)
+	at freemarker.core.Expression.getStringValue(Expression.java:93)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:76)
+	at freemarker.core.Environment.visit(Environment.java:221)
+	at freemarker.core.MixedContent.accept(MixedContent.java:92)
+	at freemarker.core.Environment.visit(Environment.java:221)
+	at freemarker.core.Environment.process(Environment.java:199)
+	at freemarker.template.Template.process(Template.java:259)
+	at Index.doGet(Index.java:66)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:225)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:999)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:565)
+	at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.run(AprEndpoint.java:1812)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["index.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "index.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/index.html"
+DEBUG Index doGet 56  - getRequestURL():http://192.168.0.88:8080/index.html/showconfig/temp/a/b/cdsdfafdsa/122/vfsd
+DEBUG MDispatch Dispatch 81  - Found a element:showconfig
+DEBUG MDispatch Dispatch 81  - Found a element:temp
+DEBUG MDispatch Dispatch 81  - Found a element:a
+DEBUG MDispatch Dispatch 81  - Found a element:b
+DEBUG MDispatch Dispatch 81  - Found a element:cdsdfafdsa
+DEBUG MDispatch Dispatch 81  - Found a element:122
+DEBUG MDispatch Dispatch 74  - Found a element:vfsd
+ERROR MDispatch Dispatch 96  - Go to the introdection Page:showconfig
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='Guest'
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["menu.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "menu.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/menu.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["ivnav.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "ivnav.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/ivnav.html"
+ERROR freemarker.log.Log4JLoggerFactory$Log4JLogger error 96  - Template processing error: "Expression compent1 is undefined on line 30, column 19 in index.html."
+
+Expression compent1 is undefined on line 30, column 19 in index.html.
+The problematic instruction:
+----------
+==> ${compent1} [on line 30, column 17 in index.html]
+----------
+
+Java backtrace for programmers:
+----------
+freemarker.core.InvalidReferenceException: Expression compent1 is undefined on line 30, column 19 in index.html.
+	at freemarker.core.TemplateObject.assertNonNull(TemplateObject.java:125)
+	at freemarker.core.Expression.getStringValue(Expression.java:118)
+	at freemarker.core.Expression.getStringValue(Expression.java:93)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:76)
+	at freemarker.core.Environment.visit(Environment.java:221)
+	at freemarker.core.MixedContent.accept(MixedContent.java:92)
+	at freemarker.core.Environment.visit(Environment.java:221)
+	at freemarker.core.Environment.process(Environment.java:199)
+	at freemarker.template.Template.process(Template.java:259)
+	at Index.doGet(Index.java:66)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:225)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:999)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:565)
+	at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.run(AprEndpoint.java:1812)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["index.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "index.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/index.html"
+DEBUG Index doGet 56  - getRequestURL():http://192.168.0.88:8080/index.html/showstatus
+DEBUG MDispatch Dispatch 74  - Found a element:showstatus
+DEBUG MDispatch Dispatch 90  - Dispatch showstatus MShowStatus@189280b
+DEBUG MShowStatus load 23  - MShowStatus load:Guest
+DEBUG MShowStatus Displatch 61  - Enter
+DEBUG MShowStatus load 36  - Start get shop Info
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='Guest'
+ERROR MUserManager GetShopInfo 199  - Get the User info error:Guest
+DEBUG MShowStatus load 47  - Get Shop Info error
+DEBUG MCompent GetModel 103  - template Dir:./template/sand/show
+DEBUG MCompent GetModel 104  - FileName:status.html
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["status.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "status.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/show/status.html"
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='Guest'
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["menu.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "menu.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/menu.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["ivnav.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "ivnav.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/ivnav.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["footer.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "footer.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/footer.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["index.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "index.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/index.html"
+DEBUG Index doGet 56  - getRequestURL():http://192.168.0.88:8080/index.html
+ERROR MDispatch Dispatch 96  - Go to the introdection Page:#
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='Guest'
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["menu.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "menu.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/menu.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["ivnav.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "ivnav.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/ivnav.html"
+ERROR freemarker.log.Log4JLoggerFactory$Log4JLogger error 96  - Template processing error: "Expression compent1 is undefined on line 30, column 19 in index.html."
+
+Expression compent1 is undefined on line 30, column 19 in index.html.
+The problematic instruction:
+----------
+==> ${compent1} [on line 30, column 17 in index.html]
+----------
+
+Java backtrace for programmers:
+----------
+freemarker.core.InvalidReferenceException: Expression compent1 is undefined on line 30, column 19 in index.html.
+	at freemarker.core.TemplateObject.assertNonNull(TemplateObject.java:125)
+	at freemarker.core.Expression.getStringValue(Expression.java:118)
+	at freemarker.core.Expression.getStringValue(Expression.java:93)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:76)
+	at freemarker.core.Environment.visit(Environment.java:221)
+	at freemarker.core.MixedContent.accept(MixedContent.java:92)
+	at freemarker.core.Environment.visit(Environment.java:221)
+	at freemarker.core.Environment.process(Environment.java:199)
+	at freemarker.template.Template.process(Template.java:259)
+	at Index.doGet(Index.java:66)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:225)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:999)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:565)
+	at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.run(AprEndpoint.java:1812)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["index.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "index.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/index.html"
+DEBUG Index doGet 56  - getRequestURL():http://192.168.0.88:8080/index.html
+ERROR MDispatch Dispatch 96  - Go to the introdection Page:#
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='Guest'
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["menu.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "menu.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/menu.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["ivnav.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "ivnav.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/ivnav.html"
+ERROR freemarker.log.Log4JLoggerFactory$Log4JLogger error 96  - Template processing error: "Expression compent1 is undefined on line 30, column 19 in index.html."
+
+Expression compent1 is undefined on line 30, column 19 in index.html.
+The problematic instruction:
+----------
+==> ${compent1} [on line 30, column 17 in index.html]
+----------
+
+Java backtrace for programmers:
+----------
+freemarker.core.InvalidReferenceException: Expression compent1 is undefined on line 30, column 19 in index.html.
+	at freemarker.core.TemplateObject.assertNonNull(TemplateObject.java:125)
+	at freemarker.core.Expression.getStringValue(Expression.java:118)
+	at freemarker.core.Expression.getStringValue(Expression.java:93)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:76)
+	at freemarker.core.Environment.visit(Environment.java:221)
+	at freemarker.core.MixedContent.accept(MixedContent.java:92)
+	at freemarker.core.Environment.visit(Environment.java:221)
+	at freemarker.core.Environment.process(Environment.java:199)
+	at freemarker.template.Template.process(Template.java:259)
+	at Index.doGet(Index.java:66)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:225)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:999)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:565)
+	at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.run(AprEndpoint.java:1812)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["index.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "index.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/index.html"
+DEBUG Index doGet 56  - getRequestURL():http://192.168.0.88:8080/index.html
+ERROR MDispatch Dispatch 96  - Go to the introdection Page:#
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='Guest'
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["menu.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "menu.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/menu.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["ivnav.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "ivnav.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/ivnav.html"
+ERROR freemarker.log.Log4JLoggerFactory$Log4JLogger error 96  - Template processing error: "Expression compent1 is undefined on line 30, column 19 in index.html."
+
+Expression compent1 is undefined on line 30, column 19 in index.html.
+The problematic instruction:
+----------
+==> ${compent1} [on line 30, column 17 in index.html]
+----------
+
+Java backtrace for programmers:
+----------
+freemarker.core.InvalidReferenceException: Expression compent1 is undefined on line 30, column 19 in index.html.
+	at freemarker.core.TemplateObject.assertNonNull(TemplateObject.java:125)
+	at freemarker.core.Expression.getStringValue(Expression.java:118)
+	at freemarker.core.Expression.getStringValue(Expression.java:93)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:76)
+	at freemarker.core.Environment.visit(Environment.java:221)
+	at freemarker.core.MixedContent.accept(MixedContent.java:92)
+	at freemarker.core.Environment.visit(Environment.java:221)
+	at freemarker.core.Environment.process(Environment.java:199)
+	at freemarker.template.Template.process(Template.java:259)
+	at Index.doGet(Index.java:66)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:225)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:999)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:565)
+	at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.run(AprEndpoint.java:1812)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["index.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "index.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/index.html"
+DEBUG Index doGet 56  - getRequestURL():http://192.168.0.88:8080/index.html
+ERROR MDispatch Dispatch 96  - Go to the introdection Page:#
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='Guest'
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["menu.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "menu.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/menu.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["ivnav.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "ivnav.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/ivnav.html"
+ERROR freemarker.log.Log4JLoggerFactory$Log4JLogger error 96  - Template processing error: "Expression compent1 is undefined on line 30, column 19 in index.html."
+
+Expression compent1 is undefined on line 30, column 19 in index.html.
+The problematic instruction:
+----------
+==> ${compent1} [on line 30, column 17 in index.html]
+----------
+
+Java backtrace for programmers:
+----------
+freemarker.core.InvalidReferenceException: Expression compent1 is undefined on line 30, column 19 in index.html.
+	at freemarker.core.TemplateObject.assertNonNull(TemplateObject.java:125)
+	at freemarker.core.Expression.getStringValue(Expression.java:118)
+	at freemarker.core.Expression.getStringValue(Expression.java:93)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:76)
+	at freemarker.core.Environment.visit(Environment.java:221)
+	at freemarker.core.MixedContent.accept(MixedContent.java:92)
+	at freemarker.core.Environment.visit(Environment.java:221)
+	at freemarker.core.Environment.process(Environment.java:199)
+	at freemarker.template.Template.process(Template.java:259)
+	at Index.doGet(Index.java:66)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:225)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:999)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:565)
+	at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.run(AprEndpoint.java:1812)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+DEBUG MTop_Screct TopCallbackCheck 106  - top_appkey:21040246
+DEBUG MTop_Screct TopCallbackCheck 107  - top_session:6102a06becdcf511046118b151b0430510aa7fcfaf83a2d36950449
+DEBUG MTop_Screct TopCallbackCheck 108  - top_parameters:ZXhwaXJlc19pbj04NjQwMCZpZnJhbWU9MSZyMV9leHBpcmVzX2luPTg2NDAwJnIyX2V4cGlyZXNfaW49ODY0MDAmcmVfZXhwaXJlc19pbj0wJnJlZnJlc2hfdG9rZW49NjEwMWQwNjU5NDRjZjQxOGJhNDk3ZTU3YWFkNTczODMzNWU4OGQ2YThkODQ5NzQzNjk1MDQ0OSZ0cz0xMzQxNzI1OTU3ODE2JnZpc2l0b3JfaWQ9MzY5NTA0NDkmdmlzaXRvcl9uaWNrPW1vcmVtJncxX2V4cGlyZXNfaW49ODY0MDAmdzJfZXhwaXJlc19pbj04NjQwMA==
+DEBUG MTop_Screct TopCallbackCheck 109  - top_sign:ue12PU5TAiBEPHe3qv+YGA==
+DEBUG MTop_Screct TopCallbackCheck 118  - Check Top Sign Call Ok
+DEBUG MTop_Screct convertBase64StringtoMap 70  - expires_in:86400
+DEBUG MTop_Screct convertBase64StringtoMap 70  - iframe:1
+DEBUG MTop_Screct convertBase64StringtoMap 70  - r1_expires_in:86400
+DEBUG MTop_Screct convertBase64StringtoMap 70  - r2_expires_in:86400
+DEBUG MTop_Screct convertBase64StringtoMap 70  - re_expires_in:0
+DEBUG MTop_Screct convertBase64StringtoMap 70  - refresh_token:6101d065944cf418ba497e57aad5738335e88d6a8d8497436950449
+DEBUG MTop_Screct convertBase64StringtoMap 70  - ts:1341725957816
+DEBUG MTop_Screct convertBase64StringtoMap 70  - visitor_id:36950449
+DEBUG MTop_Screct convertBase64StringtoMap 70  - visitor_nick:morem
+DEBUG MTop_Screct convertBase64StringtoMap 70  - w1_expires_in:86400
+DEBUG MTop_Screct convertBase64StringtoMap 70  - w2_expires_in:86400
+DEBUG MUserManager GetUserByID 109  - Get User By ID:36950449   36950449
+DEBUG MUserManager GetAndUpdateDatabase 47  - Read Database:select * from usermap where id='36950449'
+DEBUG MUserManager GetAndUpdateDatabase 59  - Get User ID:36950449
+DEBUG MUserManager GetAndUpdateDatabase 70  - Get User nick:morem
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["index.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "index.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/index.html"
+DEBUG Index doGet 56  - getRequestURL():http://192.168.0.88:8080/index.html
+ERROR MDispatch Dispatch 96  - Go to the introdection Page:#
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='36950449'
+DEBUG MUserManager GetUserByID 166  - Get User ID:36950449
+DEBUG MUserManager GetUserByID 178  - Get User nick:morem
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["menu.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "menu.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/menu.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["ivnav.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "ivnav.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/ivnav.html"
+ERROR freemarker.log.Log4JLoggerFactory$Log4JLogger error 96  - Template processing error: "Expression compent1 is undefined on line 30, column 19 in index.html."
+
+Expression compent1 is undefined on line 30, column 19 in index.html.
+The problematic instruction:
+----------
+==> ${compent1} [on line 30, column 17 in index.html]
+----------
+
+Java backtrace for programmers:
+----------
+freemarker.core.InvalidReferenceException: Expression compent1 is undefined on line 30, column 19 in index.html.
+	at freemarker.core.TemplateObject.assertNonNull(TemplateObject.java:125)
+	at freemarker.core.Expression.getStringValue(Expression.java:118)
+	at freemarker.core.Expression.getStringValue(Expression.java:93)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:76)
+	at freemarker.core.Environment.visit(Environment.java:221)
+	at freemarker.core.MixedContent.accept(MixedContent.java:92)
+	at freemarker.core.Environment.visit(Environment.java:221)
+	at freemarker.core.Environment.process(Environment.java:199)
+	at freemarker.template.Template.process(Template.java:259)
+	at Index.doGet(Index.java:66)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:225)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:999)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:565)
+	at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.run(AprEndpoint.java:1812)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["index.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "index.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/index.html"
+DEBUG Index doGet 56  - getRequestURL():http://192.168.0.88:8080/index.html/showconfig/temp/a/b/cdsdfafdsa/122/vfsd
+DEBUG MDispatch Dispatch 81  - Found a element:showconfig
+DEBUG MDispatch Dispatch 81  - Found a element:temp
+DEBUG MDispatch Dispatch 81  - Found a element:a
+DEBUG MDispatch Dispatch 81  - Found a element:b
+DEBUG MDispatch Dispatch 81  - Found a element:cdsdfafdsa
+DEBUG MDispatch Dispatch 81  - Found a element:122
+DEBUG MDispatch Dispatch 74  - Found a element:vfsd
+ERROR MDispatch Dispatch 96  - Go to the introdection Page:showconfig
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='36950449'
+DEBUG MUserManager GetUserByID 166  - Get User ID:36950449
+DEBUG MUserManager GetUserByID 178  - Get User nick:morem
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["menu.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "menu.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/menu.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["ivnav.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "ivnav.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/ivnav.html"
+ERROR freemarker.log.Log4JLoggerFactory$Log4JLogger error 96  - Template processing error: "Expression compent1 is undefined on line 30, column 19 in index.html."
+
+Expression compent1 is undefined on line 30, column 19 in index.html.
+The problematic instruction:
+----------
+==> ${compent1} [on line 30, column 17 in index.html]
+----------
+
+Java backtrace for programmers:
+----------
+freemarker.core.InvalidReferenceException: Expression compent1 is undefined on line 30, column 19 in index.html.
+	at freemarker.core.TemplateObject.assertNonNull(TemplateObject.java:125)
+	at freemarker.core.Expression.getStringValue(Expression.java:118)
+	at freemarker.core.Expression.getStringValue(Expression.java:93)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:76)
+	at freemarker.core.Environment.visit(Environment.java:221)
+	at freemarker.core.MixedContent.accept(MixedContent.java:92)
+	at freemarker.core.Environment.visit(Environment.java:221)
+	at freemarker.core.Environment.process(Environment.java:199)
+	at freemarker.template.Template.process(Template.java:259)
+	at Index.doGet(Index.java:66)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:225)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:999)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:565)
+	at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.run(AprEndpoint.java:1812)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["index.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "index.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/index.html"
+DEBUG Index doGet 56  - getRequestURL():http://192.168.0.88:8080/index.html/showstatus
+DEBUG MDispatch Dispatch 74  - Found a element:showstatus
+DEBUG MDispatch Dispatch 90  - Dispatch showstatus MShowStatus@189280b
+DEBUG MShowStatus load 23  - MShowStatus load:36950449
+DEBUG MShowStatus Displatch 61  - Enter
+DEBUG MShowStatus load 36  - Start get shop Info
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='36950449'
+DEBUG MUserManager GetUserByID 166  - Get User ID:36950449
+DEBUG MUserManager GetUserByID 178  - Get User nick:morem
+DEBUG MTop_API getUserShowNum 48  - Enter
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='36950449'
+DEBUG MUserManager GetUserByID 166  - Get User ID:36950449
+DEBUG MUserManager GetUserByID 178  - Get User nick:morem
+DEBUG MTop_API getUserShowNum 67  - ShowCase NUM:40
+DEBUG MTop_API getUserShowNum 68  - ShowCase Used:40
+DEBUG MTop_API getUserShowNum 69  - ShowCase NUM:0
+DEBUG MShowStatus load 40  - Get Shop Info success
+DEBUG MCompent GetModel 103  - template Dir:./template/sand/show
+DEBUG MCompent GetModel 104  - FileName:status.html
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["status.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "status.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/show/status.html"
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='36950449'
+DEBUG MUserManager GetUserByID 166  - Get User ID:36950449
+DEBUG MUserManager GetUserByID 178  - Get User nick:morem
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["menu.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "menu.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/menu.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["ivnav.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "ivnav.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/ivnav.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["footer.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "footer.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/footer.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["index.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "index.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/index.html"
+DEBUG Index doGet 56  - getRequestURL():http://192.168.0.88:8080/index.html/showconfig/temp/a/b/cdsdfafdsa/122/vfsd
+DEBUG MDispatch Dispatch 81  - Found a element:showconfig
+DEBUG MDispatch Dispatch 81  - Found a element:temp
+DEBUG MDispatch Dispatch 81  - Found a element:a
+DEBUG MDispatch Dispatch 81  - Found a element:b
+DEBUG MDispatch Dispatch 81  - Found a element:cdsdfafdsa
+DEBUG MDispatch Dispatch 81  - Found a element:122
+DEBUG MDispatch Dispatch 74  - Found a element:vfsd
+ERROR MDispatch Dispatch 96  - Go to the introdection Page:showconfig
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='36950449'
+DEBUG MUserManager GetUserByID 166  - Get User ID:36950449
+DEBUG MUserManager GetUserByID 178  - Get User nick:morem
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["menu.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "menu.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/menu.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["ivnav.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "ivnav.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/ivnav.html"
+ERROR freemarker.log.Log4JLoggerFactory$Log4JLogger error 96  - Template processing error: "Expression compent1 is undefined on line 30, column 19 in index.html."
+
+Expression compent1 is undefined on line 30, column 19 in index.html.
+The problematic instruction:
+----------
+==> ${compent1} [on line 30, column 17 in index.html]
+----------
+
+Java backtrace for programmers:
+----------
+freemarker.core.InvalidReferenceException: Expression compent1 is undefined on line 30, column 19 in index.html.
+	at freemarker.core.TemplateObject.assertNonNull(TemplateObject.java:125)
+	at freemarker.core.Expression.getStringValue(Expression.java:118)
+	at freemarker.core.Expression.getStringValue(Expression.java:93)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:76)
+	at freemarker.core.Environment.visit(Environment.java:221)
+	at freemarker.core.MixedContent.accept(MixedContent.java:92)
+	at freemarker.core.Environment.visit(Environment.java:221)
+	at freemarker.core.Environment.process(Environment.java:199)
+	at freemarker.template.Template.process(Template.java:259)
+	at Index.doGet(Index.java:66)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:225)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:999)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:565)
+	at org.apache.tomcat.util.net.AprEndpoint$SocketWithOptionsProcessor.run(AprEndpoint.java:1770)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["index.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "index.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/index.html"
+DEBUG Index doGet 56  - getRequestURL():http://192.168.0.88:8080/index.html/showstatus
+DEBUG MDispatch Dispatch 74  - Found a element:showstatus
+DEBUG MDispatch Dispatch 90  - Dispatch showstatus MShowStatus@189280b
+DEBUG MShowStatus load 23  - MShowStatus load:36950449
+DEBUG MShowStatus Displatch 61  - Enter
+DEBUG MShowStatus load 36  - Start get shop Info
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='36950449'
+DEBUG MUserManager GetUserByID 166  - Get User ID:36950449
+DEBUG MUserManager GetUserByID 178  - Get User nick:morem
+DEBUG MTop_API getUserShowNum 48  - Enter
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='36950449'
+DEBUG MUserManager GetUserByID 166  - Get User ID:36950449
+DEBUG MUserManager GetUserByID 178  - Get User nick:morem
+DEBUG MTop_API getUserShowNum 67  - ShowCase NUM:40
+DEBUG MTop_API getUserShowNum 68  - ShowCase Used:40
+DEBUG MTop_API getUserShowNum 69  - ShowCase NUM:0
+DEBUG MShowStatus load 40  - Get Shop Info success
+DEBUG MCompent GetModel 103  - template Dir:./template/sand/show
+DEBUG MCompent GetModel 104  - FileName:status.html
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["status.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "status.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/show/status.html"
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='36950449'
+DEBUG MUserManager GetUserByID 166  - Get User ID:36950449
+DEBUG MUserManager GetUserByID 178  - Get User nick:morem
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["menu.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "menu.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/menu.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["ivnav.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "ivnav.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/ivnav.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["footer.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "footer.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/footer.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["index.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "index.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/index.html"
+DEBUG Index doGet 56  - getRequestURL():http://192.168.0.88:8080/index.html/showstatus/fsfsd
+DEBUG MDispatch Dispatch 81  - Found a element:showstatus
+DEBUG MDispatch Dispatch 74  - Found a element:fsfsd
+DEBUG MDispatch Dispatch 90  - Dispatch showstatus MShowStatus@189280b
+DEBUG MShowStatus load 23  - MShowStatus load:36950449
+DEBUG MShowStatus Displatch 61  - Enter
+DEBUG MShowStatus load 36  - Start get shop Info
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='36950449'
+DEBUG MUserManager GetUserByID 166  - Get User ID:36950449
+DEBUG MUserManager GetUserByID 178  - Get User nick:morem
+DEBUG MTop_API getUserShowNum 48  - Enter
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='36950449'
+DEBUG MUserManager GetUserByID 166  - Get User ID:36950449
+DEBUG MUserManager GetUserByID 178  - Get User nick:morem
+DEBUG MTop_API getUserShowNum 67  - ShowCase NUM:40
+DEBUG MTop_API getUserShowNum 68  - ShowCase Used:40
+DEBUG MTop_API getUserShowNum 69  - ShowCase NUM:0
+DEBUG MShowStatus load 40  - Get Shop Info success
+DEBUG MCompent GetModel 103  - template Dir:./template/sand/show
+DEBUG MCompent GetModel 104  - FileName:status.html
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["status.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "status.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/show/status.html"
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='36950449'
+DEBUG MUserManager GetUserByID 166  - Get User ID:36950449
+DEBUG MUserManager GetUserByID 178  - Get User nick:morem
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["menu.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "menu.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/menu.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["ivnav.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "ivnav.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/ivnav.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["footer.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "footer.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/footer.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["index.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "index.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/index.html"
+DEBUG Index doGet 56  - getRequestURL():http://192.168.0.88:8080/index.html/showstatus/fsfsd
+DEBUG MDispatch Dispatch 81  - Found a element:showstatus
+DEBUG MDispatch Dispatch 74  - Found a element:fsfsd
+DEBUG MDispatch Dispatch 90  - Dispatch showstatus MShowStatus@189280b
+DEBUG MShowStatus load 23  - MShowStatus load:36950449
+DEBUG MShowStatus Displatch 61  - Enter
+DEBUG MShowStatus load 36  - Start get shop Info
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='36950449'
+DEBUG MUserManager GetUserByID 166  - Get User ID:36950449
+DEBUG MUserManager GetUserByID 178  - Get User nick:morem
+DEBUG MTop_API getUserShowNum 48  - Enter
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='36950449'
+DEBUG MUserManager GetUserByID 166  - Get User ID:36950449
+DEBUG MUserManager GetUserByID 178  - Get User nick:morem
+DEBUG MTop_API getUserShowNum 67  - ShowCase NUM:40
+DEBUG MTop_API getUserShowNum 68  - ShowCase Used:40
+DEBUG MTop_API getUserShowNum 69  - ShowCase NUM:0
+DEBUG MShowStatus load 40  - Get Shop Info success
+DEBUG MCompent GetModel 103  - template Dir:./template/sand/show
+DEBUG MCompent GetModel 104  - FileName:status.html
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["status.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "status.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/show/status.html"
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='36950449'
+DEBUG MUserManager GetUserByID 166  - Get User ID:36950449
+DEBUG MUserManager GetUserByID 178  - Get User nick:morem
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["menu.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "menu.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/menu.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["ivnav.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "ivnav.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/ivnav.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["footer.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "footer.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/footer.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["index.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "index.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/index.html"
+DEBUG Index doGet 56  - getRequestURL():http://192.168.0.88:8080/index.html/showconfig/temp/a/b/cdsdfafdsa/122/vfsd
+DEBUG MDispatch Dispatch 81  - Found a element:showconfig
+DEBUG MDispatch Dispatch 81  - Found a element:temp
+DEBUG MDispatch Dispatch 81  - Found a element:a
+DEBUG MDispatch Dispatch 81  - Found a element:b
+DEBUG MDispatch Dispatch 81  - Found a element:cdsdfafdsa
+DEBUG MDispatch Dispatch 81  - Found a element:122
+DEBUG MDispatch Dispatch 74  - Found a element:vfsd
+ERROR MDispatch Dispatch 96  - Go to the introdection Page:showconfig
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='36950449'
+DEBUG MUserManager GetUserByID 166  - Get User ID:36950449
+DEBUG MUserManager GetUserByID 178  - Get User nick:morem
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["menu.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "menu.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/menu.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["ivnav.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "ivnav.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/ivnav.html"
+ERROR freemarker.log.Log4JLoggerFactory$Log4JLogger error 96  - Template processing error: "Expression compent1 is undefined on line 30, column 19 in index.html."
+
+Expression compent1 is undefined on line 30, column 19 in index.html.
+The problematic instruction:
+----------
+==> ${compent1} [on line 30, column 17 in index.html]
+----------
+
+Java backtrace for programmers:
+----------
+freemarker.core.InvalidReferenceException: Expression compent1 is undefined on line 30, column 19 in index.html.
+	at freemarker.core.TemplateObject.assertNonNull(TemplateObject.java:125)
+	at freemarker.core.Expression.getStringValue(Expression.java:118)
+	at freemarker.core.Expression.getStringValue(Expression.java:93)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:76)
+	at freemarker.core.Environment.visit(Environment.java:221)
+	at freemarker.core.MixedContent.accept(MixedContent.java:92)
+	at freemarker.core.Environment.visit(Environment.java:221)
+	at freemarker.core.Environment.process(Environment.java:199)
+	at freemarker.template.Template.process(Template.java:259)
+	at Index.doGet(Index.java:66)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:225)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:999)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:565)
+	at org.apache.tomcat.util.net.AprEndpoint$SocketWithOptionsProcessor.run(AprEndpoint.java:1770)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["index.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "index.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/index.html"
+DEBUG Index doGet 56  - getRequestURL():http://192.168.0.88:8080/index.html/showstatus
+DEBUG MDispatch Dispatch 74  - Found a element:showstatus
+DEBUG MDispatch Dispatch 90  - Dispatch showstatus MShowStatus@189280b
+DEBUG MShowStatus load 23  - MShowStatus load:36950449
+DEBUG MShowStatus Displatch 61  - Enter
+DEBUG MShowStatus load 36  - Start get shop Info
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='36950449'
+DEBUG MUserManager GetUserByID 166  - Get User ID:36950449
+DEBUG MUserManager GetUserByID 178  - Get User nick:morem
+DEBUG MTop_API getUserShowNum 48  - Enter
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='36950449'
+DEBUG MUserManager GetUserByID 166  - Get User ID:36950449
+DEBUG MUserManager GetUserByID 178  - Get User nick:morem
+DEBUG MTop_API getUserShowNum 67  - ShowCase NUM:40
+DEBUG MTop_API getUserShowNum 68  - ShowCase Used:40
+DEBUG MTop_API getUserShowNum 69  - ShowCase NUM:0
+DEBUG MShowStatus load 40  - Get Shop Info success
+DEBUG MCompent GetModel 103  - template Dir:./template/sand/show
+DEBUG MCompent GetModel 104  - FileName:status.html
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["status.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "status.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/show/status.html"
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='36950449'
+DEBUG MUserManager GetUserByID 166  - Get User ID:36950449
+DEBUG MUserManager GetUserByID 178  - Get User nick:morem
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["menu.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "menu.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/menu.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["ivnav.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "ivnav.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/ivnav.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["footer.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "footer.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/footer.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["index.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "index.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/index.html"
+DEBUG Index doGet 56  - getRequestURL():http://192.168.0.88:8080/index.html
+ERROR MDispatch Dispatch 96  - Go to the introdection Page:#
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='Guest'
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["menu.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "menu.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/menu.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["ivnav.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "ivnav.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/ivnav.html"
+ERROR freemarker.log.Log4JLoggerFactory$Log4JLogger error 96  - Template processing error: "Expression compent1 is undefined on line 30, column 19 in index.html."
+
+Expression compent1 is undefined on line 30, column 19 in index.html.
+The problematic instruction:
+----------
+==> ${compent1} [on line 30, column 17 in index.html]
+----------
+
+Java backtrace for programmers:
+----------
+freemarker.core.InvalidReferenceException: Expression compent1 is undefined on line 30, column 19 in index.html.
+	at freemarker.core.TemplateObject.assertNonNull(TemplateObject.java:125)
+	at freemarker.core.Expression.getStringValue(Expression.java:118)
+	at freemarker.core.Expression.getStringValue(Expression.java:93)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:76)
+	at freemarker.core.Environment.visit(Environment.java:221)
+	at freemarker.core.MixedContent.accept(MixedContent.java:92)
+	at freemarker.core.Environment.visit(Environment.java:221)
+	at freemarker.core.Environment.process(Environment.java:199)
+	at freemarker.template.Template.process(Template.java:259)
+	at Index.doGet(Index.java:66)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:225)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:999)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:565)
+	at org.apache.tomcat.util.net.AprEndpoint$SocketWithOptionsProcessor.run(AprEndpoint.java:1770)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["index.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "index.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/index.html"
+DEBUG Index doGet 56  - getRequestURL():http://192.168.0.88:8080/index.html/showstatus
+DEBUG MDispatch Dispatch 74  - Found a element:showstatus
+DEBUG MDispatch Dispatch 90  - Dispatch showstatus MShowStatus@189280b
+DEBUG MShowStatus load 23  - MShowStatus load:Guest
+DEBUG MShowStatus Displatch 61  - Enter
+DEBUG MShowStatus load 36  - Start get shop Info
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='Guest'
+ERROR MUserManager GetShopInfo 199  - Get the User info error:Guest
+DEBUG MShowStatus load 47  - Get Shop Info error
+DEBUG MCompent GetModel 103  - template Dir:./template/sand/show
+DEBUG MCompent GetModel 104  - FileName:status.html
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["status.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "status.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/show/status.html"
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='Guest'
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["menu.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "menu.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/menu.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["ivnav.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "ivnav.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/ivnav.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["footer.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "footer.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/footer.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["index.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "index.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/index.html"
+DEBUG Index doGet 56  - getRequestURL():http://192.168.0.88:8080/index.html/showstatus/fsfsd
+DEBUG MDispatch Dispatch 81  - Found a element:showstatus
+DEBUG MDispatch Dispatch 74  - Found a element:fsfsd
+DEBUG MDispatch Dispatch 90  - Dispatch showstatus MShowStatus@189280b
+DEBUG MShowStatus load 23  - MShowStatus load:Guest
+DEBUG MShowStatus Displatch 61  - Enter
+DEBUG MShowStatus load 36  - Start get shop Info
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='Guest'
+ERROR MUserManager GetShopInfo 199  - Get the User info error:Guest
+DEBUG MShowStatus load 47  - Get Shop Info error
+DEBUG MCompent GetModel 103  - template Dir:./template/sand/show
+DEBUG MCompent GetModel 104  - FileName:status.html
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["status.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "status.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/show/status.html"
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='Guest'
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["menu.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "menu.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/menu.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["ivnav.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "ivnav.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/ivnav.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["footer.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "footer.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/footer.html"
+DEBUG MTop_Screct TopCallbackCheck 106  - top_appkey:21040246
+DEBUG MTop_Screct TopCallbackCheck 107  - top_session:6102a06becdcf511046118b151b0430510aa7fcfaf83a2d36950449
+DEBUG MTop_Screct TopCallbackCheck 108  - top_parameters:ZXhwaXJlc19pbj04NjQwMCZpZnJhbWU9MSZyMV9leHBpcmVzX2luPTg2NDAwJnIyX2V4cGlyZXNfaW49ODY0MDAmcmVfZXhwaXJlc19pbj0wJnJlZnJlc2hfdG9rZW49NjEwMWQwNjU5NDRjZjQxOGJhNDk3ZTU3YWFkNTczODMzNWU4OGQ2YThkODQ5NzQzNjk1MDQ0OSZ0cz0xMzQxNzI1OTU3ODE2JnZpc2l0b3JfaWQ9MzY5NTA0NDkmdmlzaXRvcl9uaWNrPW1vcmVtJncxX2V4cGlyZXNfaW49ODY0MDAmdzJfZXhwaXJlc19pbj04NjQwMA==
+DEBUG MTop_Screct TopCallbackCheck 109  - top_sign:ue12PU5TAiBEPHe3qv+YGA==
+DEBUG MTop_Screct TopCallbackCheck 118  - Check Top Sign Call Ok
+DEBUG MTop_Screct convertBase64StringtoMap 70  - expires_in:86400
+DEBUG MTop_Screct convertBase64StringtoMap 70  - iframe:1
+DEBUG MTop_Screct convertBase64StringtoMap 70  - r1_expires_in:86400
+DEBUG MTop_Screct convertBase64StringtoMap 70  - r2_expires_in:86400
+DEBUG MTop_Screct convertBase64StringtoMap 70  - re_expires_in:0
+DEBUG MTop_Screct convertBase64StringtoMap 70  - refresh_token:6101d065944cf418ba497e57aad5738335e88d6a8d8497436950449
+DEBUG MTop_Screct convertBase64StringtoMap 70  - ts:1341725957816
+DEBUG MTop_Screct convertBase64StringtoMap 70  - visitor_id:36950449
+DEBUG MTop_Screct convertBase64StringtoMap 70  - visitor_nick:morem
+DEBUG MTop_Screct convertBase64StringtoMap 70  - w1_expires_in:86400
+DEBUG MTop_Screct convertBase64StringtoMap 70  - w2_expires_in:86400
+DEBUG MUserManager GetUserByID 109  - Get User By ID:36950449   36950449
+DEBUG MUserManager GetAndUpdateDatabase 47  - Read Database:select * from usermap where id='36950449'
+DEBUG MUserManager GetAndUpdateDatabase 59  - Get User ID:36950449
+DEBUG MUserManager GetAndUpdateDatabase 70  - Get User nick:morem
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["index.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "index.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/index.html"
+DEBUG Index doGet 56  - getRequestURL():http://192.168.0.88:8080/index.html
+ERROR MDispatch Dispatch 96  - Go to the introdection Page:#
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='36950449'
+DEBUG MUserManager GetUserByID 166  - Get User ID:36950449
+DEBUG MUserManager GetUserByID 178  - Get User nick:morem
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["menu.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "menu.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/menu.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["ivnav.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "ivnav.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/ivnav.html"
+ERROR freemarker.log.Log4JLoggerFactory$Log4JLogger error 96  - Template processing error: "Expression compent1 is undefined on line 30, column 19 in index.html."
+
+Expression compent1 is undefined on line 30, column 19 in index.html.
+The problematic instruction:
+----------
+==> ${compent1} [on line 30, column 17 in index.html]
+----------
+
+Java backtrace for programmers:
+----------
+freemarker.core.InvalidReferenceException: Expression compent1 is undefined on line 30, column 19 in index.html.
+	at freemarker.core.TemplateObject.assertNonNull(TemplateObject.java:125)
+	at freemarker.core.Expression.getStringValue(Expression.java:118)
+	at freemarker.core.Expression.getStringValue(Expression.java:93)
+	at freemarker.core.DollarVariable.accept(DollarVariable.java:76)
+	at freemarker.core.Environment.visit(Environment.java:221)
+	at freemarker.core.MixedContent.accept(MixedContent.java:92)
+	at freemarker.core.Environment.visit(Environment.java:221)
+	at freemarker.core.Environment.process(Environment.java:199)
+	at freemarker.template.Template.process(Template.java:259)
+	at Index.doGet(Index.java:66)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:621)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:722)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:305)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:210)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:225)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:169)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:168)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:98)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:927)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:118)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:407)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:999)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:565)
+	at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.run(AprEndpoint.java:1812)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1110)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:603)
+	at java.lang.Thread.run(Thread.java:722)
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["index.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "index.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/index.html"
+DEBUG Index doGet 56  - getRequestURL():http://192.168.0.88:8080/index.html/showstatus
+DEBUG MDispatch Dispatch 74  - Found a element:showstatus
+DEBUG MDispatch Dispatch 90  - Dispatch showstatus MShowStatus@189280b
+DEBUG MShowStatus load 23  - MShowStatus load:36950449
+DEBUG MShowStatus Displatch 61  - Enter
+DEBUG MShowStatus load 36  - Start get shop Info
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='36950449'
+DEBUG MUserManager GetUserByID 166  - Get User ID:36950449
+DEBUG MUserManager GetUserByID 178  - Get User nick:morem
+DEBUG MTop_API getUserShowNum 48  - Enter
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='36950449'
+DEBUG MUserManager GetUserByID 166  - Get User ID:36950449
+DEBUG MUserManager GetUserByID 178  - Get User nick:morem
+ERROR com.taobao.api.internal.util.TaobaoLogger _logCommError 144  - 2012-07-08 21:02:31^_^taobao.shop.remainshowcase.get^_^21040246^_^127.0.1.1^_^Linux^_^top-sdk-java-20120705^_^http://gw.api.taobao.com/router/rest?sign=477259C17E3A625AE69A4F59B293CA55&timestamp=2012-07-08+21%3A00%3A39&v=2.0&app_key=21040246&method=taobao.shop.remainshowcase.get&sign_method=hmac&partner_id=top-sdk-java-20120705&session=6101d065944cf418ba497e57aad5738335e88d6a8d8497436950449&format=json^_^^_^gw.api.taobao.com
+ERROR MTop_API getUserShowNum 73  - Get ShowCase info error com.taobao.api.ApiException: java.net.UnknownHostException: gw.api.taobao.com
+DEBUG MShowStatus load 47  - Get Shop Info error
+DEBUG MCompent GetModel 103  - template Dir:./template/sand/show
+DEBUG MCompent GetModel 104  - FileName:status.html
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["status.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "status.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/show/status.html"
+DEBUG MUserManager GetUserByID 154  - Read Database:select * from usermap where id='36950449'
+DEBUG MUserManager GetUserByID 166  - Get User ID:36950449
+DEBUG MUserManager GetUserByID 178  - Get User nick:morem
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["menu.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "menu.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/menu.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["ivnav.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "ivnav.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/ivnav.html"
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Could not find template in cache, creating new one; id=["footer.html"["en_US",ISO-8859-1,parsed] ]
+DEBUG freemarker.log.Log4JLoggerFactory$Log4JLogger debug 81  - Compiling FreeMarker template "footer.html"["en_US",ISO-8859-1,parsed]  from "/home/miao/work/webset/template/sand/footer.html"

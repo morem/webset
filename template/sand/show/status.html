@@ -1,0 +1,71 @@
+
+<style type="text/css">
+q{}
+
+.status
+{
+	width:900px;
+	height:600px;
+	top:0px;
+	left:0px;
+	overflow:hidden;
+	position:absolute;
+	margin:0 0 0 0;
+	padding: 0 0 0 0;
+	border-bottom:1px solid #CCCCCC;
+}
+
+.status_switch
+{
+	width:200px;
+	height:80px;
+	top:10px;
+	left:10px;
+	overflow:hidden;
+	position:absolute;
+	margin:0 0 0 0;
+	padding: 0 0 0 0;
+	border-bottom:1px solid #CCCCCC;
+}
+
+.status_info
+{
+	width:200px;
+	height:290px;
+	top:95px;
+	left:10px;
+	overflow:hidden;
+	position:absolute;
+	margin:0 0 0 0;
+	padding: 0 0 0 0;
+	border-bottom:1px solid #CCCCCC;
+}
+
+.status_chart
+{
+	width:550px;
+	height:290px;
+	top:10px;
+	left:220px;
+	overflow:hidden;
+	position:absolute;
+	margin:0 0 0 0;
+	padding: 0 0 0 0;
+	border-bottom:1px solid #CCCCCC;
+}
+</style>
+
+<div class="status">
+	<div class="box status_switch">
+	<p>当前正在处于<b>${start_stop}</b>状态。</p>
+	<button class="ym-button">${start_stop}</button>
+	</div>
+	<div class="box status_info">
+		<li>橱窗总数:${show_case_num}</li>
+		<li>已用橱窗:${show_case_used}</li>
+		<li>剩余橱窗:${show_case_remained}</li>
+		<li><a href="/index.html/showstatus/fsfsd">强制更新商品</a></li>
+	</div>
+	<div class="box status_chart">
+	</div>
+</div>

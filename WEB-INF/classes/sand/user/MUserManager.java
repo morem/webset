@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import freemarker.log.Logger;
+import org.apache.log4j.*;
 
 public class MUserManager
 {
@@ -65,6 +65,7 @@ public class MUserManager
             {
                 usr.nick = rs.getString("nick");
                 usr.avatar = rs.getString("img");
+                usr.token = rs.getString("token");
                 usr.vaild = true;
                 logger.debug("Get User nick:" + usr.nick);
                 return usr;
@@ -74,14 +75,17 @@ public class MUserManager
             logger.error("getRow error:" + e +":"+ e.getErrorCode());
             MTop_API top = new MTop_API();
             MUser usr;
-            usr = top.getUserInfo(id.toString(),token);
+            logger.debug("ID:" + id);
+            logger.debug("Token:" + token);
+            usr = top.getUserInfo(id,token);
             if (usr.vaild == true)
             {
                 String sqlString =  "insert into usermap values(" +
-                                    "'" + usr.id.toString() + "'," +
+                                    "'" + usr.id + "'," +
                                     "'" + usr.nick + "'," +
+                                    "'" + usr.token + "'," +
                                     "'" + usr.avatar + "'," +
-                                    "'" + "null" + "'" +
+                                    "'" + "/home/miao/work/sanddata/" + "usr.id" + ".xml'" +
                                     ")";
                 
                 logger.debug("Add the User to Map:"+sqlString);
@@ -169,6 +173,7 @@ public class MUserManager
             {
                 usr.nick = rs.getString("nick");
                 usr.avatar = rs.getString("img");
+                usr.token = rs.getString("token");
                 usr.vaild = true;
                 logger.debug("Get User nick:" + usr.nick);
                 return usr;
@@ -178,5 +183,29 @@ public class MUserManager
             return null;
         }
     }
-
+    
+    public void UpdateAllProduction(String id)
+    {
+        MUser usr = GetUserByID (id);
+        if (usr == null)return;
+        if (usr.vaild == false)return;
+       
+    }
+    
+    public MUser GetShopInfo(String id)
+    {
+        MUser usr = GetUserByID(id);
+        if (usr == null){
+            logger.error("Get the User info error:"+id);
+            return null ;
+        }
+        if (usr.vaild == false){
+            logger.error("Get the User info error:"+id);
+            return null;
+        }
+        MTop_API top = new MTop_API();
+        logger.equals("ID:" + usr.id + "  token:" + usr.token);
+        usr = top.getUserShowNum(usr.id, usr.token);
+        return usr;
+    }
 }

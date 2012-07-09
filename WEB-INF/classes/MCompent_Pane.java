@@ -10,7 +10,7 @@ import org.dom4j.Node;
 import org.dom4j.Visitor;
 import org.dom4j.VisitorSupport;
 
-import freemarker.log.Logger;
+import org.apache.log4j.*;
 
 class XmlFileLoader{
 	  public Document doc = null;

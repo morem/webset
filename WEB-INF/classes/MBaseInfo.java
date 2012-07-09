@@ -1,5 +1,5 @@
 import org.omg.CORBA.PUBLIC_MEMBER;
-
+import org.apache.log4j.*;
 
 public class MBaseInfo
 {
