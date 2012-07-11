@@ -23,18 +23,19 @@ public class MShowStatus extends HttpServlet implements MDispatchCallback
         logger.debug("MShowStatus load:"+ id);
         MCompent mc = new MCompent();
         HashMap map = new HashMap();
-        Displatch (list, id);
-        String str = "运行";
-        try {
-            str = new String(str.getBytes("UTF-8"),"ISO-8859-1");
-        } catch (Exception e) {
-            str = "unknow";
-        }
-        map.put("start_stop", str);
+        Displatch (id, list);
+        String str = null;
+        if (new MUserData().GetShowCaseRunStatus(id) == true)
+             str = "run";
+        else
+            str = "stop";
+
+        map.put("run_stop", str);
         
         MUserManager manager = new MUserManager();
         logger.debug("Start get shop Info");
-        MUser usr = manager.GetShopInfo(id);
+        MUser usr = new MTop_API().getUserShowNum(id);
+        
         if (usr != null && usr.showCaseVaild == true)
         {
             logger.debug("Get Shop Info success");
@@ -58,7 +59,7 @@ public class MShowStatus extends HttpServlet implements MDispatchCallback
         return className;
     }
     
-    public boolean Displatch(ArrayList list, String usr)
+    public boolean Displatch( String id , ArrayList list)
     {
         logger.debug("Enter");
         if (list.size() <= 1)return true;
@@ -66,8 +67,16 @@ public class MShowStatus extends HttpServlet implements MDispatchCallback
         if (action.equals("update"))
         {
             logger.debug("Get all Production");
-            updateAllProduction(usr);
-        }       
+            updateAllProduction(id);
+        }
+        else if (action.equals("run"))
+        {
+            new MUserData().SetShowCaseRunStatus(id, true);
+        }
+        else if (action.equals("stop"))
+        {
+            new MUserData().SetShowCaseRunStatus(id, false);
+        }
         return true;
     }
     

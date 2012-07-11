@@ -34,6 +34,8 @@ public class Login extends HttpServlet
             MUser usr = manager.GetUserByID ( visitor_id,
                                               (String)map.get("refresh_token"), true);
             httpSession.setAttribute("visitor_id", visitor_id);
+            MUserData userXMLData = new MUserData();
+            userXMLData.CreateUser(visitor_id, (String)map.get("refresh_token"));
         }
         resp.sendRedirect("/index.html");
     }

@@ -4,37 +4,39 @@
 <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
 <title>${title}首页</title>
 <!-- add your meta tags here -->
-<link rel="stylesheet" href="http://192.168.0.88:8080/css/central.css" type="text/css"/>
-<link rel="stylesheet" href="http://192.168.0.88:8080/css/screen/custom.css" type="text/css"/>
-<link rel="stylesheet" href="http://192.168.0.88:8080/yaml/screen/grid-960-12.css" type="text/css"/>
-<link rel="stylesheet" href="http://192.168.0.88:8080/yaml/screen/grid-960-16.css" type="text/css"/>
-<link rel="stylesheet" href="http://192.168.0.88:8080/css/g960_411.css" type="text/css"/>
+<link rel="stylesheet" href="${ip}/css/central.css" type="text/css"/>
+<link rel="stylesheet" href="${ip}/css/screen/custom.css" type="text/css"/>
+<link rel="stylesheet" href="${ip}/yaml/screen/grid-960-12.css" type="text/css"/>
+<link rel="stylesheet" href="${ip}/yaml/screen/grid-960-16.css" type="text/css"/>
+<link rel="stylesheet" href="${ip}/css/g960_411.css" type="text/css"/>
+
 <!--[if lte IE 7]>
 <link rel="stylesheet" href="yaml/core/iehacks.min.css" type="text/css"/>
 <![endif]-->
 </head>
 
 <body>
+	<header class="myheader">
+		  </header>
   <div class="ym-wrapper">
     <div class="ym-wbox">
-      <header><#include "menu.html"></header>
-
-<div class="ym-column">
-  <div class="ym-col1">
-	<div class="box vnav">
-		<#include "ivnav.html">
+	<div class="ym-column">
+	  <div class="ym-col1">
+		<div class="vnav">
+			<#include "ivnav.html">
+		</div>
+	  </div>
+	  <div class="ym-col2">
+		<div class="contentbox">
+			${compent1}
+		</div>
+	
+	  </div>
 	</div>
-  </div>
-  <div class="ym-col2">
-	<div class="box contentbox">
-		${compent1}
-	</div>
-
-  </div>
-</div>
 
 	</div>
   </div>
+
   <footer><#include "footer.html"></footer>
 </body>
 </html>

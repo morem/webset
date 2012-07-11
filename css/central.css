@@ -26,4 +26,4 @@
 
 /* import print layout | Druck-Layout einbinden */
 @import url(../yaml/print/print.css);
-@import url(styles.css);
+@import url(./styles.css);

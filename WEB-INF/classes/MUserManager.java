@@ -183,29 +183,5 @@ public class MUserManager
             return null;
         }
     }
-    
-    public void UpdateAllProduction(String id)
-    {
-        MUser usr = GetUserByID (id);
-        if (usr == null)return;
-        if (usr.vaild == false)return;
-       
-    }
-    
-    public MUser GetShopInfo(String id)
-    {
-        MUser usr = GetUserByID(id);
-        if (usr == null){
-            logger.error("Get the User info error:"+id);
-            return null ;
-        }
-        if (usr.vaild == false){
-            logger.error("Get the User info error:"+id);
-            return null;
-        }
-        MTop_API top = new MTop_API();
-        logger.equals("ID:" + usr.id + "  token:" + usr.token);
-        usr = top.getUserShowNum(usr.id, usr.token);
-        return usr;
-    }
+
 }

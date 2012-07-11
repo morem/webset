@@ -18,17 +18,24 @@ body
 	padding:0 0 0 0 ;
 	overflow:hidden;
 	z-index:10;
-	background:#FFFFFF;
+	background:url(menu_back.JPG);
 	width: 950px;	
 }
 
 .mymenu
 {
 	padding: 0 0 0 0;
-	margin: 0 0 0 0;	
-	background: #FFFFFF;
-	font-style: #000000;
+	margin-top:40px;	
+	background:#FFFFFF;
+	background-image: url(../res/menu_back.JPG);
 }
+
+.myheader
+{
+	background:#FFFFFF;
+	background-image: url(../res/menu_back.JPG);
+	height:100px;	
+	}
 
 .ym-col1 { 
 	width: 15%; 
@@ -51,16 +58,17 @@ body
 
 .vnav
 {
-	margin: 5px 0 0 0 ;
+	margin: 0 0 0 0 ;
 	padding: 2px 2px 2px 2px;
 	height: 390px;	
 	background: #FFFFFF;
 	overflow:hidden;
+	border-right:thin #CCCCCC solid;
 }
 
 .contentbox
 {
-	margin: 5px 0 0 0 ;
+	margin: 0 0 0 10px ;
 	padding: 2px 2px 2px 2px;		
 	height: 390px;
 	background: #FFFFFF;

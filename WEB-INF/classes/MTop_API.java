@@ -37,24 +37,29 @@ public class MTop_API extends Object
         }
         return usrMUser;
     }
+    
+    public boolean getUserSubscribes(String nick)
+    {
+        return true;
+    }
   
-    public MUser getUserShowNum(String id, String token)
+    public MUser getUserShowNum(String id)
     {
         TaobaoClient client=new DefaultTaobaoClient(new MBaseInfo().url(), 
                 new MBaseInfo().appKey(), 
                 new MBaseInfo().appSecret());
         
         ShopRemainshowcaseGetRequest req=new ShopRemainshowcaseGetRequest();
-        logger.debug("Enter");
-        MUser usr = new MUserManager().GetUserByID(id);
-        if (usr.vaild == false){
-            logger.error("Can't found the id info:" + id );
-            return null;
-        }
-        
         try {
-
-            ShopRemainshowcaseGetResponse response = client.execute(req , usr.token);
+            MUser usr = new MUser();
+            logger.debug(new MUserData().GetUserToken(id));
+            String token = new MUserData().GetUserToken(id);
+            if (token == null)
+            {
+                logger.error("Can't find the user's token");
+                return null;
+            }
+            ShopRemainshowcaseGetResponse response = client.execute(req , token);
             if (response == null)
             {
                 logger.error("ShopRemainshowcaseGetResponse error"); 
@@ -68,8 +73,7 @@ public class MTop_API extends Object
             logger.debug("ShowCase Used:" + usr.showCaseUsed);
             logger.debug("ShowCase NUM:" + usr.showCaseRemained);
             return usr;
-        } catch (Exception e) {
-            usr.showCaseVaild = false;  
+        } catch (Exception e) { 
             logger.error("Get ShowCase info error " + e);
             return null;
         }

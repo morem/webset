@@ -3,14 +3,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import javax.xml.transform.*;
 
-import org.dom4j.Document;
-import org.dom4j.DocumentException;
+import org.dom4j.*;
 import org.dom4j.io.SAXReader;
-import org.dom4j.DocumentHelper;
-import org.dom4j.Element;
-import org.dom4j.Node;
-import org.dom4j.Visitor;
-import org.dom4j.VisitorSupport;
 
 import java.lang.*;
 import java.io.*;

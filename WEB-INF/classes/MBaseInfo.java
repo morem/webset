@@ -13,5 +13,13 @@ public class MBaseInfo
     public String url()
     {
         return "http://gw.api.taobao.com/router/rest";
-    }    
+    }
+    public String ipself()
+    {
+        return "http://192.168.1.102:8080";
+    }
+    public String dateBase()
+    {
+        return "/opt/data/";
+    }
 }
