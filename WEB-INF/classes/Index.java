@@ -52,6 +52,8 @@ public class Index extends HttpServlet
         str = new String(str.getBytes("UTF-8"),"ISO-8859-1");
         root.put("title",str); 
         logger.debug("Get Header:" + req.getLocalAddr() + req.getLocalPort());
+        new MBaseInfo().setServerAddr("http://" + req.getLocalAddr() + ":" + req.getLocalPort());
+        
         root.put("ip", "http://" + req.getLocalAddr() + ":" + req.getLocalPort());
         MCompent_Pane c = new MCompent_Pane();
         

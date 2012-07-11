@@ -11,9 +11,9 @@ public class MShowStatus extends HttpServlet implements MDispatchCallback
     static Logger logger = Logger.getLogger(MShowStatus.class.getName());
     public void init()
     {
-        logger.debug("Init");
         if (bInit == true)return;
         bInit = true;
+        logger.debug("Init");
         MShowStatus obj = new MShowStatus();
         MDispatch p = new MDispatch();
         p.RegistObject (obj);        

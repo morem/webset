@@ -20,29 +20,6 @@ public class MDispatch extends HttpServlet
     
     public void init()
     {
-        logger.debug("Init");
-        if (doc != null)return;
-        
-        SAXReader xmlReader = new SAXReader();
-        FileInputStream fs;
-        try{
-            fs = new FileInputStream("./WEB-INF/page.xml");
-            doc =  xmlReader.read(fs);
-        }
-        catch (Exception e) {
-                // TODO: handle exception
-            logger.error("Open the File error");
-            return;
-        }
-        
-        Element root = doc.getRootElement();
-        List list = root.elements();
-        for (Object obj:list)
-        {
-            Element elt = (Element)obj;
-//            map.put(elt.getName(), elt.getText());
-//            logger.debug("Read Displatch Info,Name:" + elt.getName() + " Value:" + elt.getText());
-        }        
     }
     
     public String load(String arg0, String arg1)
