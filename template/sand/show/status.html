@@ -17,12 +17,6 @@ q{}
 
 .status_switch
 {
-	width:200px;
-	height:80px;
-	top:10px;
-	left:10px;
-	overflow:hidden;
-	position:absolute;
 	margin:0 0 0 0;
 	padding: 0 0 0 0;
 	border-bottom:1px solid #CCCCCC;
@@ -30,41 +24,16 @@ q{}
 
 .status_info
 {
-	width:200px;
-	height:90px;
-	top:95px;
-	left:10px;
-	overflow:hidden;
-	position:absolute;
 	margin:0 0 0 0;
 	padding: 0 0 0 0;
-		border-bottom:1px solid #CCCCCC;
+	border-bottom:1px solid #CCCCCC;
+}
+.status_info li
+{
+	list-style:none;
+	float:left;
 }
 
-.status_product
-{
-	width:200px;
-	height:290px;
-	top:195px;
-	left:10px;
-	overflow:hidden;
-	position:absolute;
-	margin:0 0 0 0;
-	padding: 0 0 0 0;
-}
-
-.status_chart
-{
-	width:550px;
-	height:290px;
-	top:10px;
-	left:220px;
-	overflow:hidden;
-	position:absolute;
-	margin:0 0 0 0;
-	padding: 0 0 0 0;
-	border-left:1px solid #CCCCCC;
-}
 </style>
 
 <div class="status">
@@ -80,8 +49,6 @@ q{}
 			<li>橱窗总数:${show_case_num}</li>
 			<li>已用橱窗:${show_case_used}</li>
 			<li>剩余橱窗:${show_case_remained}</li>
-		</div>
-		<div class ="status_product">
 			<li>在售商品:0</li>
 			<li>强制推荐:0</li>
 			<li>强制不荐:0</li>
