@@ -1,10 +1,14 @@
+import java.util.*;
+
+import javax.swing.ListModel;
 import javax.xml.ws.Response;
 
+import com.sun.msv.grammar.ListExp;
 import com.taobao.api.*;
 import com.taobao.api.domain.User;
 import com.taobao.api.request.*;
 import com.taobao.api.response.*;
-import com.taobao.api.response.*;
+import com.taobao.api.domain.Item;
 
 import org.apache.log4j.*;
 
@@ -75,6 +79,67 @@ public class MTop_API extends Object
             return usr;
         } catch (Exception e) { 
             logger.error("Get ShowCase info error " + e);
+            return null;
+        }
+    }
+    
+    public List<MItem> getItems(String id, String title, long cid, 
+                               String seller_cid, long page_no, 
+                               int has_showcase, String order, long page_size)
+    {
+        TaobaoClient client=new DefaultTaobaoClient(new MBaseInfo().url(), 
+                new MBaseInfo().appKey(), 
+                new MBaseInfo().appSecret());
+        ItemsOnsaleGetRequest req=new ItemsOnsaleGetRequest();
+        
+        req.setFields("num_iid,title,pic_url");
+        if (title != null)
+            req.setQ(title);
+        if (cid != -1)
+            req.setCid(cid);
+        if (seller_cid != null)
+            req.setSellerCids(seller_cid);
+        if (page_no != -1)
+            req.setPageNo(page_no);
+        if (has_showcase == 1)
+        {
+            req.setHasShowcase(true);
+        }else if (has_showcase == 0)
+        {
+            req.setHasShowcase(false);
+        }
+        if (order != null)
+            req.setOrderBy(order);
+        if (page_size != -1)
+            req.setPageSize(page_size);
+        
+        String token = new MUserData().GetUserToken(id);
+        if (token == null)
+        {
+            logger.error("Can't find the user's token");
+            return null;
+        }
+        try {
+            ItemsOnsaleGetResponse response = client.execute(req , token);     
+            List<Item> list = new ArrayList<Item>();
+            List<MItem> listM = new ArrayList<MItem>();
+            
+            list = response.getItems();
+            Long totalItem = response.getTotalResults();
+            for (Object obj:list)
+            {
+                Item item = null;
+                MItem itemM = new MItem();
+                item = (Item)obj;
+                itemM.num_iid = item.getNumIid().toString();
+                itemM.pic_url = item.getPicUrl();
+                itemM.title = item.getTitle();
+                itemM.total_num = totalItem;
+                listM.add(itemM);
+            }
+            return listM;
+        } catch (Exception e) {
+            logger.error("Taobao API Call fail" + e);
             return null;
         }
     }

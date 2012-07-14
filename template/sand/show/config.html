@@ -6,7 +6,7 @@
 {
 	width:900px;
 	height:900px;
-	border:solid thin #FF0000;
+
 	padding:0 0 0 0;
 	margin:0 0 0 0;
 	position:relative;
@@ -18,7 +18,7 @@
 	top:0;
 	width:200px;
 	height:490px;
-	border:solid thin #00FF00;
+	border-right:solid thin #aaaaaa;
 	position:absolute;
 }
 
@@ -28,18 +28,82 @@
 	top: 0;
 	width:460px;
 	height:490px;
-	border:solid thin #FFFF00;
 	position:absolute;
 }
+
+.form_style
+{
+	background:#ffffff;
+	}
 
 </style>
 
 <div class="status">
 	<div class="status_search">
-	<li>商品名称包含</li>
-	<li>类目/所有</li>
-	<li>橱窗中的商品/不在橱窗中的商品</li>
-	<li>排序方式:上架时间，下架时间，商品数量，修改时间</li>
+	<form method="post" action="" id="demo-form1" class="ym-form linearize-form form_style" role="application">
+		<div class="ym-fbox-text">
+			<label for="firstname">商品名称</label>
+			<input type="text" name="firstname" id="firstname" size="20" />
+		</div>
+	<div class="ym-fbox-select">
+		<label for="more">选择类目</label>
+		<select name="more" id="more" size="1">
+			<option value="0" selected="selected">所有的宝贝</option>
+			<optgroup label="First options to choose from">
+				<option value="Empfehlung">Option 1</option>
+				<option value="Suchmaschine">Option 2</option>
+			</optgroup>
+			<optgroup label="Yet more options to choose from">
+				<option value="Weblog">Option 3</option>
+				<option value="Werbung">Option 4</option>
+				<option value="Zeitung / Magazin">Option 5</option>
+				<option value="Sonstiges">Option 6</option>
+			</optgroup>
+		</select>
+	</div>	
+	<div class="ym-fbox-check">
+		<div>
+			<span class="ym-label">在橱窗中</span>
+			<input type="radio" name="vote" value="Option 1" id="vote1" />
+			<label for="vote1">忽略</label>
+		</div>
+		<div>
+			<input type="radio" name="vote" id="vote2" />
+			<label for="vote2">在</label>
+		</div>
+		<div>
+			<input type="radio" name="vote" id="vote3" />
+			<label for="vote3">不在</label>
+		</div>
+	</div>	
+	<div class="ym-fbox-check">
+		<div>
+			<span class="ym-label">排序方式</span>
+			<input type="radio" name="vote" value="Option 1" id="vote1" />
+			<label for="vote1">忽略</label>
+		</div>
+		<div>
+			<input type="radio" name="vote" id="vote2" />
+			<label for="vote2">上架时间</label>
+		</div>
+		<div>
+			<input type="radio" name="vote" id="vote3" />
+			<label for="vote3">下架时间</label>
+		</div>
+		<div>
+			<input type="radio" name="vote" id="vote3" />
+			<label for="vote3">商品数量</label>
+		</div>
+		<div>
+			<input type="radio" name="vote" id="vote3" />
+			<label for="vote3">修改时间</label>
+		</div>
+	</div>	
+	<div class="ym-fbox-button">
+		<input type="submit" value="submit"  class="save" id="submit" name="submit" />
+		<input type="reset" value="reset" class="delete" id="reset" name="reset" />
+	</div>
+	</form>
 	<li>每条页数</li>
 	<li>使终推荐/使终不推荐/全部</li>
 	</div>

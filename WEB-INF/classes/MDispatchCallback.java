@@ -6,6 +6,6 @@ import javax.servlet.http.*;
 
 public interface MDispatchCallback 
 {
-    public String load(String arg0, ArrayList list);
+    public String load(MDispatchParam param);
     public String getname();
 }

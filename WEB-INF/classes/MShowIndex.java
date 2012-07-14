@@ -1,24 +1,19 @@
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
+import java.util.*;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import org.apache.log4j.*;
 
-public class MShowStatus extends HttpServlet implements MDispatchCallback
+public class MShowIndex extends HttpServlet implements MDispatchCallback
 {
     static boolean bInit = false;
-    private String className = "showstatus";
+    private String className = "showindex";
     static Logger logger = Logger.getLogger(MShowStatus.class.getName());
     public void init()
     {
         if (bInit == true)return;
         bInit = true;
         logger.debug("Init");
-        MShowStatus obj = new MShowStatus();
+        MShowIndex obj = new MShowIndex();
         MDispatch p = new MDispatch();
         p.RegistObject (obj);        
     }
@@ -26,20 +21,15 @@ public class MShowStatus extends HttpServlet implements MDispatchCallback
     {
         String id = param.id;
         List list = param.list;
-        logger.debug("MShowStatus load:"+ id);
+        logger.debug("MShowIndex load:"+ id);
         MCompent mc = new MCompent();
         HashMap map = new HashMap();
-        Displatch (param.id, param.list);
-        String str = null;
-        if (new MUserData().GetShowCaseRunStatus(id) == true)
-             str = "run";
-        else
-            str = "stop";
 
-        map.put("run_stop", str);
+        Displatch (id, list);
+        String str = null;
         
-        MUserManager manager = new MUserManager();
-        logger.debug("Start get shop Info");
+        map.put("ip", new MBaseInfo().getServerAddr());
+  
         MUser usr = new MTop_API().getUserShowNum(id);
         
         if (usr != null && usr.showCaseVaild == true)
@@ -56,35 +46,8 @@ public class MShowStatus extends HttpServlet implements MDispatchCallback
             map.put("show_case_used", 0);
             map.put("show_case_remained", 0);            
         }
-        List<MItem> listMItems;
-        long totalNum = 0;
-        listMItems = new MTop_API().getItems(id, null, -1, null, 0, 1, 
-                                             "delist_time", 100);
-        if (listMItems != null && listMItems.size() != 0)
-        {
-            totalNum = listMItems.get(0).total_num;
-            logger.debug("list Item Total:" + totalNum);
-            Map[] map2 = new HashMap[(int)totalNum];
-            Map map3;
-            String title ;
-            for (int i = 0; i < totalNum; i ++)
-            {
-                map3 = new HashMap();
-                map3.put("pic_url", listMItems.get(i).pic_url);
-                try {
-                    title = listMItems.get(i).title;
-                    title = new String(title.getBytes("UTF-8"),"ISO-8859-1");
-                } catch (Exception e) {
-                    title = "nothing";
-                }
-             
-                map3.put("title", title);
-                map2[i] = map3;
-            }
-            map.put("items", map2);
-        }
-
-        return mc.GetModel("./template/sand/show/status.html", map);
+        
+        return mc.GetModel("./template/sand/show/index.html", map);
     }
     
     public String getname()

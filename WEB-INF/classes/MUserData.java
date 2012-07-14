@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.*;
+
 import org.apache.log4j.*;
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
@@ -10,6 +11,7 @@ import org.dom4j.Element;
 import org.dom4j.Node;
 import org.dom4j.Visitor;
 import org.dom4j.VisitorSupport;
+import org.w3c.dom.NodeList;
 
 class MUserData extends Object{
     static Logger logger = Logger.getLogger(MUserData.class.getName());
@@ -33,6 +35,8 @@ class MUserData extends Object{
         Element showcaseElement = userElement.addElement("showcase");
         Element showcaseRunStatusElement = showcaseElement.addElement("runstatus");
         showcaseRunStatusElement.setText("stop");
+        Element itemAdjuestMust = showcaseElement.addElement("adjust_must");
+        Element itemAdjuestNever = showcaseElement.addElement("adjust_never");
         
         try {
             XMLWriter output = new XMLWriter(new FileWriter(file));
@@ -101,6 +105,71 @@ class MUserData extends Object{
         }
         return true;
     }
+    
+    private boolean UpdateUserData (String id, String path, List value)
+    {
+        SAXReader xmlReader = new SAXReader();
+        Document document = null;
+        List list = null;
+        try {
+            document = xmlReader.read(new File(new MBaseInfo().dateBase() + id + ".xml"));
+            list = document.selectNodes(path);
+            if (list == null)return false;                 
+        } catch (Exception e) {
+            logger.error("Write XML File Error " + e);
+            return false;
+        }
+        for (Object strObj:value)
+        {
+            int i;
+            String str = (String)strObj;
+            for (i = 0; i < list.size(); i ++)
+            {
+                Node node = (Node)list.get(i);
+                String nodeString = node.getText();
+                if (nodeString == null)continue;
+                if(true == nodeString.equals(str))continue;                
+            }
+            if (i == list.size())
+            {
+                Node node = (Node)list.get(i);
+                Element element = node.getParent();
+                Element elementId = element.addElement("id");
+                elementId.setText(str);                
+            }
+        }
+        
+        try {
+            XMLWriter output = new XMLWriter(new FileWriter(new File(new MBaseInfo().dateBase() + id + ".xml")));
+            output.write(document);
+            output.close();
+        } catch (Exception e) {
+            logger.error("Write XML File Error " + e);
+            return false;
+        }
+        return true;
+    }
+    
+    private List GetUserDataList(String id, String path)
+    {
+        SAXReader xmlReader = new SAXReader();
+        Document document = null;
+        List<String> strList = new ArrayList<String>();
+        try {
+            document = xmlReader.read(new File(new MBaseInfo().dateBase() + id + ".xml"));
+            List nodeList = document.selectNodes(path);
+            if (nodeList == null)return null;
+            for (Object obj:nodeList)
+            {
+                Node node = (Node)obj;
+                strList.add(node.getText());
+            }
+            return strList;
+        } catch (Exception e) {
+            logger.error("Read User Data Error" + e);
+            return null;
+        }
+    }
 
     private String GetUserData(String id, String path)
     {
@@ -145,5 +214,9 @@ class MUserData extends Object{
         if (status.equals("run"))return true;
         return false;
     }
-    
+    public boolean SetShowCaseAdjustMust(List list)
+    {
+        
+        return true;
+    }
 }

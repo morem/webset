@@ -1,0 +1,75 @@
+<style type="text/css">
+q{}
+
+.status
+{
+	top:0px;
+	left:0px;
+	overflow:hidden;
+	position:absolute;
+	margin:0 0 0 0;
+	padding: 0 0 0 0;
+	border-bottom:1px solid #CCCCCC;
+}
+
+.status_pic
+{
+	height:200px;
+	overflow:hidden;	
+}
+.status_info
+{
+	margin:0 0 0 0;
+	padding: 0 0 0 0;
+	padding-top:20px;
+	border-bottom:1px solid #CCCCCC;
+}
+.status_info li
+{
+	padding-left:30px;
+	padding-right:30px;
+	list-style:none;
+	float:left;
+}
+
+.aui-carousel-item {
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	text-indent: -9999em;
+}
+
+</style>
+
+<div class="status">
+	<div class="status_pic" id="id_status_pic">
+		<div style="background-image: url(${ip}/res/article0.png);height:200px;width:700px">Article0</div>
+		<div style="background-image: url(${ip}/res/article1.png);height:200px;width:700px">Article1</div>
+		<div style="background-image: url(${ip}/res/article2.png);height:200px;width:700px">Article2</div>
+	</div>
+	<div class="status_info">
+		<li>橱窗总数:${show_case_num}</li>
+		<li>已用橱窗:${show_case_used}</li>
+		<li>剩余橱窗:${show_case_remained}</li>
+		<li>在售商品:0</li>
+		<li>强制推荐:0</li>
+		<li>强制不荐:0</li>
+	</div>
+	<script type="text/javascript" charset="utf-8">
+	
+	AUI().ready('aui-carousel', function(A) {
+	
+		var component = new A.Carousel(
+			{
+				intervalTime: 5,
+				contentBox: '#id_status_pic',
+				activeIndex: 'rand',
+				height: 200,
+				width: 700
+			}
+		)
+		.render();
+	
+	});
+	</script>
+</div>

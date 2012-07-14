@@ -1,7 +1,10 @@
 import java.util.HashMap;
 import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
+
 import org.apache.log4j.*;
 
 public class MShowConfig extends HttpServlet implements MDispatchCallback
@@ -19,12 +22,12 @@ public class MShowConfig extends HttpServlet implements MDispatchCallback
         p.RegistObject (obj);        
     }
     
-    public String load(String id, ArrayList list)
+    public String load(MDispatchParam param)
     {
-        logger.debug("MShowConfig load:"+ id);
+        logger.debug("MShowConfig load:"+ param.id);
         MCompent mc = new MCompent();
         HashMap map = new HashMap();
-        Displatch (id, list);
+        Displatch (param.id, param.list);
         String str = null;
         
         map.put("ip", new MBaseInfo().getServerAddr());
@@ -37,7 +40,7 @@ public class MShowConfig extends HttpServlet implements MDispatchCallback
         return className;
     }
     
-    public boolean Displatch( String id , ArrayList list)
+    public boolean Displatch( String id , List list)
     {
         logger.debug("Enter");
         if (list.size() <= 1)return true;

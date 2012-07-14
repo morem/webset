@@ -27,13 +27,13 @@ public class MDispatch extends HttpServlet
         return null;
     }
     
-    public String Dispatch(String path, String usr)
+    public String Dispatch(String path, MDispatchParam param)
     {
-        ArrayList list = new ArrayList();
+        List list = new ArrayList();
         int head;
         int end;
         String element;
-        
+        //解板路径，放入到List中去
         while(true)
         {
            head = path.indexOf("/");
@@ -54,13 +54,16 @@ public class MDispatch extends HttpServlet
                path = path.substring(end);
            }           
         }
-        if (list.size() == 0)path = "#";
+        //list[0]中是分页控制器
+        if (list.size() == 0)path = "showindex";
         else path = (String)list.get(0);
+        //查找控制器回调
         if (null != map.get(path))
-        {            
+        {
+            param.list = list;
             logger.debug("Dispatch " + path + " " + map.get(path));
             MDispatchCallback obj = (MDispatchCallback)map.get(path);
-            return obj.load(usr, list);
+            return obj.load(param);
         }
         else
         {
