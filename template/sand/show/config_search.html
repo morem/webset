@@ -1,0 +1,104 @@
+<style type="text/css">
+.q{}
+.search_form_style
+{
+	background:#FFFFFF;
+	padding: 10px 0 5px 0;
+	margin: 0 0 10px 0;
+	border:none;
+	border-bottom:1px solid #cccccc;
+	position:relative;
+}
+
+.search_form_style div
+{
+	float:left;
+}
+.search_form_style_block
+{
+
+	float:left;	
+}
+
+.search_form_button
+{
+    padding:2px 0px 0 0;
+    margin: -2px 0 0 0;
+    height:20px;
+    border:1px #cccccc solid;
+    width:60px;   
+    text-align:center;
+}
+.search_form_button:hover
+{
+    background:#4281B7;
+    }
+
+
+.search_form_font
+{
+	font-size:10px;
+}
+
+.search_form_style_block_input
+{
+	width:40px;
+	height:20px;
+	padding:0 0 0 0;
+	margin:0 0 0 0;
+	float:left;
+}
+
+</style>
+
+<form method="post" action="" id="demo-form1" class="ym-form linearize-form ym-columnar search_form_style" role="application">
+	<div class="ym-fbox-text search_form_style_block search_form_font" style="padding:0 5px 0 5px;margin:0 0 0 0; border-left:1px solid #000000; width:140px; left:-1px">
+		<label for="id_config_items_keyword" style="padding:0 0 0 0;margin:0 0 0 0; width:55px;">商品名称</label>
+		<input type="text" name="keyword" id="id_config_items_keyword" size="20" style="padding:0 0 0 0;margin:0 0 0 0;width:85px;"/>
+	</div>
+	<div class="ym-fbox-select search_form_style_block search_form_font" style="padding:0 5px 0 5px;margin:0 0 0 0; border-left:1px solid #CCCCCC; width:110px;">
+		<label for="id_config_items_search_cata" style="padding:0 0 0 0;margin:0 0 0 0;width:28px">类目</label>
+		<select name="cata" id="id_config_items_search_cata" size="1" style="padding:0 0 0 0;margin:0 0 0 0;width:80px"> 
+			<option value="-1" selected="selected">所有的宝贝</option>
+			<#if cats??>
+			<#list cats as cat>
+			<option value="${cat.cid}" >${cat.name}</option>
+			</#list>
+			</#if>			
+		</select>
+	</div>
+	
+	<div class="ym-fbox-select search_form_style_block search_form_font" style="padding:0 5px 0 5px;margin:0 0 0 0; border-left:1px solid #CCCCCC; width:110px;">
+		<label for="id_config_items_inshow" style="padding:0 0 0 0;margin:0 0 0 0;width:28px">橱窗</label>
+		<select name="inshow" id="id_config_items_inshow" size="1" style="padding:0 0 0 0;margin:0 0 0 0;width:80px">
+			<option value="-1" selected="selected">忽略</option>
+			<option value="0">不在橱窗中</option>
+			<option value="1">在橱窗中</option>
+		</select>
+	</div>	
+	<div class="ym-fbox-select search_form_style_block search_form_font" style="padding:0 5px 0 5px; margin:0 0 0 0; border-left:1px solid #CCCCCC; width:150px; ">
+		<label for="id_config_items_sort" style="padding:0 0 0 0;margin:0 0 0 0;width:28px">排序</label>
+		<select name="sort" id="id_config_items_sort" size="1" style="padding:0 0 0 0;margin:0 0 0 0;">
+			<option value="ignore" selected="selected">忽略</option>
+			<option value="list_time:asc">最早上架在先</option>
+			<option value="list_time:desc">最晚上架在先</option>
+			<option value="delist_time:asc">最早下架在先</option>
+			<option value="delist_time:desc">最晚下架在先</option>
+			<option value="num:asc">最多数量在先</option>
+			<option value="num:desc">最少数量在先</option>
+			<option value="modifoed:asc">最早修改在先</option>
+			<option value="modifoed:desc">最近修改在先</option>
+		</select>
+	</div>
+	<div class="ym-fbox-select search_form_font" style="padding:0 5px 0 5px;margin:0 0 0 0; width:90px; border:0;">
+		<label for="id_config_items_page_item_no" style="padding:0 0 0 0;margin:0 0 0 0;width:30px">每页</label>
+		<select name="page_item_no" id="id_config_items_page_item_no" size="1" style="padding:0 0 0 0;margin:0 0 0 0;width:55px">
+			<option value="10">10</option>
+			<option value="20">20</option>
+			<option value="40" selected="selected">40</option>
+			<option value="100">100</option>
+		</select>
+	</div>	
+	<div class="search_form_style_block search_form_button search_form_font" id="id_config_search_button" title="index.html/showconfigitemmanager?action=search"><a>查找</a>
+	</div>
+</form>

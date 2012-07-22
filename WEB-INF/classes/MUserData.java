@@ -15,7 +15,7 @@ import org.w3c.dom.NodeList;
 
 class MUserData extends Object{
     static Logger logger = Logger.getLogger(MUserData.class.getName());
-    private boolean CreateAndInitFile(String id, String token)
+    private boolean CreateAndInitFile(String id, String nick, String token)
     {
         File file = new File(new MBaseInfo().dateBase()+ id + ".xml");
         try{
@@ -30,8 +30,13 @@ class MUserData extends Object{
         userElement.addComment("User ID" + id + " Config");
         Element idElement = userElement.addElement("id");
         idElement.setText(id);
+        Element nickElement = userElement.addElement("nick");
+        nickElement.setText(nick);
         Element tokenElement = userElement.addElement("token");
         tokenElement.setText(token);
+        Element itemsElement = userElement.addElement("items");
+        Element itemsTotalNumElement = itemsElement.addElement("total_num");
+        Element itemsTotalNumUpdateTime = itemsElement.addElement("update_time");
         Element showcaseElement = userElement.addElement("showcase");
         Element showcaseRunStatusElement = showcaseElement.addElement("runstatus");
         showcaseRunStatusElement.setText("stop");
@@ -186,18 +191,51 @@ class MUserData extends Object{
         }        
     }
     
-    public void CreateUser(String id, String token) {
+    public void CreateUser(String id,String nick, String token) {
 
         File f1 = new File(new MBaseInfo().dateBase()+ id + ".xml");
         if (f1.exists() == true)
+        {
             UpdateUserData(id, "/user/token", token);
+            UpdateUserData(id, "/user/nick", nick);
+        }
         else
-            CreateAndInitFile(id, token);
+            CreateAndInitFile(id, nick, token);
     }
     
     public String GetUserToken(String id)
     {
         return GetUserData(id, "/user/token");
+    }
+    
+    public String GetUserNick(String id)
+    {
+        return GetUserData(id, "/user/nick");
+    }
+    
+    public boolean SetItemsTotalNum(String id, Long num)
+    {
+        return UpdateUserData(id, "/user/items/total_num", num.toString());
+    }
+    
+    public Long GetItemsTotalNum(String id)
+    {
+        String num =  GetUserData(id, "/user/items/total_num");
+        return Long.valueOf(num);
+    }
+    
+    public boolean SetItemTotalNumUpdateTime (String id)
+    {
+        Long ms = System.currentTimeMillis();
+        return UpdateUserData(id, "/user/items/update_time", ms.toString());
+    }
+    
+    public Long getItemTotalNumUpdateTime (String id)
+    {
+        String ms = GetUserData(id, "/user/items/update_time");
+        if (ms == null)return 0L;
+        Long timeLong =  Long.valueOf(ms);
+        return timeLong;
     }
     
     public boolean SetShowCaseRunStatus(String id, boolean run)

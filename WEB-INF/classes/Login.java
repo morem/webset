@@ -31,12 +31,13 @@ public class Login extends HttpServlet
             Map map = top.convertBase64StringtoMap(req, "utf-8"); 
             MUserManager manager = new MUserManager();
             String visitor_id = (String)map.get("visitor_id");
+            String visitor_nick = (String)map.get("visitor_nick");
             MUser usr = manager.GetUserByID ( visitor_id,
                                               (String)map.get("refresh_token"), true);
             httpSession.setAttribute("visitor_id", visitor_id);
             MUserData userXMLData = new MUserData();
-            userXMLData.CreateUser(visitor_id, (String)map.get("refresh_token"));
+            userXMLData.CreateUser(visitor_id, visitor_nick,(String)map.get("refresh_token"));
         }
-        resp.sendRedirect("/index.html");
+        resp.sendRedirect("/index.html?ct=1");
     }
 }

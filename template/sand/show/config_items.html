@@ -1,0 +1,23 @@
+<#if items??>
+<#list items as item>
+<div class="config_items_item config_items_font">
+	<div class="config_items_checkbox">
+	  <input type="checkbox" name="your-id" id=${item.num_iid} />
+	</div>
+	<div class="config_items_item_status config_items_font">
+		<#if item.status = "true"><b>已推荐</b></#if><#if item.status = "false">未推荐</#if>
+	</div>
+	<div class="config_items_item_pic">
+		<img src="${item.pic_url}" style="width:50px;height:50px" />
+	</div>
+	<div class="config_items_item_title" style="margin-top:18px;">
+		${item.title}
+	</div>
+    <div style="padding:17px 10px 0px 10px;">已被强制推荐</div>
+    <div class="config_items_item_action_button"><a>加入禁止推荐</a></div>
+    <div class="config_items_item_action_button"><a>转为普通方式</a></div>
+</div>
+</#list>
+</#if>
+<li id="id_config_items_curpage" value="<#if cur_page??>${cur_page}</#if>" style="display:none;"></li>
+<li id="id_config_items_totalpage" value="<#if total_page??>${total_page}</#if>" style="display:none;"></li>

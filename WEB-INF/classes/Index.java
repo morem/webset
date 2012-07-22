@@ -43,8 +43,17 @@ public class Index extends HttpServlet
         cfg.setObjectWrapper (new DefaultObjectWrapper());
         cfg.setDefaultEncoding("ISO-8859-1");
         Template temp = null;
-        temp = cfg.getTemplate("index.html");
         
+        String ctype = req.getParameter("ct");
+        if (ctype != null)
+        {
+            if (ctype.equals("1"))
+                temp = cfg.getTemplate("index.html");
+            else
+                temp = cfg.getTemplate("index2.html");
+        }
+        else
+            temp = cfg.getTemplate("index.html");
         //构建基本的内容map
         Map root = new HashMap();
         String str = "欢迎"+ visitor_id;
@@ -61,6 +70,8 @@ public class Index extends HttpServlet
         MDispatch patch= new MDispatch();
         MDispatchParam param = new MDispatchParam();
         param.id = visitor_id;
+        param.req = req;
+        param.resp = resp;
         String string = patch.Dispatch(control, param);
         root.put("compent1", string);
         
@@ -75,4 +86,10 @@ public class Index extends HttpServlet
 			// TODO: handle exception
         }
     }
+    public void doPost (HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException
+    { 
+        doGet(req, resp);
+    }
+
 }

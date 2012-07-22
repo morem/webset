@@ -2,14 +2,15 @@ import java.util.*;
 
 import javax.swing.ListModel;
 import javax.xml.ws.Response;
+import java.net.*;
 
 import com.sun.msv.grammar.ListExp;
 import com.taobao.api.*;
+import com.taobao.api.domain.ShopCat;
 import com.taobao.api.domain.User;
 import com.taobao.api.request.*;
 import com.taobao.api.response.*;
-import com.taobao.api.domain.Item;
-
+import com.taobao.api.domain.*;
 import org.apache.log4j.*;
 
 
@@ -83,35 +84,99 @@ public class MTop_API extends Object
         }
     }
     
-    public List<MItem> getItems(String id, String title, long cid, 
-                               String seller_cid, long page_no, 
-                               int has_showcase, String order, long page_size)
+    public Long getItemsCnt(String id)
+    {
+        Long ms = System.currentTimeMillis();
+        Long i = ms - (new MUserData().getItemTotalNumUpdateTime(id));
+        logger.debug("Cur ms:" + ms + " Get ms:" + i);
+        if (i < 10*60*1000)
+        {
+            logger.debug("beacuse total num is get not long ago, so use it");
+            Long num = new MUserData().GetItemsTotalNum(id);
+            return num;
+        }
+        else
+        {
+            Long num;
+            List<MItem> list = null;
+            logger.debug("because total num is so long time not get, so get it new");
+            list = getItems(id, null, -1L, null, -1L, -1L, null, -1L);
+            if (list != null)
+            {
+                num = list.get(0).total_num; 
+                new MUserData().SetItemsTotalNum(id, num);
+                new MUserData().SetItemTotalNumUpdateTime(id);
+                return num;
+            }
+            return 0L;
+        }
+    }
+    
+    public void setItemsCnt(String id, Long num)
+    {
+        logger.debug("set it cnt:" + num);
+        new MUserData().SetItemsTotalNum(id, num);
+        new MUserData().SetItemTotalNumUpdateTime(id);
+    }
+    
+    public List<MItem> getItems(String id, String title, Long cid, 
+                               String seller_cid, Long page_no, 
+                               Long has_showcase, String order, Long page_size)
     {
         TaobaoClient client=new DefaultTaobaoClient(new MBaseInfo().url(), 
                 new MBaseInfo().appKey(), 
                 new MBaseInfo().appSecret());
         ItemsOnsaleGetRequest req=new ItemsOnsaleGetRequest();
+        logger.debug("id:" + id);
+        logger.debug("title:" + title);
+        logger.debug("cid:" + cid);
+        logger.debug("seller_cid:" + seller_cid);
+        logger.debug("page_no:" + page_no);
+        logger.debug("has_showcase:" + has_showcase);
+        logger.debug("order:" + order);
+        logger.debug("page_size:" + page_size);
         
-        req.setFields("num_iid,title,pic_url");
+        req.setFields("num_iid,title,pic_url,has_showcase");
         if (title != null)
-            req.setQ(title);
+        {   
+            logger.debug("set title" + title);
+            String t = title;
+            req.setQ("112");
+        }
         if (cid != -1)
+        {
+            logger.debug("set cid");
             req.setCid(cid);
+        }
         if (seller_cid != null)
+        {
+            logger.debug("set seller_cid");
             req.setSellerCids(seller_cid);
+        }
         if (page_no != -1)
+        {
+            logger.debug("set page_no");
             req.setPageNo(page_no);
+        }
         if (has_showcase == 1)
         {
+            logger.debug("set has_showcase true");
             req.setHasShowcase(true);
         }else if (has_showcase == 0)
         {
+            logger.debug("set has_showcase false");
             req.setHasShowcase(false);
         }
         if (order != null)
+        {
+            logger.debug("set order");
             req.setOrderBy(order);
+        }
         if (page_size != -1)
+        {
+            logger.debug("set page_size");
             req.setPageSize(page_size);
+        }
         
         String token = new MUserData().GetUserToken(id);
         if (token == null)
@@ -119,28 +184,92 @@ public class MTop_API extends Object
             logger.error("Can't find the user's token");
             return null;
         }
+        Long times = 3L;
+        while (true)
+        {
+            try {
+
+                ItemsOnsaleGetResponse response = client.execute(req , token);     
+                logger.error("here");
+                List<Item> list = new ArrayList<Item>();
+                List<MItem> listM = new ArrayList<MItem>();
+                logger.error("here");
+                if (response == null)
+                {
+                    logger.error("Get The Item fail respone is null");
+                    return null;
+                }
+                if (0 == response.getTotalResults())
+                {
+                    logger.error("get total results 0");
+                    return listM;
+                }
+                
+                list = response.getItems();
+                if (list == null)
+                {
+                    logger.error("not Item found");
+                    return listM;
+                }
+                
+                logger.error("here");
+                Long totalItem = response.getTotalResults();
+                for (Object obj:list)
+                {
+                    Item item = null;
+                    MItem itemM = new MItem();
+                    item = (Item)obj;
+                    itemM.num_iid = item.getNumIid().toString();
+                    itemM.pic_url = item.getPicUrl();
+                    itemM.title = item.getTitle();
+                    itemM.total_num = totalItem;
+                    itemM.hasShowcase = item.getHasShowcase();
+                    listM.add(itemM);
+                }
+                setItemsCnt (id, totalItem);
+                return listM;
+            }catch (Exception e) {
+                logger.error("Taobao API Call fail" + e);
+                if (true == e.getLocalizedMessage().matches(".{1,}SocketTimeoutException.{1,}"))
+                {
+                    times --;
+                    if (times > 0)
+                    {
+                        logger.error("try again:"+ times);
+                        continue;
+                    }
+                    else
+                    {
+                        logger.error("always timeout return");
+                        return null;
+                    }
+                }
+                
+                return null;
+            } 
+        }
+    }
+    
+    public List<SellerCat> GetTheUserCats(String id)
+    {
+        TaobaoClient client=new DefaultTaobaoClient(new MBaseInfo().url(), 
+                new MBaseInfo().appKey(), 
+                new MBaseInfo().appSecret());
+        SellercatsListGetRequest req=new SellercatsListGetRequest();
         try {
-            ItemsOnsaleGetResponse response = client.execute(req , token);     
-            List<Item> list = new ArrayList<Item>();
-            List<MItem> listM = new ArrayList<MItem>();
-            
-            list = response.getItems();
-            Long totalItem = response.getTotalResults();
-            for (Object obj:list)
+            req.setNick(new MUserData().GetUserNick(id));
+            logger.debug("Get " + new MUserData().GetUserNick(id) + "'s cats");
+            SellercatsListGetResponse response = client.execute(req);
+            if (response == null)
             {
-                Item item = null;
-                MItem itemM = new MItem();
-                item = (Item)obj;
-                itemM.num_iid = item.getNumIid().toString();
-                itemM.pic_url = item.getPicUrl();
-                itemM.title = item.getTitle();
-                itemM.total_num = totalItem;
-                listM.add(itemM);
+                logger.error("Get Sellercats Error");
+                return null;
             }
-            return listM;
+            return response.getSellerCats();
         } catch (Exception e) {
-            logger.error("Taobao API Call fail" + e);
+            logger.error("Get User Cata error:" + e);
             return null;
         }
+        
     }
 }

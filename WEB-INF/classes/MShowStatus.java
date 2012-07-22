@@ -35,9 +35,9 @@ public class MShowStatus extends HttpServlet implements MDispatchCallback
              str = "run";
         else
             str = "stop";
-
+        map.put("ip", new MBaseInfo().getServerAddr());
         map.put("run_stop", str);
-        
+
         MUserManager manager = new MUserManager();
         logger.debug("Start get shop Info");
         MUser usr = new MTop_API().getUserShowNum(id);
@@ -58,8 +58,8 @@ public class MShowStatus extends HttpServlet implements MDispatchCallback
         }
         List<MItem> listMItems;
         long totalNum = 0;
-        listMItems = new MTop_API().getItems(id, null, -1, null, 0, 1, 
-                                             "delist_time", 100);
+        listMItems = new MTop_API().getItems(id, null, -1L, null, 0L, 1L, 
+                                             "delist_time", 200L);
         if (listMItems != null && listMItems.size() != 0)
         {
             totalNum = listMItems.get(0).total_num;

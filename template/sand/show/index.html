@@ -6,7 +6,7 @@ q{}
 	top:0px;
 	left:0px;
 	overflow:hidden;
-	position:absolute;
+	position:relative;
 	margin:0 0 0 0;
 	padding: 0 0 0 0;
 	border-bottom:1px solid #CCCCCC;
@@ -47,6 +47,7 @@ q{}
 		<div style="background-image: url(${ip}/res/article1.png);height:200px;width:700px">Article1</div>
 		<div style="background-image: url(${ip}/res/article2.png);height:200px;width:700px">Article2</div>
 	</div>
+	<#include "index_introduct.html">
 	<div class="status_info">
 		<li>橱窗总数:${show_case_num}</li>
 		<li>已用橱窗:${show_case_used}</li>
@@ -55,21 +56,4 @@ q{}
 		<li>强制推荐:0</li>
 		<li>强制不荐:0</li>
 	</div>
-	<script type="text/javascript" charset="utf-8">
-	
-	AUI().ready('aui-carousel', function(A) {
-	
-		var component = new A.Carousel(
-			{
-				intervalTime: 5,
-				contentBox: '#id_status_pic',
-				activeIndex: 'rand',
-				height: 200,
-				width: 700
-			}
-		)
-		.render();
-	
-	});
-	</script>
 </div>

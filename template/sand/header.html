@@ -1,0 +1,167 @@
+<style type="text/css">
+
+.myheader
+{
+	background:#FFFFFF;
+	background-image: url(../res/menu_back.JPG);
+	height:80px;
+	padding: 0 0 0 0;
+	margin:0 0 0 0;
+
+}
+
+.mynav_nofixed
+{
+	position:relative;
+}
+
+.mynav_fixed
+{
+	position:fixed;
+	top:0;
+	left:0;
+}
+
+.mymenu
+{
+	background:#ddeef;
+	background-image:url(../res/menu_back.JPG);
+	height:50px;	
+	padding: 0px 0 0 200px;
+	margin:0 0 0 0;
+	z-index:100;
+	overflow:visible;
+}
+
+/* 导航菜单 START */
+/* 菜单项 */
+#menubar ul.menus li {
+	float:left; /* 靠左浮动 */
+	list-style:none; /* 清空列表风格 */
+	margin-right:1px; /* 右侧的间隔 */
+}
+/* 菜单项链接 */
+#menubar ul.menus li a {
+	padding:5px 10px; /* 内边距 */
+	display:block; /* 显示为块 */
+	color:#FFF; /* 文字颜色 */
+	background:#162f71; /* 背景颜色 */
+	text-decoration:none; /* 没有下横线 */
+}
+/* 当前菜单位置 */
+#menubar ul.menus ul {
+	position:absolute;
+}
+/* 当前菜单项链接 */
+#menubar ul.menus li.current-cat a {
+	background:#5495CD; /* 背景颜色 */
+}
+/* 选中菜单项链接 */
+#menubar ul.menus li a:hover {
+	background:#4281B7; /* 背景颜色 */
+}
+/* 二级菜单 */
+#menubar ul.children {
+	display:none; /* 初始化页面时不显示出来 */
+	padding:0;
+	margin:0;
+}
+/* 二级菜单的菜单项 */
+#menubar ul.children li {
+	float:none; /* 垂直排列 */
+	margin:0;
+	padding:0;
+}
+/* 二级菜单的当前菜单项链接 */
+#menubar ul.children li a {
+	width:100px; /* 对 IE6 来说十分很重要 */
+}
+/* 导航菜单 END */
+</style>
+
+<div class = "myheader">
+</div>
+<nav id="menubar" class="ym-hlist mymenu mynav_nofixed">
+		<ul id="menus" class="menus">
+			<li class="cat-item cat-item-40 "><a href="javascript:void(0);" title="">自动橱窗</a>
+				<ul class="children" style="display: none; ">
+					<li class="cat-item cat-item-41" title="index.html"><a href="javascript:void(0);" >橱窗首页</a></li>
+					<li class="cat-item cat-item-42" title="index.html/showstatus"><a href="javascript:void(0);" >运行状态</a></li>
+					<li class="cat-item cat-item-43" title="index.html/showconfig"><a href="javascript:void(0);" >橱窗配置</a></li>
+					<li class="cat-item cat-item-44"><a href="javascript:void(0);" title="">计划任务</a></li>
+				</ul>
+			</li>
+			<li class="cat-item cat-item-50"><a href="javascript:void(0);" title="View all posts filed under Java">上架调整</a>
+				<ul class="children" style="display: none; ">
+					<li class="cat-item cat-item-51"><a href="javascript:void(0);" title="">运行状态</a></li>
+					<li class="cat-item cat-item-52"><a href="javascript:void(0);" title="">调整配置</a></li>
+					<li class="cat-item cat-item-53"><a href="javascript:void(0);" title="">计划任务</a></li>
+				</ul>
+			</li>
+			<li class="cat-item cat-item-60"><a href="javascript:void(0);" title="">自动评价</a>
+				<ul class="children" style="display: none; ">
+					<li class="cat-item cat-item-61"><a href="javascript:void(0);" title="">运行状态</a></li>
+					<li class="cat-item cat-item-62"><a href="javascript:void(0);" title="">评价配置</a></li>
+					<li class="cat-item cat-item-63"><a href="javascript:void(0);" title="">主动通知</a></li>
+				</ul>
+			</li>
+		</ul>
+</nav>
+	
+<script type="text/javascript">
+  	$(document).ready(function(){
+		var $window = $(window);
+		var $cur_select = 1;
+		
+		$window.scroll(function(){
+			if ($window.scrollTop()>80)
+			{
+				$("nav.mynav_nofixed").removeClass("mynav_nofixed");
+				$("nav").addClass("mynav_fixed");
+			}
+			else
+			{
+				$("nav.mynav_fixed").removeClass("mynav_fixed");
+				$("nav").addClass("mynav_nofixed");				
+			}
+		});	
+ 	});
+</script>
+
+
+<script type="text/javascript">
+var mouseover_tid = [];
+var mouseout_tid = [];
+
+jQuery(document).ready(function(){
+	jQuery('#menus > li').each(function(index){
+		jQuery(this).hover(
+
+			function(){
+				var _self = this;
+				clearTimeout(mouseout_tid[index]);
+				mouseover_tid[index] = setTimeout(function() {
+					jQuery(_self).find('ul:eq(0)').slideDown(200);
+				}, 400);
+			},
+
+			function(){
+				var _self = this;
+				clearTimeout(mouseover_tid[index]);
+				mouseout_tid[index] = setTimeout(function() {
+					jQuery(_self).find('ul:eq(0)').slideUp(200);
+				}, 400);
+			}
+
+		);
+	});
+	
+	$("nav ul li ul li").bind("click",function(){
+		var $to = $(this).attr("title");
+		var _self = this;
+		$to = "${ip}/" + $to + "?ct=0"
+		$("#runing").dialog('open');
+		$("#id_contentbox").load($to,function(){$("#runing").dialog('close');});
+	})
+});
+</script>

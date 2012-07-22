@@ -18,8 +18,7 @@ body
 	padding:0 0 0 0 ;
 	overflow:hidden;
 	z-index:10;
-	background:url(menu_back.JPG);
-	width: 950px;	
+	background:${ip}/res/menu_back.JPG;
 }
 
 .mymenu
@@ -27,28 +26,8 @@ body
 	padding: 0 0 0 0;
 	margin-top:40px;	
 	background:#FFFFFF;
-	background-image: url(../res/menu_back.JPG);
+	background-image: ${ip}/res/menu_back.JPG;
 }
-
-.myheader
-{
-	background:#FFFFFF;
-	background-image: url(../res/menu_back.JPG);
-	height:100px;	
-	}
-
-.ym-col1 { 
-	width: 15%; 
-	padding: 0 0 0 0;
-	margin: 0 0 0 0;
-} /* left column */
-.ym-col2 { 
-	width: 85%; 
-
-	padding: 0 0 0 0;
-	margin: 0 0 0 0;	
-} /* left column */
-
 
 .ym-column
 {
@@ -56,23 +35,12 @@ body
 	padding: 0 0 0 0;
 }
 
-.vnav
+.nonlive
 {
-	margin: 0 0 0 0 ;
-	padding: 2px 2px 2px 2px;
-	height: 500px;	
-	background: #FFFFFF;
-	overflow:hidden;
-	border-right:thin #CCCCCC solid;
+	display:none;	
 }
 
-.contentbox
+.alive
 {
-	margin: 0 0 0 10px ;
-	padding: 2px 2px 2px 2px;		
-
-	background: #FFFFFF;
-
-	position:relative;
+	display:block;	
 }
-
