@@ -131,6 +131,7 @@ public class MShowConfigItemManager extends HttpServlet implements MDispatchCall
         }
         else
             logger.debug("get the Items Num:" + listMItems.size());
+        listMItems = new MUserData().GetItemStatus(param.id, listMItems);
         
         List<Map> listMap = new ArrayList<Map>();
         int i = 0;
@@ -150,6 +151,14 @@ public class MShowConfigItemManager extends HttpServlet implements MDispatchCall
                 mapItem.put("status", "true");
             else
                 mapItem.put("status", "false");
+            
+            if (item.status == 2)
+                mapItem.put("item_status", "forbidShow");
+            else if (item.status == 1)
+                mapItem.put("item_status", "forceShow");
+            else 
+                mapItem.put("item_status", "normalShow");
+            
             listMap.add(mapItem);
         }
         

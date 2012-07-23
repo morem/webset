@@ -22,43 +22,54 @@ public class MShowDataManager extends HttpServlet implements MDispatchCallback
         MDispatch p = new MDispatch();
         p.RegistObject (obj);        
     }
-
-    public void AddForceShowList(String idList[])
-    {
-        
-        
-    }
-    public void AddForbidShowList(String idList[])
-    {
-                
-    }
-    
-    public void AddNormalShowList(String idList[])
-    {
-                
-    }
     
     public String load(MDispatchParam param)
     {
         logger.debug("MShowDataManager load:"+ param.id);
         String action = param.req.getParameter("action");
-        if (action == null)return null;
+        if (action == null)
+        {
+            logger.error("get action error");
+            return null;
+        }
         String id = param.req.getParameter("id");
-        if (id == null)return null;
+        if (id == null)
+        {
+            logger.error("no id param");
+            return null;
+        }
         String idList[] = id.split(":");
+        List<String> list = new ArrayList<String>();
+
+        for (String item : idList) {
+            if (item.length() == 0)continue;
+            list.add(item);
+            logger.debug("item:" + item);
+        }
+        
         if (action.equals("forceShow"))
         {
-            AddForceShowList (idList);
+            logger.debug("forceShow");
+            new MUserData().SetForceShow(param.id, list);
+            return "success_force"; 
         }
         else if (action.equals("forbidShow"))
         {
-            AddForbidShowList (idList);
+            logger.debug("forbidShow");
+            new MUserData().SetForbidShow(param.id, list); 
+            return "success_forbid"; 
         }
         else if (action.equals("normalShow"))
         {
-            AddNormalShowList (idList);
-        }       
-        return null;       
+            logger.debug("normalShow");
+            new MUserData().SetNormalShow(param.id, list);
+            return "success_normal"; 
+        }
+        else
+        {
+            logger.error("found a vaild req" + action);
+            return "error";
+        }      
     }
     
     public String getname()

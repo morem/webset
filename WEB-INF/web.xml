@@ -69,6 +69,6 @@
     	<load-on-startup>100</load-on-startup>
     </servlet>
     <session-config>
-	    <session-timeout>5</session-timeout>
+	    <session-timeout>0</session-timeout>
     </session-config>
 </web-app>

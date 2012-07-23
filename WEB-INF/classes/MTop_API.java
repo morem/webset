@@ -30,7 +30,6 @@ public class MTop_API extends Object
         req.setFields("user_id,nick,seller_credit,avatar");
         try{
             UserGetResponse response = client.execute (req, token);
-            
             usrMUser.id = response.getUser().getUserId().toString();
             usrMUser.nick = response.getUser().getNick();
             usrMUser.avatar = response.getUser().getAvatar();
@@ -55,6 +54,17 @@ public class MTop_API extends Object
                 new MBaseInfo().appSecret());
         
         ShopRemainshowcaseGetRequest req=new ShopRemainshowcaseGetRequest();
+
+        if (id.equals("Guest"))
+        {
+            MUser usr = new MUser();
+            usr.showCaseNum = 40;
+            usr.showCaseUsed= 40;
+            usr.showCaseRemained = 0;
+            usr.showCaseVaild = true;
+            return usr;
+        }
+
         try {
             MUser usr = new MUser();
             logger.debug(new MUserData().GetUserToken(id));
@@ -112,11 +122,16 @@ public class MTop_API extends Object
         }
     }
     
-    public void setItemsCnt(String id, Long num)
+    private void setItemsCnt(String id, Long num)
     {
         logger.debug("set it cnt:" + num);
         new MUserData().SetItemsTotalNum(id, num);
         new MUserData().SetItemTotalNumUpdateTime(id);
+    }
+
+    private List<MItem> getGuestItem()
+    {
+        return null;
     }
     
     public List<MItem> getItems(String id, String title, Long cid, 
@@ -127,6 +142,7 @@ public class MTop_API extends Object
                 new MBaseInfo().appKey(), 
                 new MBaseInfo().appSecret());
         ItemsOnsaleGetRequest req=new ItemsOnsaleGetRequest();
+        Boolean canSetItemCntBoolean = true;
         logger.debug("id:" + id);
         logger.debug("title:" + title);
         logger.debug("cid:" + cid);
@@ -137,54 +153,59 @@ public class MTop_API extends Object
         logger.debug("page_size:" + page_size);
         
         req.setFields("num_iid,title,pic_url,has_showcase");
-        if (title != null)
-        {   
+        if (title != null){   
             logger.debug("set title" + title);
             String t = title;
             req.setQ("112");
+            canSetItemCntBoolean = false;
         }
-        if (cid != -1)
-        {
+        if (cid != -1){
             logger.debug("set cid");
             req.setCid(cid);
+            canSetItemCntBoolean = false;
         }
-        if (seller_cid != null)
-        {
+        if (seller_cid != null){
             logger.debug("set seller_cid");
             req.setSellerCids(seller_cid);
+            canSetItemCntBoolean = false;
         }
-        if (page_no != -1)
-        {
+        if (page_no != -1){
             logger.debug("set page_no");
             req.setPageNo(page_no);
+            canSetItemCntBoolean = false;
         }
-        if (has_showcase == 1)
-        {
+        if (has_showcase == 1){
             logger.debug("set has_showcase true");
             req.setHasShowcase(true);
+            canSetItemCntBoolean = false;
         }else if (has_showcase == 0)
         {
             logger.debug("set has_showcase false");
             req.setHasShowcase(false);
+            canSetItemCntBoolean = false;
         }
-        if (order != null)
-        {
+        if (order != null){
             logger.debug("set order");
             req.setOrderBy(order);
+            canSetItemCntBoolean = false;
         }
-        if (page_size != -1)
-        {
+        if (page_size != -1){
             logger.debug("set page_size");
             req.setPageSize(page_size);
+            canSetItemCntBoolean = false;
         }
         
         String token = new MUserData().GetUserToken(id);
-        if (token == null)
-        {
+        if (token == null){
             logger.error("Can't find the user's token");
             return null;
         }
         Long times = 3L;
+
+        if (id.equals("Guest"))
+            return getGuestItem();
+
+        
         while (true)
         {
             try {
@@ -211,7 +232,7 @@ public class MTop_API extends Object
                     logger.error("not Item found");
                     return listM;
                 }
-                
+
                 logger.error("here");
                 Long totalItem = response.getTotalResults();
                 for (Object obj:list)
@@ -226,7 +247,7 @@ public class MTop_API extends Object
                     itemM.hasShowcase = item.getHasShowcase();
                     listM.add(itemM);
                 }
-                setItemsCnt (id, totalItem);
+                if (canSetItemCntBoolean)setItemsCnt (id, totalItem);
                 return listM;
             }catch (Exception e) {
                 logger.error("Taobao API Call fail" + e);

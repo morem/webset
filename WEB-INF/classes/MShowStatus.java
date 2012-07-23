@@ -38,7 +38,6 @@ public class MShowStatus extends HttpServlet implements MDispatchCallback
         map.put("ip", new MBaseInfo().getServerAddr());
         map.put("run_stop", str);
 
-        MUserManager manager = new MUserManager();
         logger.debug("Start get shop Info");
         MUser usr = new MTop_API().getUserShowNum(id);
         

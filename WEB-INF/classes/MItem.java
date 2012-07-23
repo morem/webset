@@ -6,5 +6,6 @@ public class MItem extends Object
     String num_iid = "";
     String pic_url = "";
     String valid_thru = "";
-    Boolean hasShowcase = true; 
+    Boolean hasShowcase = true;
+    Integer status = 0;    /**0:normal 1:forceShow 2:forbidShow*/
 }

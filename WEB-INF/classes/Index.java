@@ -1,5 +1,7 @@
-import org.apache.log4j.*;
+//import org.apache.log4j.*;
 import freemarker.template.*;
+import freemarker.log.Logger;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import javax.xml.transform.*;
@@ -15,12 +17,17 @@ import com.taobao.api.response.*;
 import com.taobao.api.response.*;
 
 public class Index extends HttpServlet
-{
-    static Logger logger = Logger.getLogger(Index.class.getName());
+{    
+    //static Logger logger = Logger.getLogger(Index.class.getName());
     
     public void doGet (HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException
-    { 
+    {
+        try {
+            Logger.selectLoggerLibrary(Logger.LIBRARY_NONE);
+        } catch (Exception e) {
+        }
+
         PrintWriter out = resp.getWriter();
         //Session处理，判断是否在会话时间内
         HttpSession httpSession = req.getSession();
@@ -34,12 +41,11 @@ public class Index extends HttpServlet
         //得到控制器 . index.html/后面跟的是分支控制器
         String control = req.getPathInfo();
         if (control == null)control = "#";
-        logger.debug("PathInfo:" + req.getPathInfo());
 
         //得到主页模版
-	    Configuration cfg = new Configuration();
+        Configuration cfg = new Configuration();
         cfg.setDirectoryForTemplateLoading (
-        		new File("./template/sand"));
+                    new File("./template/sand"));
         cfg.setObjectWrapper (new DefaultObjectWrapper());
         cfg.setDefaultEncoding("ISO-8859-1");
         Template temp = null;
@@ -49,8 +55,10 @@ public class Index extends HttpServlet
         {
             if (ctype.equals("1"))
                 temp = cfg.getTemplate("index.html");
-            else
+            else if (ctype.equals("0") || ctype.equals("2"))
                 temp = cfg.getTemplate("index2.html");
+            else if (ctype.equals("3"))
+                temp = cfg.getTemplate("index3.html");
         }
         else
             temp = cfg.getTemplate("index.html");
@@ -59,13 +67,13 @@ public class Index extends HttpServlet
         String str = "欢迎"+ visitor_id;
         str = new String(str.getBytes("UTF-8"),"ISO-8859-1");
         root.put("title",str); 
-        logger.debug("Get Header:" + req.getLocalAddr() + req.getLocalPort());
+        //logger.debug("Get Header:" + req.getLocalAddr() + ":" + req.getLocalPort());
         new MBaseInfo().setServerAddr("http://" + req.getLocalAddr() + ":" + req.getLocalPort());
         //基路径
         root.put("ip", "http://" + req.getLocalAddr() + ":" + req.getLocalPort());
         MCompent_Pane c = new MCompent_Pane();
         
-        logger.debug("getRequestURL():" + req.getRequestURL());
+        //logger.debug("getRequestURL():" + req.getRequestURL());
         //进入分支创建子页面
         MDispatch patch= new MDispatch();
         MDispatchParam param = new MDispatchParam();
@@ -74,16 +82,11 @@ public class Index extends HttpServlet
         param.resp = resp;
         String string = patch.Dispatch(control, param);
         root.put("compent1", string);
-        
-        //输出页面
-        MUserManager m = new MUserManager();
-        MUser user = m.GetUserByID(visitor_id);
 
         try {
-            temp.process(root, out);		
+            temp.process(root, out);
             out.flush();
         } catch (Exception e) {
-			// TODO: handle exception
         }
     }
     public void doPost (HttpServletRequest req, HttpServletResponse resp)

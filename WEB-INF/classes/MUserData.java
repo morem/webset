@@ -11,7 +11,6 @@ import org.dom4j.Element;
 import org.dom4j.Node;
 import org.dom4j.Visitor;
 import org.dom4j.VisitorSupport;
-import org.w3c.dom.NodeList;
 
 class MUserData extends Object{
     static Logger logger = Logger.getLogger(MUserData.class.getName());
@@ -40,8 +39,10 @@ class MUserData extends Object{
         Element showcaseElement = userElement.addElement("showcase");
         Element showcaseRunStatusElement = showcaseElement.addElement("runstatus");
         showcaseRunStatusElement.setText("stop");
-        Element itemAdjuestMust = showcaseElement.addElement("adjust_must");
-        Element itemAdjuestNever = showcaseElement.addElement("adjust_never");
+        Element showcaseRunModeElement = showcaseElement.addElement("runstatus");
+        showcaseRunModeElement.setText("all");
+        Element itemAdjuestMust = showcaseElement.addElement("forceShow");
+        Element itemAdjuestNever = showcaseElement.addElement("forbidShow");
         
         try {
             XMLWriter output = new XMLWriter(new FileWriter(file));
@@ -111,36 +112,52 @@ class MUserData extends Object{
         return true;
     }
     
-    private boolean UpdateUserData (String id, String path, List value)
+    private boolean UpdateUserDataList (String id, String path, String item, List<String> value)
     {
         SAXReader xmlReader = new SAXReader();
         Document document = null;
-        List list = null;
+        Element element;
         try {
             document = xmlReader.read(new File(new MBaseInfo().dateBase() + id + ".xml"));
-            list = document.selectNodes(path);
-            if (list == null)return false;                 
+            element = (Element)document.selectSingleNode(path);
+            if (element == null)
+            {
+                logger.error("Can't found the element:" + path + "/" + item);
+                return false;                 
+            }
         } catch (Exception e) {
             logger.error("Write XML File Error " + e);
             return false;
         }
-        for (Object strObj:value)
+        
+        for (String str:value)
         {
-            int i;
-            String str = (String)strObj;
-            for (i = 0; i < list.size(); i ++)
+            Integer i;
+            Boolean add;
+            add = true;
+            List<Node> nodeList = null;
+            nodeList = element.selectNodes(item);
+            logger.debug("check:" + str);
+            if (nodeList != null && nodeList.size() != 0)
             {
-                Node node = (Node)list.get(i);
-                String nodeString = node.getText();
-                if (nodeString == null)continue;
-                if(true == nodeString.equals(str))continue;                
+                for (i = 0; i < nodeList.size(); i ++)
+                {
+                    String nodeString = nodeList.get(i).getText();
+                    if (nodeString == null || nodeString.length() == 0)continue;
+                    if(true == nodeString.equals(str))
+                    {
+                        add = false;
+                        logger.debug("found the same" + str);
+                        break;
+                    }
+                }      
             }
-            if (i == list.size())
+            
+            if (add == true)
             {
-                Node node = (Node)list.get(i);
-                Element element = node.getParent();
-                Element elementId = element.addElement("id");
-                elementId.setText(str);                
+                logger.debug("add a new str:"+str);
+                Element elt = element.addElement(item);
+                elt.setText(str);                
             }
         }
         
@@ -154,6 +171,49 @@ class MUserData extends Object{
         }
         return true;
     }
+
+    private boolean RemoveUserDataList (String id, String path, List<String> value)
+    {
+        SAXReader xmlReader = new SAXReader();
+        Document document = null;
+        List<Node> list = null;
+        try {
+            document = xmlReader.read(new File(new MBaseInfo().dateBase() + id + ".xml"));
+            list = document.selectNodes(path);
+            if (list == null)return false;                 
+        } catch (Exception e) {
+            logger.error("Write XML File Error " + e);
+            return false;
+        }
+        for (String str:value)
+        {
+            int i;
+            logger.debug("search the path have node, text:" + str);
+            for (i = 0; i < list.size(); i ++)
+            {
+                Node node = (Node)list.get(i);
+                String nodeString = node.getText();
+                if (nodeString == null)continue;
+                if(true == nodeString.equals(str))
+                {
+                    logger.debug("remove id:" + nodeString);
+                    Element elmt = node.getParent();
+                    elmt.remove(node);
+                }               
+            }
+        }
+        
+        try {
+            XMLWriter output = new XMLWriter(new FileWriter(new File(new MBaseInfo().dateBase() + id + ".xml")));
+            output.write(document);
+            output.close();
+        } catch (Exception e) {
+            logger.error("Write XML File Error " + e);
+            return false;
+        }
+        return true;
+    }
+
     
     private List GetUserDataList(String id, String path)
     {
@@ -234,8 +294,12 @@ class MUserData extends Object{
     {
         String ms = GetUserData(id, "/user/items/update_time");
         if (ms == null)return 0L;
-        Long timeLong =  Long.valueOf(ms);
-        return timeLong;
+        try {
+            Long timeLong =  Long.valueOf(ms);      
+            return timeLong;
+        } catch (Exception e) {
+            return 0L;
+        }
     }
     
     public boolean SetShowCaseRunStatus(String id, boolean run)
@@ -252,9 +316,80 @@ class MUserData extends Object{
         if (status.equals("run"))return true;
         return false;
     }
-    public boolean SetShowCaseAdjustMust(List list)
+    public boolean SetForceShow(String id, List<String> list)
     {
-        
+        if (list.isEmpty())
+        {
+            logger.error("Found a empty list, so no action");
+            return true;
+        }
+        UpdateUserDataList (id, "/user/showcase/forceShow", "id", list);
+        RemoveUserDataList (id, "/user/showcase/forbidShow/id", list);
         return true;
     }
+    
+    public boolean SetForbidShow(String id, List<String> list)
+    {
+        if (list.isEmpty())
+        {
+            logger.error("Found a empty list, so no action");
+            return true;
+        }
+        UpdateUserDataList (id, "/user/showcase/forbidShow", "id", list);
+        RemoveUserDataList (id, "/user/showcase/forceShow/id", list);
+        return true;
+    }
+    public boolean SetNormalShow(String id, List<String> list)
+    {
+        if (list.isEmpty())
+        {
+            logger.error("Found a empty list, so no action");
+            return true;
+        }
+        RemoveUserDataList (id, "/user/showcase/forbidShow/id", list);
+        RemoveUserDataList (id, "/user/showcase/forceShow/id", list);
+        return true;
+    }
+    
+    public List<MItem> GetItemStatus(String id, List<MItem> listItem)
+    {
+        SAXReader xmlReader = new SAXReader();
+        Document document = null;
+        List<Node> forceShowList,forbidShowList;
+        List<MItem> list = new ArrayList<MItem>();
+        try {
+            document = xmlReader.read(new File(new MBaseInfo().dateBase() + id + ".xml"));
+            forceShowList = document.selectNodes("/user/showcase/forceShow/id");
+            forbidShowList = document.selectNodes("/user/showcase/forbidShow/id");
+        } catch (Exception e) {
+            logger.error("Read User Data Error" + e);
+            return null;
+        }
+        
+        Integer totalItem = listItem.size();
+        MItem item;
+        Boolean addBoolean;
+        for (Integer i = 0 ; i < totalItem; i ++){
+            item = listItem.get(i);
+            addBoolean = false;
+            item.status = 0;
+            for (Node node : forceShowList) {
+                if (item.num_iid.equals(node.getText())){
+                    item.status = 1;
+                    break;
+                }
+            }
+            if (addBoolean == false)
+            {
+                for (Node node: forbidShowList){
+                    if (item.num_iid.equals(node.getText())){
+                        item.status = 2;
+                        break;
+                    }
+                }
+            }
+            list.add(item);
+        }       
+        return list;
+    }    
 }
