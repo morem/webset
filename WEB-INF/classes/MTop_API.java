@@ -273,6 +273,29 @@ public class MTop_API extends Object
     
     public List<SellerCat> GetTheUserCats(String id)
     {
+        if (id.equals("Guest"))
+        {
+            List<SellerCat> list = new ArrayList();
+            for (Long i = 0L ; i < 10L; i ++)
+            {
+                SellerCat cat = new SellerCat();
+                cat.setCid(1000L + i*100L);
+                cat.setParentCid(0L);
+                cat.setName("Father Item " + (1000L + i*100L));
+                list.add(cat);
+                if (i == 3L)continue;
+                for (Long n = 0L; n < 6L; n ++)
+                {
+                    SellerCat catSon = new SellerCat();
+                    catSon.setCid(2000L + i*100L + n);
+                    catSon.setParentCid(1000L + i*100L);
+                    catSon.setName("Son Item " + (2000L + i*100L + n));
+                    list.add(catSon);
+                }
+            }
+            return list;
+        }
+        
         TaobaoClient client=new DefaultTaobaoClient(new MBaseInfo().url(), 
                 new MBaseInfo().appKey(), 
                 new MBaseInfo().appSecret());
@@ -286,7 +309,9 @@ public class MTop_API extends Object
                 logger.error("Get Sellercats Error");
                 return null;
             }
-            return response.getSellerCats();
+            
+            List<SellerCat> selerrCat = response.getSellerCats();
+            return selerrCat;
         } catch (Exception e) {
             logger.error("Get User Cata error:" + e);
             return null;

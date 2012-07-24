@@ -32,8 +32,8 @@ li{list-style:none;}
 </style>
 
 <div class="config" id="id_show_config">
-	<!--<div class="config_search">
-	<#include "config_introduct.html">-->
+	<div class="config_search">
+	<#include "config_introduct.html">
 	<#include "config_content.html">
 	</div>
 	<div class="config_items_content config_items_font" id="id_config_items_content" title="Basic modal dialog">
@@ -265,6 +265,96 @@ $(document).ready(function(){
 		});
 	})
 
+	$("#id_cats_adjuest").livequery("click",function(){
+		var $to = $(this).attr("title");
+		var _self = this;
+		$to = "${ip}/" + $to + "&ct=2"
+		$("#runing").dialog('open');
+		
+		$("#id_cats_window_content").load($to,function(){
+		    
+		    $("#id_cats_window").dialog({
+			    height: 500,
+		        width: 800,
+		        draggable:true,
+		        resizable:true,
+                modal: true,
+                title: "选择要调整的类目"      
+		        });
+		    
+		    
+		    $("#id_cats_window_content > ul").attr("id", "id_cats_window_tree");
+		    		    
+    		$("#id_cats_window_tree").treeview({
+				collapsed: true,
+				animated: "fast",
+				control:"#id_cats_nav",
+				
+			});
+
+		    $("#runing").dialog('close');
+		});
+	})
+
+	$("#id_cats_window input").livequery("change",function(){
+		var $id = $(this).attr("id");
+		console.log("click id:" + $id + "--:" + "#" + $id + " input");
+		if ($(this).attr("checked") == "checked")
+			$("#config_cats_cat_" + $id + " input").attr("checked", true);
+		else
+		{
+			$("#config_cats_cat_" + $id + " input").attr("checked", false);
+			$pid = $(this).parent().parent().parents().attr("id");
+			$("#" + $pid + " > input").attr("checked", false);
+		}	
+	});
+	
+	$("#id_cats_nav_select_all").livequery("click",function(){
+		$("#id_cats_window :checkbox").attr("checked",true);
+	})
+	
+	$("#id_cats_nav_select_none").livequery("click",function(){
+		$("#id_cats_window :checkbox").attr("checked",false);
+	})
+
+	$("#id_cats_nav_select_reverse").livequery("click",function(){
+		$("#id_cats_window :checkbox").each(function(){
+	       if ($(this).attr("checked") == "checked")
+	           $(this).attr("checked",false);
+	       else
+	           $(this).attr("checked",true); 				
+		});
+	})
+	
+	$("#id_cats_nav_sure").livequery("click",function(){
+		var $val = "";
+		var $to = $(this).attr("href");
+		var _self = this;
+		$to = "${ip}/" + $to + "&ct=2"
+		$("#runing").dialog('open');
+		
+		$("#id_cats_window :checkbox").each(function(){
+			if ($(this).attr("checked") == "checked")
+				$val = $val + $(this).attr("id") + ":"
+		})
+		$to = $to + "&id="+$val;
+		$("#runing").dialog('open'); 
+
+	        $.get($to, function(data, textStatus){
+	            console.log("data:" + data + "   textStatus:" + textStatus);
+	                if (textStatus == "success")
+	                {
+	                    if (data == "catsShow")
+	                    {
+						    $("#runing").dialog('close');
+						    return;
+	                    }                     
+	                }
+	            })
+	    
+	});
+
+	
 	$("#select_show_never").livequery("click",function(){
 		var $to = $(this).attr("title");
 		var _self = this;

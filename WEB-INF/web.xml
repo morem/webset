@@ -64,6 +64,11 @@
     	<load-on-startup>6</load-on-startup>
     </servlet>
     <servlet>
+    	<servlet-name>MPublicInfo</servlet-name>
+    	<servlet-class>MPublicInfo</servlet-class>
+    	<load-on-startup>7</load-on-startup>
+    </servlet>
+    <servlet>
     	<servlet-name>MShowIndex</servlet-name>
     	<servlet-class>MShowIndex</servlet-class>
     	<load-on-startup>100</load-on-startup>

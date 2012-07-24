@@ -43,7 +43,7 @@ class MUserData extends Object{
         showcaseRunModeElement.setText("all");
         Element itemAdjuestMust = showcaseElement.addElement("forceShow");
         Element itemAdjuestNever = showcaseElement.addElement("forbidShow");
-        
+        Element catsAdjuest = showcaseElement.addElement("catsShow");
         try {
             XMLWriter output = new XMLWriter(new FileWriter(file));
             output.write(document);
@@ -214,21 +214,50 @@ class MUserData extends Object{
         return true;
     }
 
+    private boolean EmptyUserDataList (String id, String path)
+    {
+        SAXReader xmlReader = new SAXReader();
+        Document document = null;
+        List<Node> list = null;
+        try {
+            document = xmlReader.read(new File(new MBaseInfo().dateBase() + id + ".xml"));
+            list = document.selectNodes(path);
+            if (list == null)return false;                 
+        } catch (Exception e) {
+            logger.error("Write XML File Error " + e);
+            return false;
+        }
+        
+        for (Integer i = 0; i < list.size(); i ++)
+        {
+            Node node = (Node)list.get(i);
+            Element elmt = node.getParent();
+            elmt.remove(node);
+        }
+
+        try {
+            XMLWriter output = new XMLWriter(new FileWriter(new File(new MBaseInfo().dateBase() + id + ".xml")));
+            output.write(document);
+            output.close();
+        } catch (Exception e) {
+            logger.error("Write XML File Error " + e);
+            return false;
+        }
+        return true;
+    }
+
     
-    private List GetUserDataList(String id, String path)
+    private List<String> GetUserDataList(String id, String path)
     {
         SAXReader xmlReader = new SAXReader();
         Document document = null;
         List<String> strList = new ArrayList<String>();
         try {
             document = xmlReader.read(new File(new MBaseInfo().dateBase() + id + ".xml"));
-            List nodeList = document.selectNodes(path);
+            List<Node> nodeList = document.selectNodes(path);
             if (nodeList == null)return null;
-            for (Object obj:nodeList)
-            {
-                Node node = (Node)obj;
+            for (Node node:nodeList)
                 strList.add(node.getText());
-            }
             return strList;
         } catch (Exception e) {
             logger.error("Read User Data Error" + e);
@@ -339,6 +368,7 @@ class MUserData extends Object{
         RemoveUserDataList (id, "/user/showcase/forceShow/id", list);
         return true;
     }
+
     public boolean SetNormalShow(String id, List<String> list)
     {
         if (list.isEmpty())
@@ -348,6 +378,16 @@ class MUserData extends Object{
         }
         RemoveUserDataList (id, "/user/showcase/forbidShow/id", list);
         RemoveUserDataList (id, "/user/showcase/forceShow/id", list);
+        return true;
+    }
+    
+    public boolean SetCatsShow(String id, List<String> list)
+    {
+        EmptyUserDataList (id, "/user/showcase/catsShow/cid");
+        if (false == list.isEmpty())
+        {
+            UpdateUserDataList (id, "/user/showcase/catsShow", "cid", list);
+        }
         return true;
     }
     
@@ -391,5 +431,10 @@ class MUserData extends Object{
             list.add(item);
         }       
         return list;
-    }    
+    }
+
+    public List<String> GetCatsListShow(String id)
+    {
+        return GetUserDataList(id, "/user/showcase/catsShow/cid");
+    }
 }

@@ -30,13 +30,13 @@ public class MShowDataManager extends HttpServlet implements MDispatchCallback
         if (action == null)
         {
             logger.error("get action error");
-            return null;
+            return "error";
         }
         String id = param.req.getParameter("id");
         if (id == null)
         {
             logger.error("no id param");
-            return null;
+            return "error";
         }
         String idList[] = id.split(":");
         List<String> list = new ArrayList<String>();
@@ -64,6 +64,12 @@ public class MShowDataManager extends HttpServlet implements MDispatchCallback
             logger.debug("normalShow");
             new MUserData().SetNormalShow(param.id, list);
             return "success_normal"; 
+        }
+        else if (action.equals("catsShow"))
+        {
+            logger.debug("catsShow");
+            new MUserData().SetCatsShow(param.id, list);
+            return "catsShow"; 
         }
         else
         {
