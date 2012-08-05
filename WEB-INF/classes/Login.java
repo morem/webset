@@ -7,8 +7,10 @@ import java.lang.*;
 import java.io.*;
 import java.util.*;
 import org.apache.log4j.*;
+import net.sf.json.*;
 
-
+//http://my.open.taobao.com/auth/authorize.htm?appkey=21040246
+//http://container.api.taobao.com/container?appkey=21040246
 public class Login extends HttpServlet
 {
     static Logger logger = Logger.getLogger(Login.class.getName());
@@ -25,16 +27,21 @@ public class Login extends HttpServlet
         }
         
         HttpSession httpSession = req.getSession();
-        //if (true == httpSession.isNew())
-        {
-            out.println("It's a New Session:"+ "New");
-            Map map = top.convertBase64StringtoMap(req, "utf-8"); 
-            String visitor_id = (String)map.get("visitor_id");
-            String visitor_nick = (String)map.get("visitor_nick");
-            httpSession.setAttribute("visitor_id", visitor_id);
-            MUserData userXMLData = new MUserData();
-            userXMLData.CreateUser(visitor_id, visitor_nick,(String)map.get("refresh_token"));
-        }
+        out.println("It's a New Session:"+ "New");
+        Map map = top.convertBase64StringtoMap(req, null); 
+        String visitor_id = (String)map.get("visitor_id");
+        String visitor_nick = (String)map.get("visitor_nick");
+        logger.debug("visitor_nick:" + visitor_nick);
+        httpSession.setAttribute("visitor_id", visitor_id);
+        MUserData userXMLData = new MUserData();
+        userXMLData.CreateUser(visitor_id, visitor_nick,(String)map.get("refresh_token"));
+
+        logger.debug (map.toString());
+
+
+        new MTop_API().UserNotifyPermit (visitor_id);
+
+        
         resp.sendRedirect("/index.html?ct=1");
     }
 }

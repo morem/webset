@@ -85,8 +85,8 @@ q{}
 			<li class="status_switch1">
 			当前正在处于<h3 style="display:inline;"><#if run_stop = "stop">停止</#if><#if run_stop = "run">运行</#if></h3>状态!
 			</li>
-			<#if run_stop = "stop"><li class="status_switch2" title="/index.html/showstatus/run"></#if>
-			<#if run_stop = "run"><li class="status_switch2" title="/index.html/showstatus/stop"></#if>
+			<#if run_stop = "stop"><li class="status_switch2" href="/index.html/showstatus/run"></#if>
+			<#if run_stop = "run"><li class="status_switch2" href="/index.html/showstatus/stop"></#if>
 			<#if run_stop = "stop">点我启动</#if>
 			<#if run_stop = "run">点我停止</#if>运行</li>
 		</div>
@@ -111,7 +111,7 @@ q{}
 <script type="text/javascript">
 jQuery(document).ready(function(){
 	$(".status_switch2").bind("click",function(){
-		var $to = $(this).attr("title");
+		var $to = $(this).attr("href");
 		$to = "${ip}/" + $to + "?ct=0"
 		console.log( $to);
 		$("#runing").dialog("open");

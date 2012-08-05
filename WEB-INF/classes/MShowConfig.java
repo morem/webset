@@ -120,7 +120,9 @@ public class MShowConfig extends HttpServlet implements MDispatchCallback
         List list = getAllCats(param.id);
         if (list != null)
             map.put("cats", list);
-        List<Map> listMap; 
+
+        map.put ("mode", new MUserData().GetShowCaseMode(param.id));
+
         logger.debug("ip:" + new MBaseInfo().getServerAddr());
         return mc.GetModel("./template/sand/show/config.html", map);
     }

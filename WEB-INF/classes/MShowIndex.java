@@ -7,7 +7,7 @@ public class MShowIndex extends HttpServlet implements MDispatchCallback
 {
     static boolean bInit = false;
     private String className = "showindex";
-    static Logger logger = Logger.getLogger(MShowStatus.class.getName());
+    static Logger logger = Logger.getLogger(MShowIndex.class.getName());
     public void init()
     {
         if (bInit == true)return;

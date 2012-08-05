@@ -22,6 +22,15 @@ public class MShowDataManager extends HttpServlet implements MDispatchCallback
         MDispatch p = new MDispatch();
         p.RegistObject (obj);        
     }
+
+    private String saveMode (MDispatchParam param)
+    {
+        String mode = param.req.getParameter("mode");
+        if (mode == null)mode = "all";
+        logger.info ("the mode is " + mode);
+        new MUserData().SetShowCaseMode (param.id, mode);
+        return "success";
+    }  
     
     public String load(MDispatchParam param)
     {
@@ -32,6 +41,13 @@ public class MShowDataManager extends HttpServlet implements MDispatchCallback
             logger.error("get action error");
             return "error";
         }
+
+        if (action.equals("savemode"))
+        {
+            logger.info ("the action is save mode");
+            return saveMode (param);
+        }
+        
         String id = param.req.getParameter("id");
         if (id == null)
         {

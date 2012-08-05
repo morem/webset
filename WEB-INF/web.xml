@@ -69,6 +69,21 @@
     	<load-on-startup>7</load-on-startup>
     </servlet>
     <servlet>
+    	<servlet-name>MMessageListener</servlet-name>
+    	<servlet-class>MMessageListener</servlet-class>
+    	<load-on-startup>8</load-on-startup>
+    </servlet>
+    <servlet>
+    	<servlet-name>MShowCaseEvent</servlet-name>
+    	<servlet-class>MShowCaseEvent</servlet-class>
+    	<load-on-startup>9</load-on-startup>
+    </servlet>
+    <servlet>
+    	<servlet-name>MProcessEvent</servlet-name>
+    	<servlet-class>MProcessEvent</servlet-class>
+    	<load-on-startup>10</load-on-startup>
+    </servlet>
+    <servlet>
     	<servlet-name>MShowIndex</servlet-name>
     	<servlet-class>MShowIndex</servlet-class>
     	<load-on-startup>100</load-on-startup>

@@ -12,6 +12,7 @@ public class Log4jInit extends HttpServlet {
           } 
      	Logger logger = Logger.getLogger(Log4jInit.class.getName());
     	logger.debug("Log Start Now............");
+        
      }
 
 }

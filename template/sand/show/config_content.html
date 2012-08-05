@@ -24,15 +24,19 @@
 
 .config_set
 {
+    height:100px;
 	padding: 10px 0 10px 10px;
 	margin: 0 0 0 0;
 	border-bottom:1px #cccccc solid;
 }
 
-.config_set form div
+.config_set > div
 {
-		
+    float:left;
 }
+
+#config_set_left{width:350px;}
+#config_set_right{width:400px;height;auto;padding:0px 10px 10px 10px; border-left:1px #cccccc solid;}
 
 .config_set form li
 {
@@ -42,25 +46,34 @@
 #id_cats_window_content{height:410px;overflow-y:scroll;}
 #id_cats_nav li{float:left;margin:3px 10px 3px 10px;padding:2px 5px 2px 5px;border:1px #cccccc solid;}
 #id_cats_nav li:hover{background:#4281B7;}
+
+#showcase_config_adjust_mothod_select {width:90px; height:23px;border:1px solid #cccccc;margin:10px 0 10px 0;text-align:center;}
+#showcase_config_adjust_mothod_select:hover{background:#4281B7;}
+
 </style>
 
 <div class="config_content">
 	<div class ="config_cur_status">
-		<div>当前的策略:全部调整</div>
+		<div>当前的策略:
+		    <#if mode??><#if mode = "all">调整所有宝贝</#if></#if>
+		    <#if mode??><#if mode = "cats">调整指定类目宝贝</#if></#if>
+		    <#if mode??><#if mode = "config">推荐指定的宝贝</#if></#if></div>
+		<#if mode??><#if mode = "config-">
 		<div>始终不推荐的宝贝 (10),<a>查看</a></div>
 		<div>始终推荐的宝贝 (2),<a>查看</a></div>
+		</#if></#if>
 	</div>
 	
 	<div class="ym-fbox-check config_set">
-		<form>
-    		<div>
-    		    <input type="radio" name="adjust" value="all" checked="checked"/>
-    		    <label for="all-adjust">所有宝贝</label>
-    		</div>
-    		<div>
-    		    <input type="radio" name="adjust" value="cats" />
-    		    <label for="by-cats" id="id_cats_adjuest" title="index.html/public?action=getcats_bytemp&template=./template/sand/show/config_cats.html"><a>按类目调整</a></label>
-    		</div>
+		<div id="config_set_left">
+    		<li id="showcase_config_all">
+    		    <input type="radio" name="adjust" value="all" <#if mode??><#if mode = "all">checked="checked"</#if></#if>/>
+    		    <label for="all-adjust"><a>推荐所有宝贝</a></label>
+    		</li>
+    		<li id="showcase_config_cats">
+    		    <input type="radio" name="adjust" value="cats" <#if mode??><#if mode = "cats">checked="checked"</#if></#if>/>
+    		    <label for="by-cats" id="id_cats_adjuest" href="${ip}/index.html/public?action=getcats_bytemp&template=./template/sand/show/config_cats.html"><a>推荐指定类目宝贝(点击设置)</a></label>
+    		</li>
     		<div id="id_cats_window" style="display:none">
     			<div id="id_cats_window_content"></div>
     			<div id="id_cats_nav">
@@ -70,18 +83,19 @@
     				<li id="id_cats_nav_select_all"><a>全选</a></li>	
     				<li id="id_cats_nav_select_reverse"><a>反选</a></li>	
     				<li id="id_cats_nav_select_none"><a>全不选</a></li>	
-    				<li id="id_cats_nav_sure" href="index.html/showdatamanager?action=catsShow"><a>确认完成设定</a></li>	
+    				<li id="id_cats_nav_sure" href="${ip}/index.html/showdatamanager?action=catsShow"><a>确认完成设定</a></li>	
     			</div>	
     		</div>
-    		<div>
-    		    <input type="radio" name="adjust" value="keywords"/>
-    		    <label for="by-select">按关键字推荐</label>
-    		</div>
-    		<div>
-    		    <input type="radio" name="adjust" value="config"/>
-    		    <label id="select_show_forever" title="index.html/showconfigitemmanager?action=select_forever"><a>配制推荐的宝贝</a></label>
-    		</div>
-		</form>
+    		<li id="showcase_config_set">
+    		    <input type="radio" name="adjust" value="config" <#if mode??><#if mode = "config">checked="checked"</#if></#if>/>
+    		    <label id="select_show_forever" href="${ip}/index.html/showconfigitemmanager?action=select_forever"><a>卖家自定义推荐(点我设置)</a></label>
+    		</li>
+    		<li id="showcase_config_adjust_mothod_select" href="${ip}/index.html/showdatamanager?action=savemode"><a>点我保设置</a></li>
+		</div>
+		<div id="config_set_right">
+		    <p id="showcase_config_all_intd" <#if mode??><#if mode != "all">style="display:none;"</#if></#if>>卖家在售商品将全部参与推荐。一旦卖家橱窗位出现空缺，系统就会选取一个最快下架的宝贝放入新空缺出来的橱窗位</p>
+		    <p id="showcase_config_cats_intd" <#if mode??><#if mode != "cats">style="display:none;"</#if></#if>>卖家指定店铺类目进行推荐。一旦卖家橱窗位出现空缺，系统就会选取一个最快下架，并且在卖家指定类目中的商品放入新空缺出来的橱窗位</p>
+		    <p id="showcase_config_set_intd" <#if mode??><#if mode != "config">style="display:none;"</#if></#if>>卖家可以推荐始终推荐与始终不推荐的宝贝。始终推荐将永久占用橱窗位，一但下架，立即再次放入橱窗位。不推荐的宝贝将使终不会被放入橱窗位</p>
+	    </div>
 	</div>
 </div>
-

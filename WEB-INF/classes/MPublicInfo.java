@@ -210,7 +210,7 @@ public class MPublicInfo extends HttpServlet implements MDispatchCallback
             Map map = getAllCatsTemplate(param.id);
             return mc.GetModel(model, map);
         }
-       
+
         
         
         

@@ -39,7 +39,7 @@ class MUserData extends Object{
         Element showcaseElement = userElement.addElement("showcase");
         Element showcaseRunStatusElement = showcaseElement.addElement("runstatus");
         showcaseRunStatusElement.setText("stop");
-        Element showcaseRunModeElement = showcaseElement.addElement("runstatus");
+        Element showcaseRunModeElement = showcaseElement.addElement("runmode");
         showcaseRunModeElement.setText("all");
         Element itemAdjuestMust = showcaseElement.addElement("forceShow");
         Element itemAdjuestNever = showcaseElement.addElement("forbidShow");
@@ -345,6 +345,17 @@ class MUserData extends Object{
         if (status.equals("run"))return true;
         return false;
     }
+
+    public boolean SetShowCaseMode(String id, String value)
+    {
+        return UpdateUserData(id, "/user/showcase/runmode", value);
+    }
+
+    public String GetShowCaseMode(String id)
+    {
+        return GetUserData(id, "/user/showcase/runmode");
+    }
+
     public boolean SetForceShow(String id, List<String> list)
     {
         if (list.isEmpty())
@@ -355,6 +366,11 @@ class MUserData extends Object{
         UpdateUserDataList (id, "/user/showcase/forceShow", "id", list);
         RemoveUserDataList (id, "/user/showcase/forbidShow/id", list);
         return true;
+    }
+
+    public List<String> GetForceShow (String id)
+    {
+        return GetUserDataList(id, "/user/showcase/forceShow/id");
     }
     
     public boolean SetForbidShow(String id, List<String> list)
@@ -368,7 +384,12 @@ class MUserData extends Object{
         RemoveUserDataList (id, "/user/showcase/forceShow/id", list);
         return true;
     }
-
+    
+    public List<String> GetForbidShow (String id)
+    {
+        return GetUserDataList(id, "/user/showcase/forbidShow/id");
+    }
+    
     public boolean SetNormalShow(String id, List<String> list)
     {
         if (list.isEmpty())

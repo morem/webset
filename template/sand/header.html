@@ -85,9 +85,9 @@
 		<ul id="menus" class="menus">
 			<li class="cat-item cat-item-40 "><a href="javascript:void(0);" title="">自动橱窗</a>
 				<ul class="children" style="display: none; ">
-					<li class="cat-item cat-item-41" title="index.html"><a href="javascript:void(0);" >橱窗首页</a></li>
-					<li class="cat-item cat-item-42" title="index.html/showstatus"><a href="javascript:void(0);" >运行状态</a></li>
-					<li class="cat-item cat-item-43" title="index.html/showconfig"><a href="javascript:void(0);" >橱窗配置</a></li>
+					<li class="cat-item cat-item-41" href="index.html"><a href="javascript:void(0);" >橱窗首页</a></li>
+					<li class="cat-item cat-item-42" href="index.html/showstatus"><a href="javascript:void(0);" >运行状态</a></li>
+					<li class="cat-item cat-item-43" href="index.html/showconfig" id="id_menu_showcase"><a href="javascript:void(0);" >橱窗配置</a></li>
 					<li class="cat-item cat-item-44"><a href="javascript:void(0);" title="">计划任务</a></li>
 				</ul>
 			</li>
@@ -157,7 +157,7 @@ jQuery(document).ready(function(){
 	});
 	
 	$("nav ul li ul li").bind("click",function(){
-		var $to = $(this).attr("title");
+		var $to = $(this).attr("href");
 		var _self = this;
 		$to = "${ip}/" + $to + "?ct=0"
 		$("#runing").dialog('open');

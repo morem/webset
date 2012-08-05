@@ -1,5 +1,6 @@
 import java.util.*;
-
+import java.io.*;
+import java.lang.*;
 import javax.swing.ListModel;
 import javax.xml.ws.Response;
 import java.net.*;
@@ -156,7 +157,7 @@ public class MTop_API extends Object
         if (title != null){   
             logger.debug("set title" + title);
             String t = title;
-            req.setQ("112");
+            req.setQ(t);
             canSetItemCntBoolean = false;
         }
         if (cid != -1){
@@ -318,4 +319,166 @@ public class MTop_API extends Object
         }
         
     }
+
+    public Boolean UserNotifyPermit(String id)
+    {
+
+        TaobaoClient client=new DefaultTaobaoClient (new MBaseInfo().url(), 
+                                                     new MBaseInfo().appKey(),
+                                                     new MBaseInfo().appSecret());
+        
+        IncrementCustomerPermitRequest permitReq = new IncrementCustomerPermitRequest();
+        permitReq.setType("get,notify");
+        permitReq.setTopics("trade;refund;item");
+        permitReq.setStatus("all;all;all");
+        
+        String token = new MUserData().GetUserToken(id);
+        if (token == null){
+            logger.error("Can't find the user's token");
+            return false;
+        }
+
+        try {
+            IncrementCustomerPermitResponse permitResp = client.execute(permitReq, token);
+            if(permitResp.isSuccess()){
+                logger.debug("IncrementCustomerPermitResponse success");
+            }else{
+                logger.error("IncrementCustomerPermitResponse error:" + permitResp.getBody());
+            }
+        } catch (ApiException e) {
+            logger.error (e);
+            return true;
+        }
+        return true;
+    }
+
+    public List<MItem> getItemsInfo (String id, List<String> itemIDList, 
+                                     String field)
+    {
+        int page = (itemIDList.size() + 20 - 1)/20;
+        if (field == null) field = "num_iid,title,nick,pric,has_showcase";
+        
+        String token = new MUserData().GetUserToken(id);
+        if (token == null){
+            logger.error("Can't find the user's token");
+            return null;
+        }
+        List<MItem> itemList = new ArrayList<MItem>();
+
+        for (int i = 0 ; i < page; i ++)
+        {
+            String itemIDs ;
+            itemIDs = "";
+            for (String l:itemIDList)
+                itemIDs += (l + ",");
+
+            try {
+                TaobaoClient client=new DefaultTaobaoClient (new MBaseInfo().url(), 
+                                                             new MBaseInfo().appKey(),
+                                                             new MBaseInfo().appSecret());
+
+                ItemsListGetRequest req=new ItemsListGetRequest();
+                req.setFields(field);
+                req.setNumIids(itemIDs);
+                ItemsListGetResponse response = client.execute(req, token);
+                List<Item> list;
+                list = response.getItems();
+                for (Item l:list)
+                {
+                    MItem k = new MItem();
+                    k.title = l.getTitle();
+                    k.num_iid = l.getNumIid().toString();
+                    k.pic_url = l.getPicUrl();
+                    k.hasShowcase = l.getHasShowcase();
+                    itemList.add (k);
+                }
+                return itemList;
+            }catch (Exception e){
+                logger.error (e);
+                continue;
+            }
+        }
+        return null;
+    }
+
+    public List<MItem> getLeastForShow (String id, long num)
+    {
+        List <MItem> items = new ArrayList<MItem>();
+        List <MItem> itemsTemp = new ArrayList<MItem>();
+        List<String> cats = new MUserData().GetCatsListShow(id);
+        List<String> forceShow = new MUserData().GetForceShow(id);
+        List<String> forbidShow = new MUserData().GetForbidShow(id);
+        int page = 0;
+
+        String seller_cid = null;
+        if (cats != null)
+        {
+            for (String cat:cats)
+                seller_cid += cat;
+        }
+        
+        logger.debug ("Seller_cid:" + seller_cid);
+
+        List<MItem> forceShowItemStatus = new ArrayList<MItem>();
+        forceShowItemStatus = getItemsInfo (id, forceShow, null);
+        for (MItem m:forceShowItemStatus)
+            if (m.hasShowcase == false)
+                if (num -- != 0)items.add (m);
+                else return items;
+        
+        page = 0;
+        while (true){
+                logger.debug (".");
+            try{
+                itemsTemp = getItems(id, null, -1L, seller_cid, new Long(page), 0L, "delist_time:asc", 200L);
+                page ++;
+                for (MItem m:itemsTemp)
+                    if (forbidShow.contains(m.num_iid))
+                        continue;
+                    else
+                        if (num -- != 0)items.add (m);
+                        else{
+                            logger.debug("out");
+                            return items;
+                            }
+                if (itemsTemp.get(0).total_num % 200 == 0 && page == itemsTemp.get(0).total_num/20 ){
+                    logger.debug("out");
+                    return items;
+                    }
+                else if (itemsTemp.size() < 20){
+                    logger.debug("out");
+                    return items;
+                    }
+            }catch (Exception e){
+                logger.error ("a error occur"+e);
+                logger.debug("out");
+                return items;
+            }
+        }
+    }
+
+    public Boolean setItemtoShowCase (String id, String num_iid)
+    {
+        String token = new MUserData().GetUserToken(id);
+        if (token == null){
+            logger.error("Can't find the user's token");
+            return false;
+        }
+        try{
+            TaobaoClient client=new DefaultTaobaoClient (new MBaseInfo().url(), 
+                                                         new MBaseInfo().appKey(),
+                                                         new MBaseInfo().appSecret());
+
+            ItemRecommendAddRequest req=new ItemRecommendAddRequest();
+            req.setNumIid(Long.valueOf(num_iid));
+            ItemRecommendAddResponse response = client.execute(req , token);
+            return true;
+        }catch (Exception e){
+            logger.error (e);
+            return false;
+        }
+    }
 }
+
+
+
