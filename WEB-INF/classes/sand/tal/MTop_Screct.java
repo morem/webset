@@ -1,3 +1,8 @@
+package sand.tal;
+
+import sand.*;
+import sand.message.*;
+
 import java.io.*;
 import java.net.URLDecoder;
 import java.util.*;
@@ -12,7 +17,7 @@ import javax.servlet.http.*;
 
 import org.apache.log4j.*;
 
-class MTop_Screct{
+public class MTop_Screct{
     
     static Logger logger = Logger.getLogger(MTop_Screct.class.getName());
 	  /**

@@ -7,7 +7,7 @@
   metadata-complete="true">
     <servlet>
         <servlet-name>Index</servlet-name>
-        <servlet-class>Index</servlet-class>
+        <servlet-class>sand.Index</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Index</servlet-name>
@@ -15,7 +15,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>Login</servlet-name>
-        <servlet-class>Login</servlet-class>
+        <servlet-class>sand.Login</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
@@ -23,70 +23,16 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>Regist</servlet-name>
-        <servlet-class>Regist</servlet-class>
+        <servlet-class>sand.Regist</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>Regist</servlet-name>
         <url-pattern>/regist</url-pattern>
     </servlet-mapping>
     <servlet>
-    	<servlet-name>log4j-init</servlet-name>
-    	<servlet-class>Log4jInit</servlet-class>
-    	<init-param>
-    		<param-name>log4j</param-name>
-    		<param-value>WEB-INF/log4j.properties</param-value>
-    	</init-param>
+    	<servlet-name>init</servlet-name>
+    	<servlet-class>sand.Init</servlet-class>
     	<load-on-startup>1</load-on-startup>
-    </servlet>
-    <servlet>
-    	<servlet-name>MDispatch</servlet-name>
-    	<servlet-class>MDispatch</servlet-class>
-    	<load-on-startup>2</load-on-startup>
-    </servlet>
-    <servlet>
-    	<servlet-name>MShowStatus</servlet-name>
-    	<servlet-class>MShowStatus</servlet-class>
-    	<load-on-startup>3</load-on-startup>
-    </servlet>
-    <servlet>
-    	<servlet-name>MShowConfig</servlet-name>
-    	<servlet-class>MShowConfig</servlet-class>
-    	<load-on-startup>4</load-on-startup>
-    </servlet>
-    <servlet>
-    	<servlet-name>MShowConfigItemManager</servlet-name>
-    	<servlet-class>MShowConfigItemManager</servlet-class>
-    	<load-on-startup>5</load-on-startup>
-    </servlet>
-    <servlet>
-    	<servlet-name>MShowDataManager</servlet-name>
-    	<servlet-class>MShowDataManager</servlet-class>
-    	<load-on-startup>6</load-on-startup>
-    </servlet>
-    <servlet>
-    	<servlet-name>MPublicInfo</servlet-name>
-    	<servlet-class>MPublicInfo</servlet-class>
-    	<load-on-startup>7</load-on-startup>
-    </servlet>
-    <servlet>
-    	<servlet-name>MMessageListener</servlet-name>
-    	<servlet-class>MMessageListener</servlet-class>
-    	<load-on-startup>8</load-on-startup>
-    </servlet>
-    <servlet>
-    	<servlet-name>MShowCaseEvent</servlet-name>
-    	<servlet-class>MShowCaseEvent</servlet-class>
-    	<load-on-startup>9</load-on-startup>
-    </servlet>
-    <servlet>
-    	<servlet-name>MProcessEvent</servlet-name>
-    	<servlet-class>MProcessEvent</servlet-class>
-    	<load-on-startup>10</load-on-startup>
-    </servlet>
-    <servlet>
-    	<servlet-name>MShowIndex</servlet-name>
-    	<servlet-class>MShowIndex</servlet-class>
-    	<load-on-startup>100</load-on-startup>
     </servlet>
     <session-config>
 	    <session-timeout>0</session-timeout>

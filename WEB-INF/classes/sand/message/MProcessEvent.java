@@ -1,3 +1,9 @@
+package sand.message;
+
+import sand.*;
+import sand.tal.*;
+import sand.show.*;
+
 import java.util.*;
 import java.io.*;
 import javax.servlet.ServletException;

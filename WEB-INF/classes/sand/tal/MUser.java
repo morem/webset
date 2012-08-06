@@ -1,12 +1,14 @@
+package sand.tal;
+
 public class MUser extends Object
 {
-    boolean vaild = false;
+    public boolean vaild = false;
     public String id = "";
     public String nick;
     public String avatar;
-    public String token;
+    public String refresh_token;
     
-    boolean showCaseVaild = false;
+    public boolean showCaseVaild = false;
     public long showCaseNum;
     public long showCaseUsed;
     public long showCaseRemained;   

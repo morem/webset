@@ -1,3 +1,6 @@
+package sand.sys;
+
+import sand.message.*;
 import freemarker.template.*;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;

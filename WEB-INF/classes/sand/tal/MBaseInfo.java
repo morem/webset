@@ -1,3 +1,7 @@
+package sand.tal;
+
+import sand.message.*;
+
 import org.omg.CORBA.PUBLIC_MEMBER;
 import org.apache.log4j.*;
 

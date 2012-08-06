@@ -1,3 +1,11 @@
+package sand.show
+;
+import sand.*;
+import sand.tal.*;
+import sand.message.*;
+import sand.sys.*;
+import sand.compent.*;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.ArrayList;

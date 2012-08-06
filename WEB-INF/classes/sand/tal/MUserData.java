@@ -1,3 +1,8 @@
+package sand.tal;
+
+import sand.message.*;
+import sand.tal.*;
+
 import java.io.*;
 import java.util.*;
 
@@ -12,15 +17,15 @@ import org.dom4j.Node;
 import org.dom4j.Visitor;
 import org.dom4j.VisitorSupport;
 
-class MUserData extends Object{
+public class MUserData extends Object{
     static Logger logger = Logger.getLogger(MUserData.class.getName());
-    private boolean CreateAndInitFile(String id, String nick, String token)
+    private boolean CreateAndInitFile(String id, String nick, String session, Map map)
     {
         File file = new File(new MBaseInfo().dateBase()+ id + ".xml");
         try{
             file.createNewFile();
         }catch (Exception e) {
-            logger.error("Can't Create Data Base File User:" + id + " " + token + " " + e);
+            logger.error("Can't Create Data Base File User:" + id + " " + map.toString() + " " + e);
             return false;
         }
         
@@ -31,8 +36,19 @@ class MUserData extends Object{
         idElement.setText(id);
         Element nickElement = userElement.addElement("nick");
         nickElement.setText(nick);
-        Element tokenElement = userElement.addElement("token");
-        tokenElement.setText(token);
+        Element sessionKey = userElement.addElement("top_session");
+        sessionKey.setText(session);
+        
+        Set set =map.entrySet();
+        Iterator it=set.iterator();
+        while(it.hasNext()){
+            Map.Entry<String, String>  entry= (Map.Entry<String, String>) it.next();
+            Element elt = userElement.addElement (entry.getKey());
+            elt.setText (entry.getValue());
+        }
+        userElement.addElement("ts_offset");
+
+
         Element itemsElement = userElement.addElement("items");
         Element itemsTotalNumElement = itemsElement.addElement("total_num");
         Element itemsTotalNumUpdateTime = itemsElement.addElement("update_time");
@@ -54,20 +70,21 @@ class MUserData extends Object{
          return true;
     }
     
-    private boolean UpdateAExistFile(String id, String token)
+    private boolean UpdateAExistFile(String id, String refresh_token)
     {
         SAXReader xmlReader = new SAXReader();
         Document document = null;
         try {
             document = xmlReader.read(new File(new MBaseInfo().dateBase() + id + ".xml"));
             Element root = document.getRootElement();
-            List list = root.selectNodes("token");
+            List list = root.selectNodes("refresh_token");
             for (Object obj:list)
             {
                 Element elt = (Element)obj;
-                if ( true == elt.getName().equals("token"))
+                if ( true == elt.getName().equals("refresh_token"))
+
                 {
-                    elt.setText(token);
+                    elt.setText(refresh_token);
                 }                
             }            
         } catch (Exception e) {
@@ -96,6 +113,36 @@ class MUserData extends Object{
             Node node = document.selectSingleNode(path);
             if (node == null)return false;
             node.setText(value);                    
+        } catch (Exception e) {
+            logger.error("Write XML File Error " + e);
+            return false;
+        }
+        
+        try {
+            XMLWriter output = new XMLWriter(new FileWriter(new File(new MBaseInfo().dateBase() + id + ".xml")));
+            output.write(document);
+            output.close();
+        } catch (Exception e) {
+            logger.error("Write XML File Error " + e);
+            return false;
+        }
+        return true;
+    }
+
+    private boolean UpdateUserData(String id, Map<String, String> map)
+    {
+        SAXReader xmlReader = new SAXReader();
+        Document document = null;
+        try {
+            document = xmlReader.read(new File(new MBaseInfo().dateBase() + id + ".xml"));
+            Set set =map.entrySet();
+            Iterator it=set.iterator();
+            while(it.hasNext()){
+                Map.Entry<String, String>  entry= (Map.Entry<String, String>) it.next();
+                Node node = document.selectSingleNode("/user/" + entry.getKey());
+                if (node == null)continue;
+                node.setText(entry.getValue());                
+            }
         } catch (Exception e) {
             logger.error("Write XML File Error " + e);
             return false;
@@ -280,21 +327,53 @@ class MUserData extends Object{
         }        
     }
     
-    public void CreateUser(String id,String nick, String token) {
+    public void CreateUser(String id,String nick, String session, Map map) {
 
+        logger.debug ("Create User id:" + id + "nick:" + nick);
         File f1 = new File(new MBaseInfo().dateBase()+ id + ".xml");
         if (f1.exists() == true)
         {
-            UpdateUserData(id, "/user/token", token);
             UpdateUserData(id, "/user/nick", nick);
+            UpdateUserData(id, "/user/top_session", session);
+            UpdateUserData(id, map);
         }
         else
-            CreateAndInitFile(id, nick, token);
+            CreateAndInitFile(id, nick, session, map);
     }
     
-    public String GetUserToken(String id)
+    public String GetUserRefreshToken(String id)
     {
-        return GetUserData(id, "/user/token");
+        return GetUserData(id, "/user/refresh_token");
+    }
+
+    public String GetUserTopSession(String id)
+    {
+        return GetUserData(id, "/user/top_session");
+    }
+
+    public String GetTimeOffset (String id)
+    {
+        return GetUserData(id, "/user/ts_offset");
+    }
+
+    public boolean SetTimeOffset (String id, long offset)
+    {
+        return UpdateUserData(id, "/user/ts_offset", String.valueOf(offset));
+    }
+
+    public String GetExpiresIn (String id)
+    {
+        return GetUserData(id, "/user/expires_in");
+    }
+    
+    public String GetTs (String id)
+    {
+        return GetUserData(id, "/user/ts");
+    }
+
+    public boolean SetTs (String id, String ts)
+    {
+        return UpdateUserData(id, "/user/ts", ts);
     }
     
     public String GetUserNick(String id)

@@ -1,3 +1,7 @@
+package sand.compent;
+
+import sand.message.*;
+
 import java.io.*;
 import java.util.*;
 import org.dom4j.Document;

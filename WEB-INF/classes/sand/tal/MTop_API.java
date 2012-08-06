@@ -1,3 +1,8 @@
+package sand.tal;
+
+import sand.*;
+import sand.message.*;
+
 import java.util.*;
 import java.io.*;
 import java.lang.*;
@@ -7,19 +12,23 @@ import java.net.*;
 
 import com.sun.msv.grammar.ListExp;
 import com.taobao.api.*;
+import com.taobao.api.internal.util.*;
 import com.taobao.api.domain.ShopCat;
 import com.taobao.api.domain.User;
 import com.taobao.api.request.*;
 import com.taobao.api.response.*;
 import com.taobao.api.domain.*;
 import org.apache.log4j.*;
+import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.codec.binary.StringUtils;
+import org.apache.commons.codec.digest.DigestUtils;
 
 
 public class MTop_API extends Object
 {
     static Logger logger = Logger.getLogger(MTop_API.class.getName());
     
-    public MUser getUserInfo(String id, String token)
+    public MUser getUserInfo(String id, String refresh_token)
     {
         MUser usrMUser = new MUser();
         usrMUser.vaild = false;
@@ -30,11 +39,11 @@ public class MTop_API extends Object
         UserGetRequest req =new UserGetRequest();
         req.setFields("user_id,nick,seller_credit,avatar");
         try{
-            UserGetResponse response = client.execute (req, token);
+            UserGetResponse response = client.execute (req, refresh_token);
             usrMUser.id = response.getUser().getUserId().toString();
             usrMUser.nick = response.getUser().getNick();
             usrMUser.avatar = response.getUser().getAvatar();
-            usrMUser.token = token;
+            usrMUser.refresh_token = refresh_token;
             usrMUser.vaild = true;
         }
         catch (Exception e) {
@@ -68,14 +77,14 @@ public class MTop_API extends Object
 
         try {
             MUser usr = new MUser();
-            logger.debug(new MUserData().GetUserToken(id));
-            String token = new MUserData().GetUserToken(id);
-            if (token == null)
+            logger.debug(new MUserData().GetUserTopSession(id));
+            String refresh_token = new MUserData().GetUserTopSession(id);
+            if (refresh_token == null)
             {
-                logger.error("Can't find the user's token");
+                logger.error("Can't find the user's refresh_token");
                 return null;
             }
-            ShopRemainshowcaseGetResponse response = client.execute(req , token);
+            ShopRemainshowcaseGetResponse response = client.execute(req , refresh_token);
             if (response == null)
             {
                 logger.error("ShopRemainshowcaseGetResponse error"); 
@@ -196,9 +205,9 @@ public class MTop_API extends Object
             canSetItemCntBoolean = false;
         }
         
-        String token = new MUserData().GetUserToken(id);
-        if (token == null){
-            logger.error("Can't find the user's token");
+        String refresh_token = new MUserData().GetUserTopSession(id);
+        if (refresh_token == null){
+            logger.error("Can't find the user's refresh_token");
             return null;
         }
         Long times = 3L;
@@ -211,7 +220,7 @@ public class MTop_API extends Object
         {
             try {
 
-                ItemsOnsaleGetResponse response = client.execute(req , token);     
+                ItemsOnsaleGetResponse response = client.execute(req , refresh_token);     
                 logger.error("here");
                 List<Item> list = new ArrayList<Item>();
                 List<MItem> listM = new ArrayList<MItem>();
@@ -332,14 +341,14 @@ public class MTop_API extends Object
         permitReq.setTopics("trade;refund;item");
         permitReq.setStatus("all;all;all");
         
-        String token = new MUserData().GetUserToken(id);
-        if (token == null){
-            logger.error("Can't find the user's token");
+        String refresh_token = new MUserData().GetUserTopSession(id);
+        if (refresh_token == null){
+            logger.error("Can't find the user's refresh_token");
             return false;
         }
 
         try {
-            IncrementCustomerPermitResponse permitResp = client.execute(permitReq, token);
+            IncrementCustomerPermitResponse permitResp = client.execute(permitReq, refresh_token);
             if(permitResp.isSuccess()){
                 logger.debug("IncrementCustomerPermitResponse success");
             }else{
@@ -358,9 +367,9 @@ public class MTop_API extends Object
         int page = (itemIDList.size() + 20 - 1)/20;
         if (field == null) field = "num_iid,title,nick,pric,has_showcase";
         
-        String token = new MUserData().GetUserToken(id);
-        if (token == null){
-            logger.error("Can't find the user's token");
+        String refresh_token = new MUserData().GetUserTopSession(id);
+        if (refresh_token == null){
+            logger.error("Can't find the user's refresh_token");
             return null;
         }
         List<MItem> itemList = new ArrayList<MItem>();
@@ -380,7 +389,7 @@ public class MTop_API extends Object
                 ItemsListGetRequest req=new ItemsListGetRequest();
                 req.setFields(field);
                 req.setNumIids(itemIDs);
-                ItemsListGetResponse response = client.execute(req, token);
+                ItemsListGetResponse response = client.execute(req, refresh_token);
                 List<Item> list;
                 list = response.getItems();
                 for (Item l:list)
@@ -459,9 +468,9 @@ public class MTop_API extends Object
 
     public Boolean setItemtoShowCase (String id, String num_iid)
     {
-        String token = new MUserData().GetUserToken(id);
-        if (token == null){
-            logger.error("Can't find the user's token");
+        String refresh_token = new MUserData().GetUserTopSession(id);
+        if (refresh_token == null){
+            logger.error("Can't find the user's refresh_token");
             return false;
         }
         try{
@@ -471,13 +480,52 @@ public class MTop_API extends Object
 
             ItemRecommendAddRequest req=new ItemRecommendAddRequest();
             req.setNumIid(Long.valueOf(num_iid));
-            ItemRecommendAddResponse response = client.execute(req , token);
+            ItemRecommendAddResponse response = client.execute(req , refresh_token);
             return true;
         }catch (Exception e){
             logger.error (e);
             return false;
         }
     }
+
+    public Boolean flushTopSession (String id)
+    {
+        try {
+           String appkey = new MBaseInfo().appKey();
+           String secret = new MBaseInfo().appSecret();
+           String refreshToken = new MUserData().GetUserRefreshToken(id);
+           String sessionkey = new MUserData().GetUserTopSession(id);
+   
+           Map<String, String> signParams = new TreeMap<String, String>();
+           signParams.put("appkey", appkey);
+           signParams.put("refresh_token", refreshToken);
+           signParams.put("sessionkey", sessionkey);
+   
+           StringBuilder paramsString = new StringBuilder();
+           Set<Map.Entry<String, String>> paramsEntry = signParams.entrySet();
+           for (Map.Entry paramEntry : paramsEntry) {
+              paramsString.append(paramEntry.getKey()).append(paramEntry.getValue());
+           }
+           String sign = DigestUtils.md5Hex((paramsString.toString() + secret).getBytes("utf-8")).toUpperCase();
+           String signEncoder = URLEncoder.encode(sign, "utf-8");
+           String appkeyEncoder = URLEncoder.encode(appkey, "utf-8");
+           String refreshTokenEncoder = URLEncoder.encode(refreshToken, "utf-8");
+           String sessionkeyEncoder = URLEncoder.encode(sessionkey, "utf-8");
+
+           String freshUrl = "http://container.api.taobao.com/container/refresh?appkey=" + appkeyEncoder
+                  + "&refresh_token=" + refreshTokenEncoder + "&sessionkey=" + sessionkeyEncoder + "&sign="
+                  + signEncoder;
+           System.out.println(freshUrl);
+          //import com.taobao.api.internal.util.WebUtils
+           String response = WebUtils.doPost(freshUrl, null, 30 * 1000 * 60, 30 * 1000 * 60);
+           logger.debug(response);
+       } catch (Exception e) {
+           // TODO Auto-generated catch block
+           e.printStackTrace();
+       }
+       return true;
+    }
+
 }
 
 

@@ -1,4 +1,10 @@
-package com.taobao.api.internal.stream;
+package sand.message;
+
+import sand.*;
+import sand.tal.*;
+import sand.message.*;
+
+//import com.taobao.api.internal.stream;
 
 import java.util.Map;
 

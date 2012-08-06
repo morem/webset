@@ -1,7 +1,10 @@
-//import org.apache.log4j.*;
-import freemarker.template.*;
-import freemarker.log.Logger;
+package sand;
+import sand.tal.*;
+import sand.sys.*;
+import sand.compent.*;
 
+import org.apache.log4j.*;
+import freemarker.template.*;
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import javax.xml.transform.*;
@@ -18,16 +21,11 @@ import com.taobao.api.response.*;
 
 public class Index extends HttpServlet
 {    
-    //static Logger logger = Logger.getLogger(Index.class.getName());
+    static Logger logger = Logger.getLogger(Index.class.getName());
     
     public void doGet (HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException
     {
-        try {
-            Logger.selectLoggerLibrary(Logger.LIBRARY_NONE);
-        } catch (Exception e) {
-        }
-
         PrintWriter out = resp.getWriter();
         //Session处理，判断是否在会话时间内
         HttpSession httpSession = req.getSession();

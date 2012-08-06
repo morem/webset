@@ -17,8 +17,9 @@ WEB-NAME=a
 WEB-PATH=$(WEB-ROOT)/$(WEB-NAME)
 WEB-INF=./WEB-INF
 
-CP = $(CLASSPATH):${PWD}/WEB-INF/lib/:${PWD}/WEB-INF/lib/*:${PWD}/WEB-INF/classes/:${PWD}/WEB-INF/lib/*:$(subst $(space),:,$(SRC_DIR))
-
+#CP = $(CLASSPATH):${PWD}/WEB-INF/lib/:${PWD}/WEB-INF/lib/*:${PWD}/WEB-INF/classes/*:${PWD}/WEB-INF/lib/*:$(subst $(space),:,$(SRC_DIR))
+CP = $(CLASSPATH):${PWD}/WEB-INF/lib/*:${PWD}/WEB-INF/classes/*
+SP = ${PWD}/WEB-INF/classes/
 all:$(CONTENT)
 
 
@@ -34,7 +35,7 @@ server:
 
 %.class:%.java
 	@echo compile $<
-	javac $< -g -classpath $(CP) -encoding UTF-8 
+	javac $< -g -classpath $(CP) -sourcepath $(SP) -encoding UTF-8 
 
 
 info:web.start  $(WEB_INFO_CONTENT) LOG4J SESSION web.end

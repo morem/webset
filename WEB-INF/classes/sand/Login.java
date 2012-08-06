@@ -1,3 +1,9 @@
+package sand;
+
+import sand.compent.*;
+import sand.message.*;
+import sand.tal.*;
+
 import freemarker.template.*;
 
 import javax.servlet.ServletException;
@@ -28,14 +34,26 @@ public class Login extends HttpServlet
         
         HttpSession httpSession = req.getSession();
         out.println("It's a New Session:"+ "New");
-        Map map = top.convertBase64StringtoMap(req, null); 
+        Map<String, String> map = top.convertBase64StringtoMap(req, null); 
         String visitor_id = (String)map.get("visitor_id");
         String visitor_nick = (String)map.get("visitor_nick");
         logger.debug("visitor_nick:" + visitor_nick);
         httpSession.setAttribute("visitor_id", visitor_id);
-        MUserData userXMLData = new MUserData();
-        userXMLData.CreateUser(visitor_id, visitor_nick,(String)map.get("refresh_token"));
 
+        Set set =map.entrySet();
+        Iterator it=set.iterator();
+        while(it.hasNext()){
+            Map.Entry<String, String>  entry= (Map.Entry<String, String>) it.next();
+            System.out.println(entry.getKey()+":"+entry.getValue());
+            
+        }
+        String ts = map.get("ts");
+        Date date = new Date();
+        long offset = Long.valueOf(ts) - date.getTime();
+        
+        MUserData userXMLData = new MUserData();
+        userXMLData.CreateUser(visitor_id, visitor_nick, req.getParameter("top_session"), map);
+        userXMLData.SetTimeOffset (visitor_id, offset);
         logger.debug (map.toString());
 
 
